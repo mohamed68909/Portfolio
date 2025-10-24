@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Ashraf - Backend Developer Portfolio</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #0d1117; 
+            color: #e5e7eb;
+            scroll-behavior: smooth;
+        }
+
+      
+        .reveal-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            transition-delay: var(--delay);
+        }
+
+        .reveal-item.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-heading {
+            border-bottom: 2px solid #14b8a6; 
+            display: inline-block;
+            padding-bottom: 0.25rem;
+            margin-bottom: 2rem;
+        }
+
+        
+        .btn-primary {
+            @apply bg-teal-600 hover:bg-teal-500 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 shadow-xl shadow-teal-900/50;
+        }
+
+        .btn-secondary {
+            @apply border border-teal-600 text-teal-400 hover:bg-teal-600 hover:text-white font-semibold py-3 px-6 rounded-lg transition duration-300;
+        }
+
+  
+        .project-card, .certificate-card {
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .project-card:hover, .certificate-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(20, 184, 166, 0.2), 0 4px 6px -2px rgba(20, 184, 166, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+    
+    <nav class="sticky top-0 z-50 bg-gray-900/90 backdrop-blur-sm shadow-lg py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-bold text-teal-400">Mohamed Ashraf</a>
+            <div class="space-x-4 hidden md:flex">
+                <a href="#about" class="text-gray-300 hover:text-teal-400 transition nav-link">About</a>
+                <a href="#certifications" class="text-gray-300 hover:text-teal-400 transition nav-link">Certificates</a>
+                <a href="#skills" class="text-gray-300 hover:text-teal-400 transition nav-link">Skills</a>
+                <a href="#projects" class="text-gray-300 hover:text-teal-400 transition nav-link">Projects</a>
+                <a href="#contact" class="text-gray-300 hover:text-teal-400 transition nav-link">Contact</a>
+            </div>
+           
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8 max-w-7xl">
+
+        
+        <div id="main-portfolio-view">
+
+        
+            <section id="hero" class="min-h-screen flex items-center justify-center pt-24 pb-12">
+                <div class="text-center max-w-4xl">
+                    
+                   
+                    <div class="mx-auto w-36 h-36 rounded-full overflow-hidden mb-6 reveal-item" style="--delay: 0s;">
+    <img src="Image/Gemini_Generated_Image_jqha85jqha85jqha.png" 
+         alt="Mohamed Ashraf Profile"
+         class="w-full h-full object-cover rounded-full">
+</div>
+                    
+                    <h2 class="text-2xl md:text-3xl font-light text-gray-400 mb-6 reveal-item" style="--delay: 0.2s;">
+                        Backend Developer
+                    </h2>
+                    
+                    <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-3xl mx-auto reveal-item" style="--delay: 0.3s;">
+                        I build reliable APIs and design solid databases — I love solving big problems in simple ways.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 reveal-item" style="--delay: 0.4s;">
+                       
+                        <a href="#projects" class="btn-secondary flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M15 12a3 3 0 1 0-6 0c0 1.66 1 3 3 3s3-1.34 3-3z"/><rect width="20" height="15" x="2" y="5" rx="2" ry="2"/><path d="M6 5v15"/><path d="M18 5v15"/></svg>
+                            View Projects
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="about" class="py-20 border-t border-gray-800">
+                <h3 class="text-4xl font-bold section-heading reveal-item" style="--delay: 0s;">About Me</h3>
+                <div class="bg-gray-800 p-8 rounded-xl shadow-2xl reveal-item" style="--delay: 0.1s;">
+                    <p class="text-gray-300 leading-relaxed text-lg">
+                   I'm Mohamed Ashraf, a passionate software developer specializing in .NET and web technologies.  
+I enjoy building clean, efficient, and scalable applications that solve real-world problems.  
+Over time, I’ve developed strong skills in backend development using ASP.NET Core, C#, and Entity Framework Core.  
+
+I also have experience mentoring others — simplifying complex technical topics and helping teammates understand key programming concepts.  
+I’m constantly learning new technologies and love turning ideas into practical, well-structured systems.  
+
+My goal is to keep growing as a developer and contribute to impactful projects that make technology accessible and meaningful.
+</p>
+                </div>
+            </section>
+            
+           
+            <section id="certifications" class="py-20 border-t border-gray-800">
+                <h3 class="text-4xl font-bold section-heading reveal-item" style="--delay: 0s;">Certificates</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                   
+                    <div id="microsoft" class="bg-gray-800 p-6 rounded-xl shadow-xl reveal-item certificate-card flex items-start space-x-4" style="--delay: 0.1s;" onclick="showCertificateDetails('microsoft')">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-1"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><path d="m14 7-6 6"/><path d="m13 10-2-3"/><path d="m15 11 2 2"/></svg>
+                        <div>
+                            <h4 class="text-xl font-semibold text-teal-400 mb-1">Microsoft: C#</h4>
+                            <p class="text-gray-300">Professional certification in C# programming, demonstrating a strong understanding of object-oriented programming principles, data structures, and .NET development fundamentals.
+.</p>
+                            <p class="text-sm text-gray-500 mt-2">Source: Microsoft Official Certificate</p>
+                        </div>
+                    </div>
+                    
+                    
+                    <div id="abuhadhood" class="bg-gray-800 p-6 rounded-xl shadow-xl reveal-item certificate-card flex items-start space-x-4" style="--delay: 0.2s;" onclick="showCertificateDetails('abuhadhood')">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-1"><path d="m8 3 4 8 5-5 5 5-12 8-5-5-5 5-2-4 8-9 8-9 4-8"/></svg>
+                        <div>
+                            <h4 class="text-xl font-semibold text-teal-400 mb-1">Backend .NET Track (Programming Advice)</h4>
+                            <p class="text-gray-300">Comprehensive courses by Eng. Abou Hadhoud providing in-depth learning in C#, data structures, algorithms, and modern ASP.NET Core development — combining theory with real-world projects to build strong practical skills.
+.</p>
+                            <p class="text-sm text-gray-500 mt-2">Source: Programming Advice Academy</p>
+                        </div>
+                    </div>
+                    
+                   
+                    <div id="iti" class="bg-gray-800 p-6 rounded-xl shadow-xl reveal-item certificate-card flex items-start space-x-4" style="--delay: 0.3s;" onclick="showCertificateDetails('iti')">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-1"><path d="M12 2v20M18 6h-6M6 6h6M18 10h-6M6 10h6M18 14h-6M6 14h6M18 18h-6M6 18h6"/></svg>
+                        <div>
+                            <h4 class="text-xl font-semibold text-teal-400 mb-1">ITI .Net Web Devolpment</h4>
+                            <p class="text-gray-300">Intensive training program focused on real-world application development, covering system design, API construction, and deployment strategies.</p>
+                            <p class="text-sm text-gray-500 mt-2">Source: Information Technology Institute (ITI)</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section id="skills" class="py-20 border-t border-gray-800">
+                <h3 class="text-4xl font-bold section-heading reveal-item" style="--delay: 0s;">Technical Skills</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    
+                    <div class="bg-gray-800 p-6 rounded-xl shadow-xl reveal-item" style="--delay: 0.1s;">
+                        <h4 class="text-2xl font-semibold mb-3 text-teal-400 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="m5 17 7-7 7 7"/></svg>
+                            Languages
+                        </h4>
+                        <ul class="space-y-2 list-none text-gray-300">
+                            <li>C#</li>
+                            <li>C++</li>
+                            <li>SQL</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gray-800 p-6 rounded-xl shadow-xl reveal-item" style="--delay: 0.2s;">
+                        <h4 class="text-2xl font-semibold mb-3 text-teal-400 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M7 10v6"/><path d="M12 10v6"/><path d="M17 10v6"/><path d="M21 10H3"/><path d="M3 14h18"/><path d="M3 18h18"/><path d="M3 6h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"/></svg>
+                            Databases
+                        </h4>
+                        <ul class="space-y-2 list-none text-gray-300">
+                            <li>SQL Server</li>
+                            <li>MySQL</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gray-800 p-6 rounded-xl shadow-xl reveal-item" style="--delay: 0.3s;">
+                        <h4 class="text-2xl font-semibold mb-3 text-teal-400 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M4 10h16"/><path d="M4 14h16"/><path d="M12 21v-7"/><path d="M12 3v7"/><path d="M7 6l-3-3"/><path d="M17 6l3-3"/><path d="M7 18l-3 3"/><path d="M17 18l3 3"/></svg>
+                            Technologies
+                        </h4>
+                        <ul class="space-y-2 list-none text-gray-300">
+                            <li>RESTful APIs</li>
+                            <li>ASP.NET MVC</li>
+                            <li>ADO.NET</li>
+                            <li>EF Core</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gray-800 p-6 rounded-xl shadow-xl reveal-item" style="--delay: 0.4s;">
+                        <h4 class="text-2xl font-semibold mb-3 text-teal-400 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.71-3.71a1.9 1.9 0 0 0 0-2.7l-1.6-1.6a1.9 1.9 0 0 0-2.7 0ZM4.92 12.13l-1.04 4.54a2 2 0 0 0 2 2l4.54-1.04a1 1 0 0 0 .54-.54l-5-5a1 1 0 0 0-.54-.54Z"/></svg>
+                            Tools
+                        </h4>
+                        <ul class="space-y-2 list-none text-gray-300">
+                            <li>Visual Studio</li>
+                            <li>Git</li>
+                            <li>GitHub</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+      
+            <section id="projects" class="py-20 border-t border-gray-800">
+                <h3 class="text-4xl font-bold section-heading reveal-item" style="--delay: 0s;">Featured Projects</h3>
+                <p class="text-gray-400 mb-8 reveal-item" style="--delay: 0.1s;">Click on any project to view its detailed description and links.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    
+                    <div id="ClincManagement" class="bg-gray-800 p-6 rounded-xl shadow-xl reveal-item project-card flex flex-col h-full" style="--delay: 0.2s;" onclick="showProjectDetails('ClincManagement')">
+                        <h4 class="text-2xl font-semibold text-teal-400 mb-3">Clinc Management API</h4>
+                        <p class="text-gray-400 mb-4 flex-grow">
+                            A robust and secure RESTful Web API for medical clinic management, featuring secure auth, clean architecture, and scalability.
+                        </p>
+                        <div class="text-sm font-medium text-gray-500">
+                            <span class="inline-block bg-gray-700 rounded-full px-3 py-1 text-xs font-semibold mr-2 mb-2">ASP.NET Core</span>
+                            <span class="inline-block bg-gray-700 rounded-full px-3 py-1 text-xs font-semibold">JWT</span>
+                        </div>
+                    </div>
+                    
+                    
+                    <div id="LibrarySystem" class="bg-gray-800 p-6 rounded-xl shadow-xl reveal-item project-card flex flex-col h-full" style="--delay: 0.3s;" onclick="showProjectDetails('LibrarySystem')">
+                        <h4 class="text-2xl font-semibold text-teal-400 mb-3">Library Management API</h4>
+                        <p class="text-gray-400 mb-4 flex-grow">
+                            Library system with user management, JWT authentication, fines, and reservations, built as a dedicated API.
+                        </p>
+                        <div class="text-sm font-medium text-gray-500">
+                            <span class="inline-block bg-gray-700 rounded-full px-3 py-1 text-xs font-semibold mr-2 mb-2">C#</span>
+                            <span class="inline-block bg-gray-700 rounded-full px-3 py-1 text-xs font-semibold">JWT</span>
+                        </div>
+                    </div>
+
+                    
+                    <div id="DriverLicenseManager" class="bg-gray-800 p-6 rounded-xl shadow-xl reveal-item project-card flex flex-col h-full" style="--delay: 0.4s;" onclick="showProjectDetails('DriverLicenseManager')">
+                        <h4 class="text-2xl font-semibold text-teal-400 mb-3">Driver License Management System</h4>
+                        <p class="text-gray-400 mb-4 flex-grow">
+                            Windows Forms desktop app for managing driver licenses, renewals, and exams.
+                        </p>
+                        <div class="text-sm font-medium text-gray-500">
+                            <span class="inline-block bg-gray-700 rounded-full px-3 py-1 text-xs font-semibold mr-2 mb-2">Windows Forms</span>
+                            <span class="inline-block bg-gray-700 rounded-full px-3 py-1 text-xs font-semibold">SQL Server</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+          
+            <section id="contact" class="py-20 border-t border-gray-800">
+                <h3 class="text-4xl font-bold section-heading reveal-item text-center md:text-left" style="--delay: 0s;">Get In Touch</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 max-w-4xl mx-auto">
+                    
+                    <div class="space-y-4 reveal-item" style="--delay: 0.1s;">
+                        <h4 class="text-xl font-semibold text-teal-400">Email</h4>
+                        <div class="flex items-center space-x-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail flex-shrink-0"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                            <span class="text-lg text-gray-300 break-all">mohamedashrafabdulkareem@gmail.com</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4 reveal-item" style="--delay: 0.2s;">
+                        <h4 class="text-xl font-semibold text-teal-400">Phone</h4>
+                        <div class="flex items-center space-x-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone flex-shrink-0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <span class="text-lg text-gray-300 break-all">+20 105 050 0189</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4 reveal-item" style="--delay: 0.3s;">
+                        <h4 class="text-xl font-semibold text-teal-400">GitHub</h4>
+                        <div class="flex items-center space-x-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github flex-shrink-0"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.44-.78-3.47 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.55 1.03-1 2.22-1 3.47 0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/></svg>
+                            <a href="https://github.com/mohamed68909" target="_blank" class="text-lg text-teal-400 hover:underline break-all">github.com/mohamed68909</a>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4 reveal-item" style="--delay: 0.4s;">
+                        <h4 class="text-xl font-semibold text-teal-400">LinkedIn</h4>
+                        <div class="flex items-center space-x-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin flex-shrink-0"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                            <a href="https://www.linkedin.com/in/mohamed-ashraf-a82a93253/" target="_blank" class="text-lg text-teal-400 hover:underline break-all">linkedin.com/in/mohamed-ashraf-ab5803268</a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </div> 
+
+       
+        <div id="project-detail-view" class="hidden min-h-screen pt-24 pb-12">
+            <button onclick="hideProjectDetails()" class="btn-secondary flex items-center mb-10 reveal-item" style="--delay: 0s;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="m15 18-6-6 6-6"/></svg>
+                Back to Projects
+            </button>
+            
+            <h1 id="detail-title" class="text-5xl md:text-6xl font-bold text-teal-400 mb-6 reveal-item" style="--delay: 0.1s;">Project Title</h1>
+            
+            <div class="bg-gray-800 p-8 rounded-xl shadow-2xl reveal-item" style="--delay: 0.2s;">
+                <h2 class="text-3xl font-semibold mb-4 text-gray-100 border-b border-gray-700 pb-2">Overview</h2>
+                <p id="detail-description" class="text-gray-300 leading-relaxed text-lg mb-8">Detailed description goes here...</p>
+
+                <h2 class="text-3xl font-semibold mb-4 text-gray-100 border-b border-gray-700 pb-2">Technologies Used</h2>
+                <div id="detail-technologies" class="flex flex-wrap gap-3 mb-10">
+                
+                </div>
+                
+                <h2 class="text-3xl font-semibold mb-4 text-gray-100 border-b border-gray-700 pb-2">Project Links</h2>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
+                    <a id="detail-github-link" href="#" target="_blank" class="btn-secondary flex items-center justify-center w-full sm:w-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.44-.78-3.47 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.55 1.03-1 2.22-1 3.47 0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/></svg>
+                        GitHub Repository
+                    </a>
+                    <a id="detail-demo-link" href="#" target="_blank" class="btn-primary flex items-center justify-center w-full sm:w-auto hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M18 13V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h4"/><path d="M15 22l7-7-7-7"/><path d="M7 11h7"/></svg>
+                        Live Demo (API Endpoint)
+                    </a>
+                    <p id="demo-unavailable" class="text-gray-500 text-sm self-center">No live demo available (Backend/Desktop App).</p>
+                </div>
+            </div>
+        </div>
+        
+       
+       <div id="certificate-detail-view" class="hidden min-h-screen pt-24 pb-12">
+    <button onclick="hideCertificateDetails()" class="btn-secondary flex items-center mb-10 reveal-item" style="--delay: 0s;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+            <path d="m15 18-6-6 6-6"/>
+        </svg>
+        Back to Certificates
+    </button>
+    
+    <h1 id="cert-detail-title" class="text-5xl md:text-6xl font-bold text-teal-400 mb-6 reveal-item" style="--delay: 0.1s;">Certificate Title</h1>
+    
+    <div class="bg-gray-800 p-8 rounded-xl shadow-2xl reveal-item" style="--delay: 0.2s;">
+        
+        <h2 class="text-3xl font-semibold mb-4 text-gray-100 border-b border-gray-700 pb-2">Track Overview</h2>
+        <p id="cert-detail-track-description" class="text-gray-300 leading-relaxed text-lg mb-10"></p>
+
+        <h2 class="text-3xl font-semibold mb-4 text-gray-100 border-b border-gray-700 pb-2">Certificates Images</h2>
+        <div id="cert-detail-images" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+    </div>
+</div>
+
+
+    </main>
+
+    <footer class="bg-gray-950 py-8 mt-16 border-t border-gray-800">
+        <div class="container mx-auto px-4 text-center text-gray-400">
+            <p class="mb-4 reveal-item" style="--delay: 0s;">
+                &copy; 2025 Mohamed Ashraf — All rights reserved.
+            </p>
+            <div class="flex justify-center space-x-6 reveal-item" style="--delay: 0.1s;">
+                <a href="https://github.com/mohamed68909" target="_blank" class="text-gray-400 hover:text-teal-400 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.44-.78-3.47 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.55 1.03-1 2.22-1 3.47 0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/mohamed-ashraf-ab5803268" target="_blank" class="text-gray-400 hover:text-teal-400 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        
+        const projectsData = {
+            ClincManagement: {
+                title: "Clinc Management API",
+                description: "A robust and secure RESTful Web API designed for efficient management of medical clinics. Built with ASP.NET Core (.NET 7/8) and Entity Framework Core, this project features a clean layered architecture (Service Layer, DTOs, Result Wrapper) and prioritizes performance and security. Key Capabilities include: Core Management (Doctors, Patients, Appointments, Invoices, Payments, Services), Security (ASP.NET Identity and JWT Tokens), Architecture (Clean layered structure, Mapster for fast mapping), Scalability (Pagination support), and Documentation (Swagger UI).",
+                technologies: ["C# (.NET 7/8)", "ASP.NET Core Web API", "Entity Framework Core", "SQL Server", "Mapster", "JWT"],
+                github: "https://github.com/mohamed68909/ClincManagement", 
+                demo: "" 
+            },
+            LibrarySystem: {
+                title: "Library Management API",
+                description: "A complete system for managing library operations built on **ASP.NET Core MVC** and exposed as a reliable API. Key features include secure user authentication using **JWT (JSON Web Tokens)** for stateless security, role-based access control, detailed inventory tracking of books, automated calculation of overdue fines, and a reliable book reservation module. The system demonstrates strong application of business logic.",
+                technologies: ["C#", "ASP.NET Core MVC", "JWT Authentication", "SQL Server", "ADO.NET"],
+                github: "https://github.com/mohamed68909/Library_Managment_Api", 
+                demo: ""
+            },
+            DriverLicenseManager: {
+                title: "Driver License Management System (Windows Forms)",
+                description: "A classic desktop application developed using C# **Windows Forms** for governmental or private institutions. The system efficiently manages the entire driver's license lifecycle: initial application processing, renewals, tracking of theoretical and practical exam results, and detailed record keeping. Tt showcases strong knowledge of desktop application architecture and direct database interaction via **ADO.NET**.",
+                technologies: ["C#", "Windows Forms", "Desktop Application", "ADO.NET", "SQL Server"],
+                github: "https://github.com/mohamed68909/Driver_License_Managment", 
+                demo: ""
+            }
+        };
+
+    
+        const certificatesData = {
+            microsoft: {
+                title: "Microsoft: C#",
+                trackDescription: "Certification in C# (Basic) demonstrating solid understanding of C# fundamentals, including variables, data types, control structures, loops, arrays, and functions.  The certification highlights strong foundational skills in programming logic and syntax within the .NET environment, forming the basis for future learning in object-oriented and web development.",
+                images: [
+                    { src: "Image/C_Sqrp.jpeg", alt: "C#" }
+                ]
+            },
+            abuhadhood: {
+                title: "Backend .NET Track (Pragramming Academy)",
+                trackDescription: "My programming journey began with C++, where I learned the core concepts of problem-solving, data structures, and memory management.  Working with C++ helped me develop a strong logical foundation and understand how things work at a lower level — from pointers and arrays to classes and algorithms.After mastering the basics, I moved on to building desktop applications using **Windows Forms (WinForms)** with C#.This step was a turning point — it allowed me to see how my code could create real, interactive software with user interfaces, event handling, and database connectivity. Through WinForms projects, I learned how to structure applications, handle user input, and connect forms with SQL databases — transforming my theoretical knowledge into practical experience. Eventually, I transitioned into **modern .NET development**, exploring ASP.NET Core, APIs, and clean architecture principles.  This progression from **C++ fundamentals to WinForms and then ASP.NET Core** gave me a complete understanding of how applications evolve — from low-level logic to full-scale web system",
+                images: [
+                    { src: "Image/Algorazim_and_problem_soliving.png", alt: "" },
+                    { src: "Image/Algorith_and_Problem_solving_1.png", alt: "" },
+                      { src: "Image/Algorazm_And_problem_solving_2.png", alt: "" },
+                        { src: "Image/Algorazim_and_problem_soliving_4.png", alt: "" },
+                          { src: "Image/Algorazim_and_problem_soliving_3.png", alt: "" },
+                          { src : "Image/Introdtion_of_programming_with_C_Sharp_2.png" ,alt:""},
+                           { src : "Image/oop_C_Sharp .png" ,alt:""},
+                            { src : "Image/OOP_Project.png" ,alt:""},
+                             { src : "Image/Solid_principle.png" ,alt:""},
+                              { src : "Image/RestFull_Api.png" ,alt:""},
+                               { src : "Image/T_Sql.png" ,alt:""},
+                                 { src : "Image/Full_Project.png" ,alt:""},
+                                   { src : "Image/DataBase.png" ,alt:""},
+                                     { src : "Image/Data_structur_1.png" ,alt:""},
+                                      { src : "Image/Data_Structure_2.png" ,alt:""},
+                                       { src : "Image/DataBase_Project.png" ,alt:""},
+                ]
+            },
+            iti: {
+                title: "ITI Backend Developer Track (Information Technology Institute)",
+                trackDescription: "During the .NET Development training at the Information Technology Institute (ITI),  I specialized in the **ASP.NET MVC Framework**, gaining hands-on experience in building structured and maintainable web applications.The training focused on:- Understanding the Model–View–Controller (MVC) architecture  - Building dynamic web applications using **C#** and **ASP.NET MVC** - Working with **Entity Framework** for data access and CRUD operations  - Designing responsive interfaces with **HTML**, **CSS**, and **Bootstrap**  - Managing controllers, routes, and views for clean application flow  - Implementing validation, authentication, and user management features  Through practical sessions and real-world exercises, I learned how to design scalable, secure, and user-friendly web systems following software engineering best practices.",
+                images: [
+                    { src: "Image/ITI.jpeg", alt: "" },
+                    {  }
+                ]
+            }
+        };
+
+
+    
+        const mainView = document.getElementById('main-portfolio-view');
+        const projectDetailView = document.getElementById('project-detail-view');
+        const certificateDetailView = document.getElementById('certificate-detail-view');
+
+        
+        const detailTitle = document.getElementById('detail-title');
+        const detailDescription = document.getElementById('detail-description');
+        const detailTechnologies = document.getElementById('detail-technologies');
+        const detailGithubLink = document.getElementById('detail-github-link');
+        const detailDemoLink = document.getElementById('detail-demo-link');
+        const demoUnavailable = document.getElementById('demo-unavailable');
+        
+    
+        const certDetailTitle = document.getElementById('cert-detail-title');
+        const certDetailTrackDescription = document.getElementById('cert-detail-track-description');
+        const certDetailImages = document.getElementById('cert-detail-images');
+
+
+        function showProjectDetails(projectId) {
+            const project = projectsData[projectId];
+            if (!project) return;
+
+        
+            detailTitle.innerHTML = project.title;
+            detailDescription.innerText = project.description;
+            detailGithubLink.href = project.github;
+
+            
+            if (project.demo) {
+                detailDemoLink.href = project.demo;
+                detailDemoLink.classList.remove('hidden');
+                demoUnavailable.classList.add('hidden');
+            } else {
+                detailDemoLink.classList.add('hidden');
+                demoUnavailable.classList.remove('hidden');
+            }
+
+            
+            detailTechnologies.innerHTML = project.technologies.map(tech => 
+                `<span class="inline-block bg-teal-800 text-teal-200 rounded-full px-4 py-1 text-sm font-medium">${tech}</span>`
+            ).join('');
+
+            
+            mainView.classList.add('hidden');
+            projectDetailView.classList.remove('hidden');
+            certificateDetailView.classList.add('hidden'); 
+            window.scrollTo(0, 0); 
+        }
+
+        function hideProjectDetails() {
+         
+            projectDetailView.classList.add('hidden');
+            mainView.classList.remove('hidden');
+            
+            
+            const projectsSection = document.getElementById('projects');
+            if (projectsSection) {
+                projectsSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        
+        function showCertificateDetails(certId) {
+            const cert = certificatesData[certId];
+            if (!cert) return;
+
+         
+            certDetailTitle.innerHTML = cert.title;
+            certDetailTrackDescription.innerHTML = cert.trackDescription;
+
+         
+            certDetailImages.innerHTML = cert.images.map(img => 
+                `<a href="${img.src}" target="_blank" class="block overflow-hidden rounded-lg hover:shadow-teal-500/50 hover:shadow-2xl transition duration-300">
+                    <img src="${img.src}" alt="${img.alt}" class="w-full h-auto object-cover transform hover:scale-[1.02] transition duration-300">
+                    <p class="text-xs text-center text-gray-400 mt-2">${img.alt}</p>
+                </a>`
+            ).join('');
+
+            
+            mainView.classList.add('hidden');
+            projectDetailView.classList.add('hidden'); 
+            certificateDetailView.classList.remove('hidden');
+            window.scrollTo(0, 0); 
+        }
+
+        function hideCertificateDetails() {
+       
+            certificateDetailView.classList.add('hidden');
+            mainView.classList.remove('hidden');
+            
+            
+            const certsSection = document.getElementById('certifications');
+            if (certsSection) {
+                certsSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+
+   
+        
+        const revealItems = document.querySelectorAll('.reveal-item');
+
+        const observerOptions = {
+            root: null, 
+            rootMargin: '0px',
+            threshold: 0.1 
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); 
+                }
+            });
+        }, observerOptions);
+
+        revealItems.forEach(item => {
+            observer.observe(item);
+        });
+
+        
+        document.querySelectorAll('.nav-link[href^="#"], a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+               
+                if (mainView.classList.contains('hidden')) {
+                    e.preventDefault();
+                    return; 
+                }
+                
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId && targetId !== '#') {
+                    document.querySelector(targetId).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
