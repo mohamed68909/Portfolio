@@ -173,7 +173,7 @@
                 <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
                 <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
                 <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
-                <span class="text-xs text-slate-500 ml-3">guest@ashraf-api:~</span>
+                <span class="text-xs text-slate-500 ml-3" data-i18n="terminalTitle">guest@ashraf-api:~</span>
             </div>
             <!-- Logs output -->
             <div id="terminal-logs" class="space-y-2 text-[11px] sm:text-xs text-slate-300 min-h-[160px] max-h-[250px] overflow-y-auto">
@@ -182,8 +182,8 @@
             <!-- Input line -->
             <div id="terminal-input-line" class="hidden items-center gap-2 text-xs sm:text-sm text-slate-300 mt-4 border-t border-white/5 pt-4">
                 <span class="text-brand-teal font-bold">guest@ashraf:~$</span>
-                <input type="text" id="terminal-input" class="bg-transparent border-none outline-none text-brand-cyan caret-brand-teal flex-grow" autofocus placeholder="type 'run' or 'enter'...">
-                <button onclick="bootPortfolio()" class="btn-gradient px-4 py-1.5 rounded-lg text-xs font-semibold text-white">Enter</button>
+                <input type="text" id="terminal-input" class="bg-transparent border-none outline-none text-brand-cyan caret-brand-teal flex-grow" autofocus data-i18n-placeholder="terminalInputPlaceholder" placeholder="type 'run' or 'enter'...">
+                <button onclick="bootPortfolio()" class="btn-gradient px-4 py-1.5 rounded-lg text-xs font-semibold text-white" data-i18n="terminalBtn">Enter</button>
             </div>
         </div>
     </div>
@@ -204,28 +204,42 @@
             </a>
             
             <!-- Desktop Navigation Links -->
-            <div class="space-x-1 hidden md:flex items-center">
-                <a href="#about" class="px-4 py-2 text-slate-300 hover:text-white transition duration-200 nav-link text-sm font-medium">About</a>
-                <a href="#certifications" class="px-4 py-2 text-slate-300 hover:text-white transition duration-200 nav-link text-sm font-medium">Certificates</a>
-                <a href="#skills" class="px-4 py-2 text-slate-300 hover:text-white transition duration-200 nav-link text-sm font-medium">Skills</a>
-                <a href="#projects" class="px-4 py-2 text-slate-300 hover:text-white transition duration-200 nav-link text-sm font-medium">Projects</a>
-                <a href="#contact" class="px-4 py-2 text-slate-300 hover:text-white transition duration-200 nav-link text-sm font-medium">Contact</a>
+            <div class="hidden md:flex items-center gap-2">
+                <div class="space-x-1 flex items-center mr-4">
+                    <a href="#about" data-i18n="navAbout" class="px-4 py-2 text-slate-300 hover:text-white transition duration-200 nav-link text-sm font-medium">About</a>
+                    <a href="#certifications" data-i18n="navCertificates" class="px-4 py-2 text-slate-300 hover:text-white transition duration-200 nav-link text-sm font-medium">Certificates</a>
+                    <a href="#skills" data-i18n="navSkills" class="px-4 py-2 text-slate-300 hover:text-white transition duration-200 nav-link text-sm font-medium">Skills</a>
+                    <a href="#projects" data-i18n="navProjects" class="px-4 py-2 text-slate-300 hover:text-white transition duration-200 nav-link text-sm font-medium">Projects</a>
+                    <a href="#contact" data-i18n="navContact" class="px-4 py-2 text-slate-300 hover:text-white transition duration-200 nav-link text-sm font-medium">Contact</a>
+                </div>
+                <!-- Language Toggle -->
+                <button onclick="toggleLanguage()" class="px-3 py-1.5 rounded-lg border border-white/10 hover:border-brand-teal/50 hover:bg-white/5 text-xs font-bold text-brand-teal transition duration-300 flex items-center gap-1.5 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-languages"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>
+                    <span id="lang-btn-text">AR</span>
+                </button>
             </div>
 
             <!-- Mobile Menu Toggle -->
-            <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white focus:outline-none p-1 rounded-lg hover:bg-white/5 transition">
-                <svg id="menu-icon-hamburger" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-                <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x hidden"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-            </button>
+            <div class="flex items-center gap-3 md:hidden">
+                <!-- Language Toggle Mobile -->
+                <button onclick="toggleLanguage()" class="px-2.5 py-1.5 rounded-lg border border-white/10 hover:border-brand-teal/50 hover:bg-white/5 text-xs font-bold text-brand-teal flex items-center gap-1 focus:outline-none transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-languages"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>
+                    <span id="lang-btn-text-mobile">AR</span>
+                </button>
+                <button id="mobile-menu-btn" class="text-slate-300 hover:text-white focus:outline-none p-1 rounded-lg hover:bg-white/5 transition">
+                    <svg id="menu-icon-hamburger" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                    <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x hidden"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                </button>
+            </div>
         </div>
 
         <!-- Mobile Navigation Menu -->
         <div id="mobile-menu" class="hidden md:hidden glass-panel border-t border-white/5 absolute top-full left-0 w-full shadow-2xl py-4 px-6 flex flex-col space-y-3">
-            <a href="#about" class="py-2 text-slate-300 hover:text-white transition nav-link text-base font-medium" onclick="toggleMobileMenu()">About</a>
-            <a href="#certifications" class="py-2 text-slate-300 hover:text-white transition nav-link text-base font-medium" onclick="toggleMobileMenu()">Certificates</a>
-            <a href="#skills" class="py-2 text-slate-300 hover:text-white transition nav-link text-base font-medium" onclick="toggleMobileMenu()">Skills</a>
-            <a href="#projects" class="py-2 text-slate-300 hover:text-white transition nav-link text-base font-medium" onclick="toggleMobileMenu()">Projects</a>
-            <a href="#contact" class="py-2 text-slate-300 hover:text-white transition nav-link text-base font-medium" onclick="toggleMobileMenu()">Contact</a>
+            <a href="#about" data-i18n="navAbout" class="py-2 text-slate-300 hover:text-white transition nav-link text-base font-medium" onclick="toggleMobileMenu()">About</a>
+            <a href="#certifications" data-i18n="navCertificates" class="py-2 text-slate-300 hover:text-white transition nav-link text-base font-medium" onclick="toggleMobileMenu()">Certificates</a>
+            <a href="#skills" data-i18n="navSkills" class="py-2 text-slate-300 hover:text-white transition nav-link text-base font-medium" onclick="toggleMobileMenu()">Skills</a>
+            <a href="#projects" data-i18n="navProjects" class="py-2 text-slate-300 hover:text-white transition nav-link text-base font-medium" onclick="toggleMobileMenu()">Projects</a>
+            <a href="#contact" data-i18n="navContact" class="py-2 text-slate-300 hover:text-white transition nav-link text-base font-medium" onclick="toggleMobileMenu()">Contact</a>
         </div>
     </nav>
 
@@ -249,27 +263,27 @@
                     </div>
                     
                     <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 reveal-item" style="--delay: 0.15s;">
-                        <span class="block text-slate-400 text-sm sm:text-base font-semibold uppercase tracking-wider mb-3">Hello, I'm</span>
+                        <span class="block text-slate-400 text-sm sm:text-base font-semibold uppercase tracking-wider mb-3" data-i18n="heroGreeting">Hello, I'm</span>
                         <span class="bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-100 to-slate-300">Mohamed Ashraf</span>
                     </h1>
 
                     <h2 class="text-2xl sm:text-3xl font-bold mb-6 reveal-item flex flex-wrap justify-center items-center gap-2 h-10" style="--delay: 0.25s;">
-                        <span class="text-slate-400">Backend Developer focused on</span>
+                        <span class="text-slate-400" data-i18n="heroRole">Backend Developer focused on</span>
                         <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-teal to-brand-cyan font-bold tracking-tight glow-text-teal" id="typewriter-text">.NET Core</span>
                     </h2>
                     
-                    <p class="text-base sm:text-lg text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed reveal-item" style="--delay: 0.35s;">
+                    <p class="text-base sm:text-lg text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed reveal-item" style="--delay: 0.35s;" data-i18n="heroDesc">
                         I design and build high-performance APIs, robust database architectures, and clean, maintainable codebases to solve complex backend problems.
                     </p>
                     
                     <div class="flex flex-col sm:flex-row justify-center items-center gap-4 reveal-item" style="--delay: 0.45s;">
                         <a href="#projects" class="btn-gradient w-full sm:w-auto px-8 py-3.5 rounded-xl text-white font-semibold flex items-center justify-center gap-2 text-sm">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-terminal"><polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/></svg>
-                            Explore Projects
+                            <span data-i18n="heroBtnProjects">Explore Projects</span>
                         </a>
                         <a href="#contact" class="btn-outline w-full sm:w-auto px-8 py-3.5 rounded-xl font-semibold flex items-center justify-center gap-2 text-sm">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                            Get In Touch
+                            <span data-i18n="heroBtnContact">Get In Touch</span>
                         </a>
                     </div>
                 </div>
@@ -278,8 +292,8 @@
             <!-- About Section -->
             <section id="about" class="py-24 border-t border-slate-900">
                 <div class="max-w-6xl mx-auto">
-                    <span class="text-brand-teal text-xs font-bold tracking-widest uppercase block mb-2 reveal-item" style="--delay: 0s;">Introduction</span>
-                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white mb-10 reveal-item" style="--delay: 0.05s;">
+                    <span class="text-brand-teal text-xs font-bold tracking-widest uppercase block mb-2 reveal-item" style="--delay: 0s;" data-i18n="aboutSub">Introduction</span>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white mb-10 reveal-item" style="--delay: 0.05s;" data-i18n="aboutTitle">
                         About Me
                     </h3>
                     
@@ -287,13 +301,13 @@
                         <!-- Left Column: Biography -->
                         <div class="lg:col-span-2 space-y-6 reveal-item" style="--delay: 0.15s;">
                             <div class="glass-card p-8 rounded-2xl border border-white/5 space-y-4">
-                                <p class="text-slate-300 leading-relaxed text-base sm:text-lg">
-                                    I'm <strong class="text-white font-semibold">Mohamed Ashraf</strong>, a passionate software developer specializing in .NET and modern backend technologies. I thrive on building clean, efficient, and highly scalable systems that solve real-world problems.
+                                <p id="about-bio-1" class="text-slate-300 leading-relaxed text-base sm:text-lg" data-i18n="aboutBio1">
+                                    I'm Mohamed Ashraf, a passionate software developer specializing in .NET and modern backend technologies. I thrive on building clean, efficient, and highly scalable systems that solve real-world problems.
                                 </p>
-                                <p class="text-slate-300 leading-relaxed text-base sm:text-lg">
-                                    Over the course of my engineering journey, I've developed deep technical proficiency in backend design using <span class="text-brand-teal font-medium">ASP.NET Core</span>, <span class="text-brand-teal font-medium">C#</span>, <span class="text-brand-teal font-medium">Entity Framework Core</span>, and <span class="text-brand-teal font-medium">SQL Server</span> database optimization.
+                                <p id="about-bio-2" class="text-slate-300 leading-relaxed text-base sm:text-lg" data-i18n="aboutBio2">
+                                    Over the course of my engineering journey, I've developed deep technical proficiency in backend design using ASP.NET Core, C#, Entity Framework Core, and SQL Server database optimization.
                                 </p>
-                                <p class="text-slate-300 leading-relaxed text-base sm:text-lg">
+                                <p id="about-bio-3" class="text-slate-300 leading-relaxed text-base sm:text-lg" data-i18n="aboutBio3">
                                     I also possess valuable experience mentoring fellow developers, distilling complex programming architectures into clear, actionable knowledge. I love turning architectural plans into practical, secure, and production-ready applications.
                                 </p>
                             </div>
@@ -302,29 +316,29 @@
                         <!-- Right Column: Stats Highlights -->
                         <div class="space-y-6 reveal-item" style="--delay: 0.25s;">
                             <div class="glass-card p-8 rounded-2xl border border-white/5 h-full flex flex-col justify-between space-y-6">
-                                <h4 class="text-lg font-bold text-white mb-2 pb-2 border-b border-white/5">Focus & Highlights</h4>
+                                <h4 class="text-lg font-bold text-white mb-2 pb-2 border-b border-white/5" data-i18n="aboutHighlightTitle">Focus & Highlights</h4>
                                 <div class="grid grid-cols-2 gap-4">
                                     <div class="bg-brand-deep/60 p-4 rounded-xl border border-white/5 text-center">
                                         <div class="text-brand-teal font-black text-2xl mb-1">18+</div>
-                                        <div class="text-xs text-slate-400">Certificates Earned</div>
+                                        <div class="text-xs text-slate-400" data-i18n="aboutStatCert">Certificates Earned</div>
                                     </div>
                                     <div class="bg-brand-deep/60 p-4 rounded-xl border border-white/5 text-center">
                                         <div class="text-brand-cyan font-black text-2xl mb-1">3+</div>
-                                        <div class="text-xs text-slate-400">Core APIs & Apps</div>
+                                        <div class="text-xs text-slate-400" data-i18n="aboutStatProj">Core APIs & Apps</div>
                                     </div>
                                 </div>
                                 <ul class="space-y-3 text-sm text-slate-300 mt-4">
                                     <li class="flex items-center gap-2">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#14b8a6" stroke-width="2" class="flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
-                                        Clean Code & SOLID Design
+                                        <span data-i18n="aboutSkillCleanCode">Clean Code & SOLID Design</span>
                                     </li>
                                     <li class="flex items-center gap-2">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#14b8a6" stroke-width="2" class="flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
-                                        RESTful Web APIs & JWT
+                                        <span data-i18n="aboutSkillRestApis">RESTful Web APIs & JWT</span>
                                     </li>
                                     <li class="flex items-center gap-2">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#14b8a6" stroke-width="2" class="flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
-                                        Database Tuning & T-SQL
+                                        <span data-i18n="aboutSkillDbTuning">Database Tuning & T-SQL</span>
                                     </li>
                                 </ul>
                             </div>
@@ -333,12 +347,11 @@
                 </div>
             </section>
             
-           
             <!-- Certifications Section -->
             <section id="certifications" class="py-24 border-t border-slate-900">
                 <div class="max-w-6xl mx-auto">
-                    <span class="text-brand-teal text-xs font-bold tracking-widest uppercase block mb-2 reveal-item" style="--delay: 0s;">Credentials</span>
-                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white mb-10 reveal-item" style="--delay: 0.05s;">
+                    <span class="text-brand-teal text-xs font-bold tracking-widest uppercase block mb-2 reveal-item" style="--delay: 0s;" data-i18n="certSub">Credentials</span>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white mb-10 reveal-item" style="--delay: 0.05s;" data-i18n="certTitle">
                         Education & Certificates
                     </h3>
                     
@@ -352,13 +365,13 @@
                                         <i data-lucide="award" class="w-6 h-6"></i>
                                     </span>
                                 </div>
-                                <h4 class="text-xl font-bold text-white mb-3">Microsoft Certified</h4>
-                                <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                                <h4 class="text-xl font-bold text-white mb-3" data-i18n="certMicrosoftTitle">Microsoft Certified</h4>
+                                <p class="text-slate-400 text-sm leading-relaxed mb-6" data-i18n="certMicrosoftDesc">
                                     C# programming certification, verifying core competencies in OOP logic, syntax, data structures, and .NET runtime execution.
                                 </p>
                             </div>
                             <div class="text-brand-teal text-xs font-semibold flex items-center gap-1 group-hover:underline mt-auto">
-                                View Credentials <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                <span data-i18n="certMicrosoftAction">View Credentials</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
                             </div>
                         </div>
 
@@ -370,13 +383,13 @@
                                         <i data-lucide="graduation-cap" class="w-6 h-6"></i>
                                     </span>
                                 </div>
-                                <h4 class="text-xl font-bold text-white mb-3">Backend .NET Track</h4>
-                                <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                                <h4 class="text-xl font-bold text-white mb-3" data-i18n="certAbuhadhoodTitle">Backend .NET Track</h4>
+                                <p class="text-slate-400 text-sm leading-relaxed mb-6" data-i18n="certAbuhadhoodDesc">
                                     16 specialized courses from Programming Advice Academy, covering low-level C++, algorithms, UI (WinForms), SQL, and REST APIs.
                                 </p>
                             </div>
                             <div class="text-brand-cyan text-xs font-semibold flex items-center gap-1 group-hover:underline mt-auto">
-                                View 16 Course Certificates <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                <span data-i18n="certAbuhadhoodAction">View 16 Course Certificates</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
                             </div>
                         </div>
 
@@ -388,13 +401,13 @@
                                         <i data-lucide="school" class="w-6 h-6"></i>
                                     </span>
                                 </div>
-                                <h4 class="text-xl font-bold text-white mb-3">ITI .NET Web Development</h4>
-                                <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                                <h4 class="text-xl font-bold text-white mb-3" data-i18n="certItiTitle">ITI .NET Web Development</h4>
+                                <p class="text-slate-400 text-sm leading-relaxed mb-6" data-i18n="certItiDesc">
                                     Intensive professional training focusing on ASP.NET Core, MVC architectures, database schemas, and enterprise software engineering.
                                 </p>
                             </div>
                             <div class="text-brand-purple text-xs font-semibold flex items-center gap-1 group-hover:underline mt-auto">
-                                View ITI Certificates <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                <span data-i18n="certItiAction">View ITI Certificates</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
                             </div>
                         </div>
                     </div>
@@ -403,159 +416,13 @@
             <!-- Skills Section -->
             <section id="skills" class="py-24 border-t border-slate-900">
                 <div class="max-w-6xl mx-auto">
-                    <span class="text-brand-teal text-xs font-bold tracking-widest uppercase block mb-2 reveal-item" style="--delay: 0s;">Capabilities</span>
-                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white mb-12 reveal-item" style="--delay: 0.05s;">
+                    <span class="text-brand-teal text-xs font-bold tracking-widest uppercase block mb-2 reveal-item" style="--delay: 0s;" data-i18n="skillsSub">Capabilities</span>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white mb-12 reveal-item" style="--delay: 0.05s;" data-i18n="skillsTitle">
                         Technical Skills
                     </h3>
                     
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        <!-- Category: Languages -->
-                        <div class="glass-card p-6 rounded-2xl border border-white/5 reveal-item" style="--delay: 0.1s;">
-                            <h4 class="text-lg font-bold mb-6 text-white flex items-center gap-2.5">
-                                <i data-lucide="code-2" class="text-brand-teal w-5 h-5"></i>
-                                Languages
-                            </h4>
-                            <div class="space-y-5">
-                                <div>
-                                    <div class="flex justify-between text-sm mb-1.5">
-                                        <span class="text-slate-300 font-medium">C#</span>
-                                        <span class="text-brand-teal font-semibold">90%</span>
-                                    </div>
-                                    <div class="w-full bg-slate-950 rounded-full h-1.5 overflow-hidden">
-                                        <div class="bg-gradient-to-r from-brand-teal to-brand-cyan h-full rounded-full" style="width: 90%"></div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="flex justify-between text-sm mb-1.5">
-                                        <span class="text-slate-300 font-medium">SQL (T-SQL)</span>
-                                        <span class="text-brand-teal font-semibold">92%</span>
-                                    </div>
-                                    <div class="w-full bg-slate-950 rounded-full h-1.5 overflow-hidden">
-                                        <div class="bg-gradient-to-r from-brand-teal to-brand-cyan h-full rounded-full" style="width: 92%"></div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="flex justify-between text-sm mb-1.5">
-                                        <span class="text-slate-300 font-medium">C++</span>
-                                        <span class="text-brand-teal font-semibold">80%</span>
-                                    </div>
-                                    <div class="w-full bg-slate-950 rounded-full h-1.5 overflow-hidden">
-                                        <div class="bg-gradient-to-r from-brand-teal to-brand-cyan h-full rounded-full" style="width: 80%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Category: Databases -->
-                        <div class="glass-card p-6 rounded-2xl border border-white/5 reveal-item" style="--delay: 0.2s;">
-                            <h4 class="text-lg font-bold mb-6 text-white flex items-center gap-2.5">
-                                <i data-lucide="database" class="text-brand-teal w-5 h-5"></i>
-                                Databases
-                            </h4>
-                            <div class="space-y-5">
-                                <div>
-                                    <div class="flex justify-between text-sm mb-1.5">
-                                        <span class="text-slate-300 font-medium">SQL Server</span>
-                                        <span class="text-brand-cyan font-semibold">90%</span>
-                                    </div>
-                                    <div class="w-full bg-slate-950 rounded-full h-1.5 overflow-hidden">
-                                        <div class="bg-gradient-to-r from-brand-cyan to-brand-teal h-full rounded-full" style="width: 90%"></div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="flex justify-between text-sm mb-1.5">
-                                        <span class="text-slate-300 font-medium">MySQL</span>
-                                        <span class="text-brand-cyan font-semibold">75%</span>
-                                    </div>
-                                    <div class="w-full bg-slate-950 rounded-full h-1.5 overflow-hidden">
-                                        <div class="bg-gradient-to-r from-brand-cyan to-brand-teal h-full rounded-full" style="width: 75%"></div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="flex justify-between text-sm mb-1.5">
-                                        <span class="text-slate-300 font-medium">Database Design</span>
-                                        <span class="text-brand-cyan font-semibold">88%</span>
-                                    </div>
-                                    <div class="w-full bg-slate-950 rounded-full h-1.5 overflow-hidden">
-                                        <div class="bg-gradient-to-r from-brand-cyan to-brand-teal h-full rounded-full" style="width: 88%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Category: Technologies -->
-                        <div class="glass-card p-6 rounded-2xl border border-white/5 reveal-item" style="--delay: 0.3s;">
-                            <h4 class="text-lg font-bold mb-6 text-white flex items-center gap-2.5">
-                                <i data-lucide="cpu" class="text-brand-teal w-5 h-5"></i>
-                                Technologies
-                            </h4>
-                            <div class="space-y-5">
-                                <div>
-                                    <div class="flex justify-between text-sm mb-1.5">
-                                        <span class="text-slate-300 font-medium">RESTful Web APIs</span>
-                                        <span class="text-brand-purple font-semibold">92%</span>
-                                    </div>
-                                    <div class="w-full bg-slate-950 rounded-full h-1.5 overflow-hidden">
-                                        <div class="bg-gradient-to-r from-brand-purple to-brand-violet h-full rounded-full" style="width: 92%"></div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="flex justify-between text-sm mb-1.5">
-                                        <span class="text-slate-300 font-medium">Entity Framework</span>
-                                        <span class="text-brand-purple font-semibold">90%</span>
-                                    </div>
-                                    <div class="w-full bg-slate-950 rounded-full h-1.5 overflow-hidden">
-                                        <div class="bg-gradient-to-r from-brand-purple to-brand-violet h-full rounded-full" style="width: 90%"></div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="flex justify-between text-sm mb-1.5">
-                                        <span class="text-slate-300 font-medium">ASP.NET MVC</span>
-                                        <span class="text-brand-purple font-semibold">85%</span>
-                                    </div>
-                                    <div class="w-full bg-slate-950 rounded-full h-1.5 overflow-hidden">
-                                        <div class="bg-gradient-to-r from-brand-purple to-brand-violet h-full rounded-full" style="width: 85%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Category: Tools -->
-                        <div class="glass-card p-6 rounded-2xl border border-white/5 reveal-item" style="--delay: 0.4s;">
-                            <h4 class="text-lg font-bold mb-6 text-white flex items-center gap-2.5">
-                                <i data-lucide="wrench" class="text-brand-teal w-5 h-5"></i>
-                                Tools & Concepts
-                            </h4>
-                            <div class="space-y-5">
-                                <div>
-                                    <div class="flex justify-between text-sm mb-1.5">
-                                        <span class="text-slate-300 font-medium">Visual Studio</span>
-                                        <span class="text-slate-400 font-semibold">95%</span>
-                                    </div>
-                                    <div class="w-full bg-slate-950 rounded-full h-1.5 overflow-hidden">
-                                        <div class="bg-slate-700 h-full rounded-full" style="width: 95%"></div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="flex justify-between text-sm mb-1.5">
-                                        <span class="text-slate-300 font-medium">Git & GitHub</span>
-                                        <span class="text-slate-400 font-semibold">88%</span>
-                                    </div>
-                                    <div class="w-full bg-slate-950 rounded-full h-1.5 overflow-hidden">
-                                        <div class="bg-slate-700 h-full rounded-full" style="width: 88%"></div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="flex justify-between text-sm mb-1.5">
-                                        <span class="text-slate-300 font-medium">JWT & Security</span>
-                                        <span class="text-slate-400 font-semibold">90%</span>
-                                    </div>
-                                    <div class="w-full bg-slate-950 rounded-full h-1.5 overflow-hidden">
-                                        <div class="bg-slate-700 h-full rounded-full" style="width: 90%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div id="skills-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <!-- Rendered dynamically via JS -->
                     </div>
                 </div>
             </section>
@@ -563,81 +430,17 @@
             <!-- Projects Section -->
             <section id="projects" class="py-24 border-t border-slate-900">
                 <div class="max-w-6xl mx-auto">
-                    <span class="text-brand-teal text-xs font-bold tracking-widest uppercase block mb-2 reveal-item" style="--delay: 0s;">Showcase</span>
-                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white mb-3 reveal-item" style="--delay: 0.05s;">
+                    <span class="text-brand-teal text-xs font-bold tracking-widest uppercase block mb-2 reveal-item" style="--delay: 0s;" data-i18n="projectsSub">Showcase</span>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white mb-3 reveal-item" style="--delay: 0.05s;" data-i18n="projectsTitle">
                         Featured Projects
                     </h3>
-                    <p class="text-slate-400 mb-12 text-sm sm:text-base reveal-item animate-pulse-slow" style="--delay: 0.1s;">
+                    <p class="text-slate-400 mb-12 text-sm sm:text-base reveal-item animate-pulse-slow" style="--delay: 0.1s;" id="projects-info-desc">
                         <i data-lucide="info" class="w-4 h-4 inline-block mr-1 align-text-bottom text-brand-teal"></i>
-                        Click on any project to view comprehensive technical details and GitHub repositories.
+                        <span data-i18n="projectsInfo">Click on any project to view comprehensive technical details and GitHub repositories.</span>
                     </p>
                     
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <!-- Project: Clinic Management -->
-                        <div id="ClincManagement" class="glass-card p-8 rounded-2xl border border-white/5 flex flex-col h-full cursor-pointer relative overflow-hidden group reveal-item" style="--delay: 0.2s;" onclick="showProjectDetails('ClincManagement')">
-                            <div class="absolute top-0 left-0 w-2 h-full bg-brand-teal transform scale-y-0 group-hover:scale-y-100 transition duration-300"></div>
-                            
-                            <div class="flex justify-between items-start mb-6">
-                                <span class="p-3 bg-brand-teal/10 rounded-xl text-brand-teal group-hover:bg-brand-teal/20 transition duration-300">
-                                    <i data-lucide="heart-pulse" class="w-6 h-6"></i>
-                                </span>
-                                <i data-lucide="arrow-up-right" class="w-5 h-5 text-slate-500 group-hover:text-white transform group-hover:translate-x-1 group-hover:-translate-y-1 transition duration-300"></i>
-                            </div>
-                            
-                            <h4 class="text-xl font-bold text-white mb-3 group-hover:text-brand-teal transition duration-300">Clinic Management API</h4>
-                            <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
-                                A robust and secure RESTful Web API for medical clinic management, featuring secure auth, clean architecture, and scalability.
-                            </p>
-                            
-                            <div class="flex flex-wrap gap-2 mt-auto">
-                                <span class="bg-slate-900 text-slate-300 border border-white/5 px-2.5 py-1 rounded-lg text-xs font-semibold">ASP.NET Core</span>
-                                <span class="bg-slate-900 text-slate-300 border border-white/5 px-2.5 py-1 rounded-lg text-xs font-semibold">JWT</span>
-                            </div>
-                        </div>
-
-                        <!-- Project: Library System -->
-                        <div id="LibrarySystem" class="glass-card p-8 rounded-2xl border border-white/5 flex flex-col h-full cursor-pointer relative overflow-hidden group reveal-item" style="--delay: 0.3s;" onclick="showProjectDetails('LibrarySystem')">
-                            <div class="absolute top-0 left-0 w-2 h-full bg-brand-cyan transform scale-y-0 group-hover:scale-y-100 transition duration-300"></div>
-                            
-                            <div class="flex justify-between items-start mb-6">
-                                <span class="p-3 bg-brand-cyan/10 rounded-xl text-brand-cyan group-hover:bg-brand-cyan/20 transition duration-300">
-                                    <i data-lucide="book-open" class="w-6 h-6"></i>
-                                </span>
-                                <i data-lucide="arrow-up-right" class="w-5 h-5 text-slate-500 group-hover:text-white transform group-hover:translate-x-1 group-hover:-translate-y-1 transition duration-300"></i>
-                            </div>
-                            
-                            <h4 class="text-xl font-bold text-white mb-3 group-hover:text-brand-cyan transition duration-300">Library Management API</h4>
-                            <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
-                                Library system with user management, JWT authentication, fines calculation, and reservations, built as a dedicated API.
-                            </p>
-                            
-                            <div class="flex flex-wrap gap-2 mt-auto">
-                                <span class="bg-slate-900 text-slate-300 border border-white/5 px-2.5 py-1 rounded-lg text-xs font-semibold">C# MVC</span>
-                                <span class="bg-slate-900 text-slate-300 border border-white/5 px-2.5 py-1 rounded-lg text-xs font-semibold">JWT</span>
-                            </div>
-                        </div>
-
-                        <!-- Project: Driver License Manager -->
-                        <div id="DriverLicenseManager" class="glass-card p-8 rounded-2xl border border-white/5 flex flex-col h-full cursor-pointer relative overflow-hidden group reveal-item" style="--delay: 0.4s;" onclick="showProjectDetails('DriverLicenseManager')">
-                            <div class="absolute top-0 left-0 w-2 h-full bg-brand-purple transform scale-y-0 group-hover:scale-y-100 transition duration-300"></div>
-                            
-                            <div class="flex justify-between items-start mb-6">
-                                <span class="p-3 bg-brand-purple/10 rounded-xl text-brand-purple group-hover:bg-brand-purple/20 transition duration-300">
-                                    <i data-lucide="contact-2" class="w-6 h-6"></i>
-                                </span>
-                                <i data-lucide="arrow-up-right" class="w-5 h-5 text-slate-500 group-hover:text-white transform group-hover:translate-x-1 group-hover:-translate-y-1 transition duration-300"></i>
-                            </div>
-                            
-                            <h4 class="text-xl font-bold text-white mb-3 group-hover:text-brand-purple transition duration-300">Driver License Manager</h4>
-                            <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
-                                Windows Forms desktop application for managing the complete lifecycle of driver licenses, renewals, and exams.
-                            </p>
-                            
-                            <div class="flex flex-wrap gap-2 mt-auto">
-                                <span class="bg-slate-900 text-slate-300 border border-white/5 px-2.5 py-1 rounded-lg text-xs font-semibold">Windows Forms</span>
-                                <span class="bg-slate-900 text-slate-300 border border-white/5 px-2.5 py-1 rounded-lg text-xs font-semibold">SQL Server</span>
-                            </div>
-                        </div>
+                    <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Rendered dynamically via JS -->
                     </div>
                 </div>
             </section>
@@ -646,15 +449,15 @@
             <!-- Contact Section -->
             <section id="contact" class="py-24 border-t border-slate-900">
                 <div class="max-w-6xl mx-auto">
-                    <span class="text-brand-teal text-xs font-bold tracking-widest uppercase block mb-2 reveal-item" style="--delay: 0s;">Get In Touch</span>
-                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white mb-12 reveal-item" style="--delay: 0.05s;">
+                    <span class="text-brand-teal text-xs font-bold tracking-widest uppercase block mb-2 reveal-item" style="--delay: 0s;" data-i18n="contactSub">Get In Touch</span>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white mb-12 reveal-item" style="--delay: 0.05s;" data-i18n="contactTitle">
                         Let's Work Together
                     </h3>
                     
                     <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 items-start">
                         <!-- Direct Contact Methods (Left Column, 3/5 width on LG) -->
                         <div class="lg:col-span-3 space-y-6">
-                            <p class="text-slate-300 text-base sm:text-lg mb-8 leading-relaxed reveal-item" style="--delay: 0.1s;">
+                            <p class="text-slate-300 text-base sm:text-lg mb-8 leading-relaxed reveal-item" style="--delay: 0.1s;" data-i18n="contactDesc">
                                 I'm always open to discussing backend architectures, full-stack .NET web integration, mentoring opportunities, or joining innovative dev teams. Click email or phone to instantly copy details!
                             </p>
                             
@@ -669,7 +472,7 @@
                                         <p class="text-sm font-semibold text-white break-all pr-2">mohamedashrafabdulkareem@gmail.com</p>
                                     </div>
                                     <!-- Tooltip alert -->
-                                    <div id="email-tooltip" class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-brand-teal text-brand-deep text-xs font-bold px-3 py-1 rounded-full opacity-0 pointer-events-none transition duration-300">Copied!</div>
+                                    <div id="email-tooltip" class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-brand-teal text-brand-deep text-xs font-bold px-3 py-1 rounded-full opacity-0 pointer-events-none transition duration-300" data-i18n="contactTooltip">Copied!</div>
                                 </div>
 
                                 <!-- Phone Card -->
@@ -682,7 +485,7 @@
                                         <p class="text-sm font-semibold text-white">+20 105 050 0189</p>
                                     </div>
                                     <!-- Tooltip alert -->
-                                    <div id="phone-tooltip" class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-brand-cyan text-brand-deep text-xs font-bold px-3 py-1 rounded-full opacity-0 pointer-events-none transition duration-300">Copied!</div>
+                                    <div id="phone-tooltip" class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-brand-cyan text-brand-deep text-xs font-bold px-3 py-1 rounded-full opacity-0 pointer-events-none transition duration-300" data-i18n="contactTooltip">Copied!</div>
                                 </div>
 
                                 <!-- GitHub Card -->
@@ -712,21 +515,21 @@
                         <!-- Email Form (Right Column, 2/5 width on LG) -->
                         <div class="lg:col-span-2 reveal-item" style="--delay: 0.2s;">
                             <div class="glass-card p-8 rounded-2xl border border-white/5 space-y-6">
-                                <h4 class="text-lg font-bold text-white mb-2 pb-2 border-b border-white/5">Send Message</h4>
+                                <h4 class="text-lg font-bold text-white mb-2 pb-2 border-b border-white/5" data-i18n="contactFormTitle">Send Message</h4>
                                 <form action="https://formspree.io/f/mohamedashrafabdulkareem@gmail.com" method="POST" class="space-y-4">
                                     <div>
-                                        <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5">Your Name</label>
-                                        <input type="text" name="name" required class="w-full bg-[#060b13] border border-white/5 focus:border-brand-teal focus:ring-1 focus:ring-brand-teal rounded-xl px-4 py-3 text-sm text-white placeholder-slate-600 outline-none transition duration-200" placeholder="John Doe">
+                                        <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5" data-i18n="contactFormName">Your Name</label>
+                                        <input type="text" name="name" required class="w-full bg-[#060b13] border border-white/5 focus:border-brand-teal focus:ring-1 focus:ring-brand-teal rounded-xl px-4 py-3 text-sm text-white placeholder-slate-600 outline-none transition duration-200" data-i18n-placeholder="contactFormNamePlaceholder" placeholder="John Doe">
                                     </div>
                                     <div>
-                                        <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5">Your Email</label>
-                                        <input type="email" name="email" required class="w-full bg-[#060b13] border border-white/5 focus:border-brand-teal focus:ring-1 focus:ring-brand-teal rounded-xl px-4 py-3 text-sm text-white placeholder-slate-600 outline-none transition duration-200" placeholder="john@example.com">
+                                        <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5" data-i18n="contactFormEmail">Your Email</label>
+                                        <input type="email" name="email" required class="w-full bg-[#060b13] border border-white/5 focus:border-brand-teal focus:ring-1 focus:ring-brand-teal rounded-xl px-4 py-3 text-sm text-white placeholder-slate-600 outline-none transition duration-200" data-i18n-placeholder="contactFormEmailPlaceholder" placeholder="john@example.com">
                                     </div>
                                     <div>
-                                        <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5">Message</label>
-                                        <textarea name="message" rows="4" required class="w-full bg-[#060b13] border border-white/5 focus:border-brand-teal focus:ring-1 focus:ring-brand-teal rounded-xl px-4 py-3 text-sm text-white placeholder-slate-600 outline-none transition duration-200" placeholder="Hi Mohamed, let's talk about..."></textarea>
+                                        <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5" data-i18n="contactFormMsg">Message</label>
+                                        <textarea name="message" rows="4" required class="w-full bg-[#060b13] border border-white/5 focus:border-brand-teal focus:ring-1 focus:ring-brand-teal rounded-xl px-4 py-3 text-sm text-white placeholder-slate-600 outline-none transition duration-200" data-i18n-placeholder="contactFormMsgPlaceholder" placeholder="Hi Mohamed, let's talk about..."></textarea>
                                     </div>
-                                    <button type="submit" class="btn-gradient w-full py-3.5 rounded-xl font-bold text-sm text-white">Send Message</button>
+                                    <button type="submit" class="btn-gradient w-full py-3.5 rounded-xl font-bold text-sm text-white" data-i18n="contactFormBtn">Send Message</button>
                                 </form>
                             </div>
                         </div>
@@ -735,41 +538,46 @@
             </section>
         </div> 
 
-       
+        
         <!-- Project Detail View -->
         <div id="project-detail-view" class="hidden min-h-screen pt-24 pb-12">
             <button onclick="hideProjectDetails()" class="btn-outline flex items-center mb-10 reveal-item px-5 py-2.5 rounded-xl text-sm font-semibold">
                 <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i>
-                Back to Projects
+                <span data-i18n="projectDetailBackBtn">Back to Projects</span>
             </button>
             
             <h1 id="detail-title" class="text-4xl md:text-5xl font-extrabold text-white mb-6 reveal-item bg-clip-text text-transparent bg-gradient-to-r from-brand-teal to-brand-cyan" style="--delay: 0.1s;">Project Title</h1>
             
             <div class="glass-card p-8 rounded-2xl border border-white/5 space-y-6 reveal-item" style="--delay: 0.2s;">
+                <!-- Project Image Preview -->
+                <div id="detail-image-container" class="w-full aspect-video rounded-xl overflow-hidden border border-white/5 bg-brand-deep hidden">
+                    <img id="detail-image" src="" alt="Project Preview" class="w-full h-full object-cover">
+                </div>
+
                 <div>
-                    <h2 class="text-xl font-bold mb-3 text-white border-b border-white/5 pb-2">Overview</h2>
+                    <h2 class="text-xl font-bold mb-3 text-white border-b border-white/5 pb-2" data-i18n="projectDetailOverview">Overview</h2>
                     <p id="detail-description" class="text-slate-300 leading-relaxed text-base sm:text-lg mb-4">Detailed description goes here...</p>
                 </div>
 
                 <div>
-                    <h2 class="text-xl font-bold mb-3 text-white border-b border-white/5 pb-2">Technologies Used</h2>
+                    <h2 class="text-xl font-bold mb-3 text-white border-b border-white/5 pb-2" data-i18n="projectDetailTechTitle">Technologies Used</h2>
                     <div id="detail-technologies" class="flex flex-wrap gap-2.5"></div>
                 </div>
                 
                 <div>
-                    <h2 class="text-xl font-bold mb-3 text-white border-b border-white/5 pb-2">Project Links</h2>
+                    <h2 class="text-xl font-bold mb-3 text-white border-b border-white/5 pb-2" data-i18n="projectDetailLinksTitle">Project Links</h2>
                     <div class="flex flex-col sm:flex-row gap-4 pt-2">
                         <a id="detail-github-link" href="#" target="_blank" class="btn-outline flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold">
                             <i data-lucide="github" class="w-4 h-4"></i>
-                            GitHub Repository
+                            <span data-i18n="projectDetailGitBtn">GitHub Repository</span>
                         </a>
                         <a id="detail-demo-link" href="#" target="_blank" class="btn-gradient flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold hidden">
                             <i data-lucide="external-link" class="w-4 h-4"></i>
-                            Live Demo / API Endpoint
+                            <span data-i18n="projectDetailDemoBtn">Live Demo / API Endpoint</span>
                         </a>
                         <p id="demo-unavailable" class="text-slate-500 text-xs self-center flex items-center gap-1.5">
                             <i data-lucide="info" class="w-3.5 h-3.5"></i>
-                            No live demo available (Backend API / Desktop Application).
+                            <span data-i18n="projectDetailNoDemo">No live demo available (Backend API / Desktop Application).</span>
                         </p>
                     </div>
                 </div>
@@ -832,12 +640,12 @@
     <!-- Premium Footer -->
     <footer class="bg-[#05080f] py-12 mt-24 border-t border-slate-900">
         <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="text-center md:text-left">
+            <div class="text-center md:text-start">
                 <a href="#hero" class="text-xl font-extrabold tracking-tight text-white">
                     <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-teal to-brand-cyan">Mohamed</span>
                     <span class="text-slate-500 font-light">Ashraf</span>
                 </a>
-                <p class="text-xs text-slate-500 mt-1">&copy; 2026 Mohamed Ashraf. All rights reserved.</p>
+                <p class="text-xs text-slate-500 mt-1" data-i18n="contactFooterRights">&copy; 2026 Mohamed Ashraf. All rights reserved.</p>
             </div>
             
             <div class="flex items-center gap-6">
@@ -848,76 +656,288 @@
                     <i data-lucide="linkedin" class="w-5 h-5"></i>
                 </a>
             </div>
-        </div>
-    </footer>
-
     <!-- Main JavaScript Logic -->
     <script>
+        // Translations Dictionary
+        const i18n = {
+            en: {
+                navAbout: "About",
+                navCertificates: "Certificates",
+                navSkills: "Skills",
+                navProjects: "Projects",
+                navContact: "Contact",
+                // Hero
+                heroGreeting: "Hello, I'm",
+                heroRole: "Backend Developer focused on",
+                heroDesc: "I design and build high-performance APIs, robust database architectures, and clean, maintainable codebases to solve complex backend problems.",
+                heroBtnProjects: "Explore Projects",
+                heroBtnContact: "Get In Touch",
+                // About
+                aboutSub: "Introduction",
+                aboutTitle: "About Me",
+                aboutBio1: "I'm Mohamed Ashraf, a passionate software developer specializing in .NET and modern backend technologies. I thrive on building clean, efficient, and highly scalable systems that solve real-world problems.",
+                aboutBio2: "Over the course of my engineering journey, I've developed deep technical proficiency in backend design using ASP.NET Core, C#, Entity Framework Core, and SQL Server database optimization.",
+                aboutBio3: "I also possess valuable experience mentoring fellow developers, distilling complex programming architectures into clear, actionable knowledge. I love turning architectural plans into practical, secure, and production-ready applications.",
+                aboutHighlightTitle: "Focus & Highlights",
+                aboutStatCert: "Certificates",
+                aboutStatProj: "APIs & Apps",
+                aboutSkillCleanCode: "Clean Code & SOLID Design",
+                aboutSkillRestApis: "RESTful Web APIs & JWT",
+                aboutSkillDbTuning: "Database Tuning & T-SQL",
+                // Certificates
+                certSub: "Credentials",
+                certTitle: "Education & Certificates",
+                certMicrosoftTitle: "Microsoft Certified",
+                certMicrosoftDesc: "C# programming certification, verifying core competencies in OOP logic, syntax, data structures, and .NET runtime execution.",
+                certMicrosoftAction: "View Credentials",
+                certAbuhadhoodTitle: "Backend .NET Track",
+                certAbuhadhoodDesc: "16 specialized courses from Programming Advice Academy, covering low-level C++, algorithms, UI (WinForms), SQL, and REST APIs.",
+                certAbuhadhoodAction: "View 16 Course Certificates",
+                certItiTitle: "ITI .NET Web Development",
+                certItiDesc: "Intensive professional training focusing on ASP.NET Core, MVC architectures, database schemas, and enterprise software engineering.",
+                certItiAction: "View ITI Certificates",
+                // Skills
+                skillsSub: "Capabilities",
+                skillsTitle: "Technical Skills",
+                // Projects
+                projectsSub: "Showcase",
+                projectsTitle: "Featured Projects",
+                projectsInfo: "Click on any project to view comprehensive technical details and GitHub repositories.",
+                projectDetailBackBtn: "Back to Projects",
+                projectDetailOverview: "Overview",
+                projectDetailTechTitle: "Technologies Used",
+                projectDetailLinksTitle: "Project Links",
+                projectDetailGitBtn: "GitHub Repository",
+                projectDetailDemoBtn: "Live Demo / API Endpoint",
+                projectDetailNoDemo: "No live demo available (Backend API / Desktop Application).",
+                // Contact
+                contactSub: "Get In Touch",
+                contactTitle: "Let's Work Together",
+                contactDesc: "I'm always open to discussing backend architectures, full-stack .NET web integration, mentoring opportunities, or joining innovative dev teams. Click email or phone to instantly copy details!",
+                contactTooltip: "Copied!",
+                contactFormTitle: "Send Message",
+                contactFormName: "Your Name",
+                contactFormNamePlaceholder: "John Doe",
+                contactFormEmail: "Your Email",
+                contactFormEmailPlaceholder: "john@example.com",
+                contactFormMsg: "Message",
+                contactFormMsgPlaceholder: "Hi Mohamed, let's talk about...",
+                contactFormBtn: "Send Message",
+                contactFooterRights: "© 2026 Mohamed Ashraf. All rights reserved.",
+                // Terminal
+                terminalTitle: "guest@ashraf-api:~",
+                terminalInputPlaceholder: "type 'run' or 'enter'...",
+                terminalBtn: "Enter"
+            },
+            ar: {
+                navAbout: "نبذة عني",
+                navCertificates: "الشهادات",
+                navSkills: "المهارات",
+                navProjects: "المشاريع",
+                navContact: "اتصل بي",
+                // Hero
+                heroGreeting: "مرحباً، أنا",
+                heroRole: "مطور ويب متكامل متخصص في",
+                heroDesc: "أقوم بتصميم وبناء واجهات استخدام سلسة وأنظمة مؤسسية تجمع بين الأداء العالي في الواجهة الخلفية (Backend) والتجربة المتميزة للعملاء.",
+                heroBtnProjects: "استكشف المشاريع",
+                heroBtnContact: "تواصل معي",
+                // About
+                aboutSub: "مقدمة",
+                aboutTitle: "نبذة عني",
+                aboutBio1: "السلام عليكم ورحمة الله وبركاته، أنا محمد أشرف، مطور ويب متكامل (Full-Stack .NET Developer) متخصص في بناء وتصميم تطبيقات الويب الشاملة والأنظمة المؤسسية التي تجمع بين واجهات الاستخدام السلسة والأداء العالي في الواجهة الخلفية (Backend).",
+                aboutBio2: "حاصل على تدريب مكثف من معهد تكنولوجيا المعلومات (ITI) في مسار تطوير الويب باستخدام تقنيات .NET، وقد اكتسبت خبرة عملية قوية في برمجة مواقع الويب كاملة من الصفر (Front-End & Back-End) معتمداً على معمارية MVC (Model-View-Controller).",
+                aboutBio3: "أمتلك خبرة واسعة في تنفيذ مشاريع حقيقية (مثل منصات التجارة الإلكترونية وأنظمة المستودعات) باستخدام أحدث التقنيات مثل: C# – ASP.NET Core MVC – Web API – Entity Framework – SQL Server – HTML/CSS/JS. كما أن لدي أساساً متيناً في هندسة البرمجيات وتصميم قواعد البيانات، مما يمكنني من كتابة كود نظيف (Clean Code) وتطبيق معايير معمارية متقدمة (مثل Clean Architecture) لضمان استدامة المشاريع وسهولة تطويرها مستقبلاً.",
+                aboutHighlightTitle: "أبرز التركيزات",
+                aboutStatCert: "شهادة معتمدة",
+                aboutStatProj: "أنظمة ويب و APIs",
+                aboutSkillCleanCode: "الكتابة البرمجية النظيفة ومبادئ SOLID",
+                aboutSkillRestApis: "RESTful Web APIs وحماية JWT",
+                aboutSkillDbTuning: "تحسين قواعد البيانات ولغة T-SQL",
+                // Certificates
+                certSub: "المؤهلات والاعتمادات",
+                certTitle: "التعليم والشهادات",
+                certMicrosoftTitle: "شهادة مايكروسوفت معتمد",
+                certMicrosoftDesc: "شهادة محترف معتمد في لغة C#، تؤكد الكفاءات الأساسية في مبادئ البرمجة كائنية التوجه (OOP) وهيكل لغة .NET.",
+                certMicrosoftAction: "عرض الشهادة والاعتماد",
+                certAbuhadhoodTitle: "مسار تطوير الويب والـ Backend",
+                certAbuhadhoodDesc: "16 دورة تدريبية متخصصة من أكاديمية Programming Advice تشمل الخوارزميات، هياكل البيانات، وقواعد البيانات و REST APIs.",
+                certAbuhadhoodAction: "عرض 16 شهادة دورة",
+                certItiTitle: "معهد تكنولوجيا المعلومات ITI",
+                certItiDesc: "تدريب مهني مكثف متخصص في مسار تطوير الويب باستخدام تقنيات .NET MVC، قواعد البيانات وهندسة البرمجيات.",
+                certItiAction: "عرض شهادات ITI",
+                // Skills
+                skillsSub: "القدرات الفنية",
+                skillsTitle: "المهارات التقنية",
+                // Projects
+                projectsSub: "معرض الأعمال",
+                projectsTitle: "المشاريع المميزة",
+                projectsInfo: "اضغط على أي مشروع لعرض التفاصيل التقنية الشاملة وروابط مستودع الكود على GitHub.",
+                projectDetailBackBtn: "العودة للمشاريع",
+                projectDetailOverview: "نظرة عامة",
+                projectDetailTechTitle: "التقنيات المستخدمة",
+                projectDetailLinksTitle: "روابط المشروع",
+                projectDetailGitBtn: "مستودع GitHub",
+                projectDetailDemoBtn: "عرض حي / رابط الـ API",
+                projectDetailNoDemo: "لا يوجد عرض حي حالياً (API خلفي أو تطبيق سطح مكتب).",
+                // Contact
+                contactSub: "تواصل معي",
+                contactTitle: "لنعمل معاً",
+                contactDesc: "أنا متاح دائماً لمناقشة بنيات الـ Backend، وتطوير مواقع وتطبيقات الويب باستخدام .NET، أو تقديم التوجيه والتدريب للفرق. اضغط على البريد الإلكتروني أو الهاتف لنسخ التفاصيل فوراً!",
+                contactTooltip: "تم النسخ!",
+                contactFormTitle: "أرسل رسالة",
+                contactFormName: "اسمك الكريم",
+                contactFormNamePlaceholder: "الاسم بالكامل",
+                contactFormEmail: "بريدك الإلكتروني",
+                contactFormEmailPlaceholder: "email@example.com",
+                contactFormMsg: "الرسالة",
+                contactFormMsgPlaceholder: "أكتب تفاصيل رسالتك هنا...",
+                contactFormBtn: "إرسال الرسالة",
+                contactFooterRights: "© 2026 محمد أشرف. جميع الحقوق محفوظة.",
+                // Terminal
+                terminalTitle: "guest@ashraf-api:~",
+                terminalInputPlaceholder: "اكتب 'run' أو 'enter'...",
+                terminalBtn: "دخول"
+            }
+        };
+
         // Projects Data Catalog
         const projectsData = {
-            ClincManagement: {
-                title: "Clinic Management API",
-                description: "A robust and secure RESTful Web API designed for efficient management of medical clinics. Built with ASP.NET Core (.NET 7/8) and Entity Framework Core, this project features a clean layered architecture (Service Layer, DTOs, Result Wrapper) and prioritizes performance and security. Key Capabilities include: Core Management (Doctors, Patients, Appointments, Invoices, Payments, Services), Security (ASP.NET Identity and JWT Tokens), Architecture (Clean layered structure, Mapster for fast mapping), Scalability (Pagination support), and Documentation (Swagger UI).",
-                technologies: ["C# (.NET 7/8)", "ASP.NET Core Web API", "Entity Framework Core", "SQL Server", "Mapster", "JWT", "Swagger UI", "Clean Architecture"],
-                github: "https://github.com/mohamed68909/ClincManagement", 
-                demo: "" 
+            TechStoreCustomer: {
+                image: "https://nafezly-production.fra1.cdn.digitaloceanspaces.com/uploads/portfolios/small/357503_6a01dc9887378_1778506904.webp",
+                github: "https://github.com/mohamed68909/Portfolio",
+                demo: "",
+                en: {
+                    title: "TechStore - Customer Interface",
+                    description: "A comprehensive e-commerce customer storefront designed for purchasing high-tech devices. Built with ASP.NET Core MVC, it offers an end-to-end shopping experience. Core capabilities include user authentication and profiles, robust catalog search and advanced category filtering, responsive shopping cart, dynamic checkout processes with validation, and direct backend integration for order tracking.",
+                    technologies: ["ASP.NET Core MVC", "Entity Framework Core", "SQL Server", "C#", "Bootstrap", "jQuery", "CSS3 / HTML5"]
+                },
+                ar: {
+                    title: "متجر إلكتروني متكامل لبيع الأجهزة التقنية - واجهة العميل",
+                    description: "متجر إلكتروني متكامل لبيع الأجهزة التقنية يركز على تجربة العميل وتسهيل الشراء. تم بناؤه باستخدام تقنية ASP.NET Core MVC ليوفر تجربة تسوق متكاملة وآمنة. تشمل الميزات الأساسية: إدارة حسابات العملاء وتسجيل الدخول، تصفح المنتجات والتصفية الذكية حسب الفئة، سلة تسوق ديناميكية، عملية إتمام الطلب والدفع مع التحقق الفوري من البيانات، ومتابعة الطلبات مباشرة من خوادم النظام الخلفية.",
+                    technologies: ["ASP.NET Core MVC", "Entity Framework Core", "SQL Server", "C#", "Bootstrap", "jQuery", "CSS3 / HTML5"]
+                }
             },
-            LibrarySystem: {
-                title: "Library Management API",
-                description: "A complete system for managing library operations built on ASP.NET Core MVC and exposed as a reliable API. Key features include secure user authentication using JWT (JSON Web Tokens) for stateless security, role-based access control, detailed inventory tracking of books, automated calculation of overdue fines, and a reliable book reservation module. The system demonstrates strong application of business logic and layered architectures.",
-                technologies: ["C#", "ASP.NET Core MVC API", "JWT Authentication", "SQL Server", "ADO.NET", "Entity Framework Core"],
-                github: "https://github.com/mohamed68909/Library_Managment_Api", 
-                demo: ""
+            TechStoreAdmin: {
+                image: "https://nafezly-production.fra1.cdn.digitaloceanspaces.com/uploads/portfolios/small/357503_6a01db0d83052_1778506509.webp",
+                github: "https://github.com/mohamed68909/Portfolio",
+                demo: "",
+                en: {
+                    title: "TechStore - Admin Dashboard",
+                    description: "A sophisticated administrative control panel for the TechStore ecosystem. Built for security and administrative efficiency, it features dynamic analytics charts for sales metrics, inventory management (stock status, low-stock warnings), product catalogs configuration (CRUD operations), customer account auditing, and order state transition management.",
+                    technologies: ["ASP.NET Core MVC", "Entity Framework Core", "SQL Server", "Chart.js", "C#", "Bootstrap", "Responsive Layout"]
+                },
+                ar: {
+                    title: "لوحة تحكم إحترافية لإدارة المتاجر الإلكترونية - لوحة المدير",
+                    description: "لوحة تحكم إدارية احترافية وشاملة لمتابعة وإدارة متجر الأجهزة التقنية بالكامل. تم تصميمها لتوفير أعلى درجات الأمان والكفاءة التشغيلية للمشرفين. تشمل الميزات: لوحة إحصائيات تفاعلية للمبيعات والأرباح، إدارة المنتجات والأقسام والمخزون مع إشعارات نقص الكميات، إدارة شؤون العملاء والصلاحيات، ومتابعة حالات الشحنات والطلبات وإعداد التقارير.",
+                    technologies: ["ASP.NET Core MVC", "Entity Framework Core", "SQL Server", "Chart.js", "C#", "Bootstrap", "Responsive Layout"]
+                }
             },
-            DriverLicenseManager: {
-                title: "Driver License Management System (Desktop)",
-                description: "A classic desktop application developed using C# Windows Forms for governmental or private institutions. The system efficiently manages the entire driver's license lifecycle: initial application processing, renewals, tracking of theoretical and practical exam results, license replacements, and detailed record keeping. It showcases strong knowledge of desktop application architecture and direct database interaction via ADO.NET and complex SQL stored procedures.",
-                technologies: ["C#", "Windows Forms", "ADO.NET", "SQL Server", "T-SQL Stored Procedures", "Database Design"],
-                github: "https://github.com/mohamed68909/Driver_License_Managment", 
-                demo: ""
+            WarehouseSystem: {
+                image: "https://nafezly-production.fra1.cdn.digitaloceanspaces.com/uploads/portfolios/small/357503_69ff5c02d2763_1778342914.webp",
+                github: "https://github.com/mohamed68909/Portfolio",
+                demo: "",
+                en: {
+                    title: "Warehouse Management System (WMS)",
+                    description: "An enterprise-grade inventory and warehouse tracking system designed to streamline supply chains. Built with .NET Core and Web API following Clean Architecture and DDD principles. Features include real-time stock levels monitoring, storage bin location mapping, automated inbound (receiving) and outbound (shipping) processing, supplier relationship management, comprehensive audit logs, and JWT-secured token authentication for microservices safety.",
+                    technologies: ["C#", "ASP.NET Core Web API", "Entity Framework Core", "SQL Server", "Clean Architecture", "JWT Security", "Repository Pattern"]
+                },
+                ar: {
+                    title: "برمجة وتطوير نظام متكامل لإدارة المستودعات (WMS)",
+                    description: "نظام متكامل لإدارة المستودعات مصمم لتبسيط سلاسل الإمداد ومراقبة الأصول اللوجستية بكفاءة عالية. تم بناؤه باستخدام تقنية ASP.NET Core Web API مع الالتزام بمعمارية البنية النظيفة (Clean Architecture). يوفر النظام: تتبعاً لحظياً لمستويات المخزون وحركة القطع، تخطيط وإدارة مواقع التخزين داخل المستودع، أتمتة عمليات استلام الشحنات وتصديرها، تتبع الموردين والمشترين، سجلات تدقيق متكاملة، ونظام حماية معتمد على رموز JWT لتأمين المعاملات والربط البرمجي السلس.",
+                    technologies: ["C#", "ASP.NET Core Web API", "Entity Framework Core", "SQL Server", "Clean Architecture", "JWT Security", "Repository Pattern"]
+                }
             }
         };
 
         // Certificates Data Catalog
         const certificatesData = {
             microsoft: {
-                title: "Microsoft Certified Professional: C#",
-                trackDescription: "Foundational certification demonstrating high competency in C# programming fundamentals. Validates core concepts including variables, object-oriented syntax (OOP), arrays, loops, exception handling, data structures, and .NET runtime execution, laying a solid framework for web services development.",
+                en: {
+                    title: "Microsoft Certified Professional: C#",
+                    trackDescription: "Foundational certification demonstrating high competency in C# programming fundamentals. Validates core concepts including variables, object-oriented syntax (OOP), arrays, loops, exception handling, data structures, and .NET runtime execution, laying a solid framework for web services development."
+                },
+                ar: {
+                    title: "محترف معتمد من مايكروسوفت: لغة C#",
+                    trackDescription: "شهادة تأسيسية تثبت الكفاءة العالية في أساسيات برمجة C#. تؤكد على المفاهيم الجوهرية بما في ذلك المتغيرات، البرمجة كائنية التوجه (OOP)، المصفوفات، التكرارات، معالجة الاستثناءات، هياكل البيانات، وتشغيل منصة .NET، مما يمهد الطريق لتطوير خدمات الويب."
+                },
                 images: [
-                    { src: "Image/C_Sqrp.jpeg", alt: "Microsoft Certified: C# Programming basics" }
+                    { src: "Image/C_Sqrp.jpeg", altEn: "Microsoft Certified: C# Programming basics", altAr: "شهادة مايكروسوفت معتمد: أساسيات برمجة C#" }
                 ]
             },
             abuhadhood: {
-                title: "Backend .NET Track (Programming Advice)",
-                trackDescription: "Comprehensive training track by Eng. Abou Hadhoud spanning 16 rigorous courses that trace backend development from basic computer science logic to modern .NET Web APIs. The catalog below compiles all 16 course credentials representing fundamental algorithms, low-level data structures, system modeling, relational databases, and enterprise architectural principles.",
+                en: {
+                    title: "Backend .NET Track (Programming Advice)",
+                    trackDescription: "Comprehensive training track by Eng. Abou Hadhoud spanning 16 rigorous courses that trace backend development from basic computer science logic to modern .NET Web APIs. The catalog below compiles all 16 course credentials representing fundamental algorithms, low-level data structures, system modeling, relational databases, and enterprise architectural principles."
+                },
+                ar: {
+                    title: "مسار تطوير الويب والـ Backend (أكاديمية Programming Advice)",
+                    trackDescription: "مسار تدريبي شامل يقدمه المهندس محمد أبو هدهود يمتد عبر 16 دورة تدريبية صارمة تبدأ من منطق علوم الكمبيوتر الأساسية وتصل إلى بناء RESTful Web APIs الحديثة باستخدام .NET. يضم الكتالوج أدناه جميع شهادات الدورات الـ 16 التي تمثل الخوارزميات، هياكل البيانات منخفضة المستوى، نمذجة الأنظمة، قواعد البيانات العلائقية، ومبادئ البنية البرمجية للمؤسسات."
+                },
                 images: [
-                    { src: "Image/Algorith_and_Problem_solving_1.png", alt: "Algorithms & Problem Solving Level 1" },
-                    { src: "Image/Algorazm_And_problem_solving_2.png", alt: "Algorithms & Problem Solving Level 2" },
-                    { src: "Image/Algorazim_and_problem_soliving.png", alt: "Algorithms & Problem Solving Level 3" },
-                    { src: "Image/Algorazim_and_problem_soliving_4.png", alt: "Algorithms & Problem Solving Level 4" },
-                    { src: "Image/Algorazim_and_problem_soliving_3.png", alt: "Algorithms & Problem Solving Specialization" },
-                    { src: "Image/Introdtion_of_programming_with_C_Sharp_2.png", alt: "C# programming Level 2 Introduction" },
-                    { src: "Image/oop_C_Sharp .png", alt: "Object Oriented Programming in C#" },
-                    { src: "Image/OOP_Project.png", alt: "OOP Capstone Project (WinForms)" },
-                    { src: "Image/Solid_principle.png", alt: "SOLID Architecture & Principles" },
-                    { src: "Image/RestFull_Api.png", alt: "Building RESTful Web APIs" },
-                    { src: "Image/T_Sql.png", alt: "Advanced Transact-SQL (T-SQL)" },
-                    { src: "Image/Full_Project.png", alt: "Full Backend System Capstone" },
-                    { src: "Image/DataBase.png", alt: "Database Foundations & Normalization" },
-                    { src: "Image/Data_structur_1.png", alt: "Data Structures Level 1" },
-                    { src: "Image/Data_Structure_2.png", alt: "Data Structures Level 2" },
-                    { src: "Image/DataBase_Project.png", alt: "Database Management Capstone Project" }
+                    { src: "Image/Algorith_and_Problem_solving_1.png", altEn: "Algorithms & Problem Solving Level 1", altAr: "الخوارزميات وحل المشكلات - المستوى الأول" },
+                    { src: "Image/Algorazm_And_problem_solving_2.png", altEn: "Algorithms & Problem Solving Level 2", altAr: "الخوارزميات وحل المشكلات - المستوى الثاني" },
+                    { src: "Image/Algorazim_and_problem_soliving.png", altEn: "Algorithms & Problem Solving Level 3", altAr: "الخوارزميات وحل المشكلات - المستوى الثالث" },
+                    { src: "Image/Algorazim_and_problem_soliving_4.png", altEn: "Algorithms & Problem Solving Level 4", altAr: "الخوارزميات وحل المشكلات - المستوى الرابع" },
+                    { src: "Image/Algorazim_and_problem_soliving_3.png", altEn: "Algorithms & Problem Solving Specialization", altAr: "تخصص الخوارزميات وحل المشكلات" },
+                    { src: "Image/Introdtion_of_programming_with_C_Sharp_2.png", altEn: "C# programming Level 2 Introduction", altAr: "مقدمة برمجة C# - المستوى الثاني" },
+                    { src: "Image/oop_C_Sharp .png", altEn: "Object Oriented Programming in C#", altAr: "البرمجة كائنية التوجه في C#" },
+                    { src: "Image/OOP_Project.png", altEn: "OOP Capstone Project (WinForms)", altAr: "مشروع البرمجة كائنية التوجه (WinForms)" },
+                    { src: "Image/Solid_principle.png", altEn: "SOLID Architecture & Principles", altAr: "مبادئ وهندسة SOLID البرمجية" },
+                    { src: "Image/RestFull_Api.png", altEn: "Building RESTful Web APIs", altAr: "بناء واجهات تطبيقات الويب RESTful APIs" },
+                    { src: "Image/T_Sql.png", altEn: "Advanced Transact-SQL (T-SQL)", altAr: "لغة قواعد البيانات المتقدمة Transact-SQL" },
+                    { src: "Image/Full_Project.png", altEn: "Full Backend System Capstone", altAr: "مشروع التخرج المتكامل للـ Backend" },
+                    { src: "Image/DataBase.png", altEn: "Database Foundations & Normalization", altAr: "أسس وقواعد البيانات وتطبيعها" },
+                    { src: "Image/Data_structur_1.png", altEn: "Data Structures Level 1", altAr: "هياكل البيانات - المستوى الأول" },
+                    { src: "Image/Data_Structure_2.png", altEn: "Data Structures Level 2", altAr: "هياكل البيانات - المستوى الثاني" },
+                    { src: "Image/DataBase_Project.png", altEn: "Database Management Capstone Project", altAr: "مشروع إدارة قواعد البيانات المتكامل" }
                 ]
             },
             iti: {
-                title: "ITI .NET Web Development Track",
-                trackDescription: "Professional web engineering training at the Information Technology Institute (ITI). Focuses heavily on building high-performance web systems utilizing the ASP.NET MVC framework, database normalization, Entity Framework Core ORM design, secure user state management, dynamic UI engines, and design patterns.",
+                en: {
+                    title: "ITI .NET Web Development Track",
+                    trackDescription: "Professional web engineering training at the Information Technology Institute (ITI). Focuses heavily on building high-performance web systems utilizing the ASP.NET MVC framework, database normalization, Entity Framework Core ORM design, secure user state management, dynamic UI engines, and design patterns."
+                },
+                ar: {
+                    title: "منحة معهد تكنولوجيا المعلومات ITI - مسار تطوير الويب .NET",
+                    trackDescription: "تدريب هندسة الويب الاحترافي بمعهد تكنولوجيا المعلومات (ITI). يركز بشكل كبير على بناء مواقع وأنظمة الويب عالية الأداء باستخدام ASP.NET MVC، تطبيع وتصميم قواعد البيانات، تصميم Entity Framework Core ORM design، إدارة الجلسات الآمنة، محركات واجهات الاستخدام الديناميكية، وأنماط التصميم البرمجي."
+                },
                 images: [
-                    { src: "Image/ITI.jpeg", alt: "ITI Web Development Track Diploma" },
-                    { src: "Image/ITI1.jpeg", alt: "ITI Web Development Course Credentials" }
+                    { src: "Image/ITI.jpeg", altEn: "ITI Web Development Track Diploma", altAr: "دبلوم مسار تطوير الويب ITI" },
+                    { src: "Image/ITI1.jpeg", altEn: "ITI Web Development Course Credentials", altAr: "شهادات ودورات تطوير الويب ITI" }
                 ]
             }
         };
+
+        // 20 Core Skills catalog
+        const skillsData = [
+            // Languages
+            { category: "languages", name: "C# Programming", rating: 92, icon: "code-2" },
+            { category: "languages", name: "C++ Programming", rating: 80, icon: "code" },
+            { category: "languages", name: "SQL", rating: 90, icon: "database" },
+            { category: "languages", name: "Node.js", rating: 75, icon: "terminal" },
+            { category: "languages", name: "HTML / CSS", rating: 95, icon: "file-code" },
+            
+            // Frameworks & Web
+            { category: "frameworks", name: "Microsoft .NET", rating: 90, icon: "cpu" },
+            { category: "frameworks", name: "ASP.NET", rating: 92, icon: "globe" },
+            { category: "frameworks", name: "MVC", rating: 90, icon: "layout" },
+            { category: "frameworks", name: "React", rating: 70, icon: "atom" },
+            { category: "frameworks", name: "Bootstrap", rating: 88, icon: "layers" },
+            
+            // Database & Architecture
+            { category: "architecture", name: "Database Programming", rating: 90, icon: "server" },
+            { category: "architecture", name: "Database Administration", rating: 85, icon: "shield-alert" },
+            { category: "architecture", name: "Software Architecture", rating: 88, icon: "git-fork" },
+            { category: "architecture", name: "RESTful Web APIs", rating: 92, icon: "link-2" },
+            { category: "architecture", name: "Software Development", rating: 92, icon: "braces" },
+            
+            // Methodologies & Management
+            { category: "management", name: "Agile Development", rating: 85, icon: "users" },
+            { category: "management", name: "Project Management", rating: 80, icon: "kanban" },
+            { category: "management", name: "Inventory Management", rating: 88, icon: "package" },
+            { category: "management", name: "Website Design", rating: 90, icon: "palette" },
+            { category: "management", name: "Git & Version Control", rating: 90, icon: "git-commit" }
+        ];
 
         // Layout View DOM references
         const mainView = document.getElementById('main-portfolio-view');
@@ -939,22 +959,222 @@
         let activeCertId = '';
         let activeImageIndex = 0;
 
+        // Language state variables
+        let currentLang = localStorage.getItem('portfolio-lang') || 'en';
+
+        // Toggle Language Function
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'ar' : 'en';
+            localStorage.setItem('portfolio-lang', currentLang);
+            updatePageLanguage();
+        }
+
+        // Update Page language, direction, and elements text content
+        function updatePageLanguage() {
+            const htmlEl = document.documentElement;
+            htmlEl.setAttribute('lang', currentLang);
+            
+            if (currentLang === 'ar') {
+                htmlEl.setAttribute('dir', 'rtl');
+                document.body.style.fontFamily = "'Cairo', 'Outfit', sans-serif";
+            } else {
+                htmlEl.setAttribute('dir', 'ltr');
+                document.body.style.fontFamily = "'Outfit', 'Cairo', sans-serif";
+            }
+
+            // Translate text contents
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (i18n[currentLang][key]) {
+                    el.innerText = i18n[currentLang][key];
+                }
+            });
+
+            // Translate placeholders
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                if (i18n[currentLang][key]) {
+                    el.setAttribute('placeholder', i18n[currentLang][key]);
+                }
+            });
+
+            // Update language toggle buttons text
+            const langBtnText = document.getElementById('lang-btn-text');
+            const langBtnTextMobile = document.getElementById('lang-btn-text-mobile');
+            if (langBtnText) langBtnText.innerText = currentLang === 'en' ? 'AR' : 'EN';
+            if (langBtnTextMobile) langBtnTextMobile.innerText = currentLang === 'en' ? 'AR' : 'EN';
+
+            // Re-render lists
+            renderSkills();
+            renderProjects();
+
+            // Reset typewriter values to start typing in the correct language
+            charIndex = 0;
+            wordIndex = 0;
+            isDeleting = false;
+        }
+
+        // Render 20 Technical Skills dynamically
+        function renderSkills() {
+            const container = document.getElementById('skills-grid');
+            if (!container) return;
+
+            const categories = {
+                languages: {
+                    title: currentLang === 'ar' ? "لغات البرمجة" : "Languages",
+                    icon: "code-2",
+                    delay: "0.1s"
+                },
+                frameworks: {
+                    title: currentLang === 'ar' ? "الأطر والويب" : "Frameworks & Web",
+                    icon: "cpu",
+                    delay: "0.2s"
+                },
+                architecture: {
+                    title: currentLang === 'ar' ? "قواعد البيانات والهندسة" : "Database & Architecture",
+                    icon: "server",
+                    delay: "0.3s"
+                },
+                management: {
+                    title: currentLang === 'ar' ? "منهجيات العمل والإدارة" : "Methodologies & Management",
+                    icon: "layers",
+                    delay: "0.4s"
+                }
+            };
+
+            let html = '';
+            for (const [key, catInfo] of Object.entries(categories)) {
+                const catSkills = skillsData.filter(s => s.category === key);
+                
+                let skillsHtml = catSkills.map(skill => {
+                    return `
+                        <div>
+                            <div class="flex justify-between text-sm mb-1.5">
+                                <span class="text-slate-300 font-medium">${skill.name}</span>
+                                <span class="text-brand-teal font-semibold">${skill.rating}%</span>
+                            </div>
+                            <div class="w-full bg-slate-950 rounded-full h-1.5 overflow-hidden">
+                                <div class="bg-gradient-to-r from-brand-teal to-brand-cyan h-full rounded-full transition-all duration-1000" style="width: ${skill.rating}%"></div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+                html += `
+                    <div class="glass-card p-6 rounded-2xl border border-white/5 reveal-item" style="--delay: ${catInfo.delay};">
+                        <h4 class="text-lg font-bold mb-6 text-white flex items-center gap-2.5">
+                            <i data-lucide="${catInfo.icon}" class="text-brand-teal w-5 h-5"></i>
+                            ${catInfo.title}
+                        </h4>
+                        <div class="space-y-5">
+                            ${skillsHtml}
+                        </div>
+                    </div>
+                `;
+            }
+
+            container.innerHTML = html;
+            lucide.createIcons();
+            
+            // Setup intersection reveal observer
+            const newRevealItems = container.querySelectorAll('.reveal-item');
+            newRevealItems.forEach(item => {
+                observer.observe(item);
+            });
+        }
+
+        // Render 3 Projects dynamically
+        function renderProjects() {
+            const grid = document.getElementById('projects-grid');
+            if (!grid) return;
+
+            const projectKeys = ['TechStoreCustomer', 'TechStoreAdmin', 'WarehouseSystem'];
+            const colors = {
+                TechStoreCustomer: 'brand-teal',
+                TechStoreAdmin: 'brand-cyan',
+                WarehouseSystem: 'brand-purple'
+            };
+            const icons = {
+                TechStoreCustomer: 'shopping-cart',
+                TechStoreAdmin: 'layout',
+                WarehouseSystem: 'package'
+            };
+            
+            let html = '';
+            let index = 0;
+            for (const key of projectKeys) {
+                const project = projectsData[key][currentLang];
+                const color = colors[key];
+                const icon = icons[key];
+                const delay = 0.2 + (index * 0.1);
+                
+                const borderGlow = color === 'brand-teal' ? 'bg-brand-teal' : (color === 'brand-cyan' ? 'bg-brand-cyan' : 'bg-brand-purple');
+                const iconBg = color === 'brand-teal' ? 'bg-brand-teal/10 text-brand-teal group-hover:bg-brand-teal/20' : (color === 'brand-cyan' ? 'bg-brand-cyan/10 text-brand-cyan group-hover:bg-brand-cyan/20' : 'bg-brand-purple/10 text-brand-purple group-hover:bg-brand-purple/20');
+                const hoverColor = color === 'brand-teal' ? 'group-hover:text-brand-teal' : (color === 'brand-cyan' ? 'group-hover:text-brand-cyan' : 'group-hover:text-brand-purple');
+
+                html += `
+                    <div id="${key}" class="glass-card p-8 rounded-2xl border border-white/5 flex flex-col h-full cursor-pointer relative overflow-hidden group reveal-item" style="--delay: ${delay}s;" onclick="showProjectDetails('${key}')">
+                        <div class="absolute top-0 left-0 w-2 h-full ${borderGlow} transform scale-y-0 group-hover:scale-y-100 transition duration-300"></div>
+                        
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="p-3 ${iconBg} rounded-xl transition duration-300">
+                                <i data-lucide="${icon}" class="w-6 h-6"></i>
+                            </span>
+                            <i data-lucide="arrow-up-right" class="w-5 h-5 text-slate-500 group-hover:text-white transform group-hover:translate-x-1 group-hover:-translate-y-1 transition duration-300"></i>
+                        </div>
+                        
+                        <h4 class="text-xl font-bold text-white mb-3 ${hoverColor} transition duration-300">${project.title}</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+                            ${project.description.length > 150 ? project.description.substring(0, 145) + '...' : project.description}
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            ${project.technologies.slice(0, 3).map(tech => 
+                                `<span class="bg-slate-900 text-slate-300 border border-white/5 px-2.5 py-1 rounded-lg text-xs font-semibold">${tech}</span>`
+                            ).join('')}
+                        </div>
+                    </div>
+                `;
+                index++;
+            }
+            
+            grid.innerHTML = html;
+            lucide.createIcons();
+            
+            const newRevealItems = grid.querySelectorAll('.reveal-item');
+            newRevealItems.forEach(item => {
+                observer.observe(item);
+            });
+        }
+
         // Project View Details Toggle
         function showProjectDetails(projectId) {
-            const project = projectsData[projectId];
-            if (!project) return;
+            const projectInfo = projectsData[projectId];
+            if (!projectInfo) return;
+
+            const project = projectInfo[currentLang];
 
             detailTitle.innerHTML = project.title;
             detailDescription.innerText = project.description;
-            detailGithubLink.href = project.github;
+            detailGithubLink.href = projectInfo.github;
 
-            if (project.demo) {
-                detailDemoLink.href = project.demo;
+            if (projectInfo.demo) {
+                detailDemoLink.href = projectInfo.demo;
                 detailDemoLink.classList.remove('hidden');
                 demoUnavailable.classList.add('hidden');
             } else {
                 detailDemoLink.classList.add('hidden');
                 demoUnavailable.classList.remove('hidden');
+            }
+
+            const detailImg = document.getElementById('detail-image');
+            const detailImgContainer = document.getElementById('detail-image-container');
+            if (projectInfo.image && detailImg && detailImgContainer) {
+                detailImg.src = projectInfo.image;
+                detailImg.alt = project.title;
+                detailImgContainer.classList.remove('hidden');
+            } else if (detailImgContainer) {
+                detailImgContainer.classList.add('hidden');
             }
 
             detailTechnologies.innerHTML = project.technologies.map(tech => 
@@ -983,22 +1203,25 @@
             const cert = certificatesData[certId];
             if (!cert) return;
 
-            certDetailTitle.innerHTML = cert.title;
-            certDetailTrackDescription.innerHTML = cert.trackDescription;
+            const certLang = cert[currentLang];
 
-            certDetailImages.innerHTML = cert.images.map((img, idx) => 
-                `<div onclick="openLightbox('${certId}', ${idx})" class="block overflow-hidden rounded-xl border border-white/5 bg-[#0c1322]/85 shadow-md hover:shadow-brand-teal/15 hover:border-brand-teal/30 transform hover:scale-[1.02] cursor-pointer transition duration-300">
+            certDetailTitle.innerHTML = certLang.title;
+            certDetailTrackDescription.innerHTML = certLang.trackDescription;
+
+            certDetailImages.innerHTML = cert.images.map((img, idx) => {
+                const altText = currentLang === 'ar' ? img.altAr : img.altEn;
+                return `<div onclick="openLightbox('${certId}', ${idx})" class="block overflow-hidden rounded-xl border border-white/5 bg-[#0c1322]/85 shadow-md hover:shadow-brand-teal/15 hover:border-brand-teal/30 transform hover:scale-[1.02] cursor-pointer transition duration-300">
                     <div class="aspect-video w-full overflow-hidden bg-black/40 flex items-center justify-center">
-                        <img src="${img.src}" alt="${img.alt}" class="w-full h-full object-cover">
+                        <img src="${img.src}" alt="${altText}" class="w-full h-full object-cover">
                     </div>
                     <div class="p-4 flex items-center justify-between">
                         <div class="overflow-hidden mr-2">
-                            <p class="text-sm font-semibold text-slate-200 truncate">${img.alt}</p>
+                            <p class="text-sm font-semibold text-slate-200 truncate">${altText}</p>
                         </div>
                         <i data-lucide="zoom-in" class="w-4 h-4 text-brand-teal flex-shrink-0"></i>
                     </div>
-                </div>`
-            ).join('');
+                </div>`;
+            }).join('');
 
             mainView.classList.add('hidden');
             projectDetailView.classList.add('hidden'); 
@@ -1041,6 +1264,8 @@
         function updateLightbox() {
             const cert = certificatesData[activeCertId];
             const img = cert.images[activeImageIndex];
+            const certLang = cert[currentLang];
+            const altText = currentLang === 'ar' ? img.altAr : img.altEn;
 
             const lbImg = document.getElementById('lightbox-img');
             const lbTitle = document.getElementById('lightbox-title');
@@ -1048,8 +1273,8 @@
             const lbIndex = document.getElementById('lightbox-index');
 
             lbImg.src = img.src;
-            lbTitle.innerText = img.alt;
-            lbCaption.innerText = cert.title;
+            lbTitle.innerText = altText;
+            lbCaption.innerText = certLang.title;
             lbIndex.innerText = `${activeImageIndex + 1} / ${cert.images.length}`;
         }
 
@@ -1072,9 +1297,11 @@
             const lbModal = document.getElementById('lightbox-modal');
             if (lbModal && !lbModal.classList.contains('hidden')) {
                 if (e.key === 'ArrowRight') {
-                    nextLightboxImage();
+                    if (currentLang === 'ar') prevLightboxImage();
+                    else nextLightboxImage();
                 } else if (e.key === 'ArrowLeft') {
-                    prevLightboxImage();
+                    if (currentLang === 'ar') nextLightboxImage();
+                    else prevLightboxImage();
                 } else if (e.key === 'Escape') {
                     closeLightbox();
                 }
@@ -1086,6 +1313,7 @@
             navigator.clipboard.writeText(text).then(() => {
                 const tooltip = document.getElementById(tooltipId);
                 if (tooltip) {
+                    tooltip.innerText = i18n[currentLang].contactTooltip || "Copied!";
                     tooltip.classList.remove('opacity-0');
                     tooltip.classList.add('opacity-100');
                     setTimeout(() => {
@@ -1116,14 +1344,22 @@
         }
 
         // Typewriter Effect
-        const words = ['ASP.NET Core APIs', 'C# & .NET Systems', 'SQL Database Design', 'Clean Architecture'];
+        const wordsByLang = {
+            en: ['ASP.NET Core APIs', 'C# & .NET Systems', 'SQL Database Design', 'Clean Architecture'],
+            ar: ['تطبيقات ASP.NET Core', 'أنظمة C# و .NET', 'تصميم قواعد بيانات SQL', 'معمارية برمجية نظيفة']
+        };
         let wordIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
-        const typewriterEl = document.getElementById('typewriter-text');
+        let typewriterEl;
+        let typewriterTimeout;
 
         function type() {
+            const words = wordsByLang[currentLang];
             const currentWord = words[wordIndex];
+            typewriterEl = document.getElementById('typewriter-text');
+            if (!typewriterEl) return;
+
             if (isDeleting) {
                 typewriterEl.innerText = currentWord.substring(0, charIndex - 1);
                 charIndex--;
@@ -1146,7 +1382,10 @@
                 typeSpeed = 500;
             }
 
-            setTimeout(type, typeSpeed);
+            if (typewriterTimeout) {
+                clearTimeout(typewriterTimeout);
+            }
+            typewriterTimeout = setTimeout(type, typeSpeed);
         }
 
         // Scroll reveal animation observer
@@ -1193,31 +1432,43 @@
         });
 
         // Terminal Simulation logs
-        const terminalLogs = [
-            { text: "> Initializing portfolio environment...", delay: 200 },
-            { text: "> Loading configuration dependencies...", delay: 400 },
-            { text: "> Establishing database connections... OK", delay: 700 },
-            { text: "> Starting .NET Core runtime application... OK", delay: 1000 },
-            { text: "> Resolving clinic management and library APIs... OK", delay: 1300 },
-            { text: "> System status: ONLINE & SECURE.", delay: 1600 },
-            { text: "> Enter 'run' or 'enter' to boot the presentation console.", delay: 1800 }
-        ];
+        const terminalLogs = {
+            en: [
+                { text: "> Initializing portfolio environment...", delay: 200 },
+                { text: "> Loading configuration dependencies...", delay: 400 },
+                { text: "> Establishing database connections... OK", delay: 700 },
+                { text: "> Starting .NET Core runtime application... OK", delay: 1000 },
+                { text: "> Resolving warehouse and store system APIs... OK", delay: 1300 },
+                { text: "> System status: ONLINE & SECURE.", delay: 1600 },
+                { text: "> Enter 'run' or 'enter' to boot the presentation console.", delay: 1800 }
+            ],
+            ar: [
+                { text: "> جاري تهيئة بيئة معرض الأعمال...", delay: 200 },
+                { text: "> جاري تحميل ملفات التكوين والاعتماديات...", delay: 400 },
+                { text: "> جاري إنشاء الاتصال بقواعد البيانات... تم بنجاح", delay: 700 },
+                { text: "> جاري تشغيل بيئة عمل .NET Core... تم بنجاح", delay: 1000 },
+                { text: "> جاري تجهيز خدمات وإدارات نظام المستودعات والمتجر... تم بنجاح", delay: 1300 },
+                { text: "> حالة النظام: متصل وآمن بالكامل.", delay: 1600 },
+                { text: "> اكتب 'run' أو اضغط 'دخول' لتشغيل لوحة العرض للموقع.", delay: 1800 }
+            ]
+        };
 
         function runTerminalIntro() {
             const logsContainer = document.getElementById('terminal-logs');
             if (!logsContainer) return;
             let logIndex = 0;
+            const logs = terminalLogs[currentLang];
 
             function printLog() {
-                if (logIndex < terminalLogs.length) {
-                    const log = terminalLogs[logIndex];
+                if (logIndex < logs.length) {
+                    const log = logs[logIndex];
                     const logLine = document.createElement('p');
                     logLine.className = 'leading-relaxed text-brand-teal';
                     logLine.innerText = log.text;
                     logsContainer.appendChild(logLine);
                     logsContainer.scrollTop = logsContainer.scrollHeight;
                     logIndex++;
-                    setTimeout(printLog, logIndex === terminalLogs.length ? 500 : 250);
+                    setTimeout(printLog, logIndex === logs.length ? 500 : 250);
                 } else {
                     const inputLine = document.getElementById('terminal-input-line');
                     if (inputLine) {
@@ -1252,8 +1503,8 @@
 
         // Setup dynamic listeners & typewriter
         document.addEventListener('DOMContentLoaded', () => {
+            updatePageLanguage();
             runTerminalIntro();
-            lucide.createIcons();
             
             // Smoothed anchor link scrolling
             document.querySelectorAll('.nav-link[href^="#"], a[href^="#"]').forEach(anchor => {
