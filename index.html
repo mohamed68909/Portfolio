@@ -846,6 +846,66 @@
                     description: "نظام متكامل لإدارة المستودعات مصمم لتبسيط سلاسل الإمداد ومراقبة الأصول اللوجستية بكفاءة عالية. تم بناؤه باستخدام تقنية ASP.NET Core Web API مع الالتزام بمعمارية البنية النظيفة (Clean Architecture). يوفر النظام: تتبعاً لحظياً لمستويات المخزون وحركة القطع، تخطيط وإدارة مواقع التخزين داخل المستودع، أتمتة عمليات استلام الشحنات وتصديرها، تتبع الموردين والمشترين، سجلات تدقيق متكاملة، ونظام حماية معتمد على رموز JWT لتأمين المعاملات والربط البرمجي السلس.",
                     technologies: ["C#", "ASP.NET Core Web API", "Entity Framework Core", "SQL Server", "Clean Architecture", "JWT Security", "Repository Pattern"]
                 }
+            },
+            ClinicManagement: {
+                image: "Image/clinic_api_mockup.png",
+                github: "https://github.com/mohamed68909/ClinicManagementAPI",
+                demo: "",
+                en: {
+                    title: "Clinic Management API",
+                    description: "A robust RESTful API designed for clinic administrative management, overseeing patient registration, doctor schedules, and appointments. Engineered with ASP.NET Core and Entity Framework Core following Clean Architecture. Core capabilities include secure role-based access, patient history logs, automated booking validations, and full CRUD operations on SQL Server with optimized queries.",
+                    technologies: ["ASP.NET Core Web API", "Entity Framework Core", "SQL Server", "C#", "Clean Architecture", "JWT Authentication"]
+                },
+                ar: {
+                    title: "واجهة برمجة تطبيقات إدارة العيادات (Clinic API)",
+                    description: "واجهة برمجية (RESTful API) متكاملة لإدارة العيادات الطبية وتنظيم مواعيد المرضى وجداول الأطباء. تم بناؤها باستخدام ASP.NET Core و Entity Framework Core مع الالتزام بمعمارية البنية النظيفة (Clean Architecture). يشمل النظام: حماية متطورة وتوزيع الصلاحيات، سجلات تاريخية للمرضى، أتمتة حجز المواعيد والتحقق منها، والربط البرمجي مع قاعدة بيانات SQL Server.",
+                    technologies: ["ASP.NET Core Web API", "Entity Framework Core", "SQL Server", "C#", "Clean Architecture", "JWT Authentication"]
+                }
+            },
+            LibraryManagement: {
+                image: "Image/library_api_mockup.png",
+                github: "https://github.com/mohamed68909/LibraryManagementAPI",
+                demo: "",
+                en: {
+                    title: "Library Management API",
+                    description: "An enterprise-level Library Management RESTful API to orchestrate borrowing systems, catalog indexes, and member relationships. Developed using .NET Web API and Entity Framework Core. Features include multi-tier book borrowing policy validation, automated due date tracking, real-time inventory adjustments, and deep repository pattern abstractions for database portability.",
+                    technologies: [".NET Web API", "Entity Framework Core", "SQL Server", "C#", "Repository Pattern", "Swagger/OpenAPI"]
+                },
+                ar: {
+                    title: "واجهة برمجة تطبيقات إدارة المكتبات (Library API)",
+                    description: "واجهة برمجية متطورة لإدارة المكتبات وفهرسة الكتب وتنظيم عمليات الاستعارة وتتبع الاشتراكات. تم بناؤها باستخدام .NET Web API و Entity Framework Core. يوفر النظام: قواعد مرنة للتحقق من سياسات الاستعارة، إشعارات وتتبع تواريخ الإرجاع التلقائي، تحديث لحظي للمخزون، وتطبيق نمط المستودع (Repository Pattern) لتبسيط التعامل مع البيانات.",
+                    technologies: [".NET Web API", "Entity Framework Core", "SQL Server", "C#", "Repository Pattern", "Swagger/OpenAPI"]
+                }
+            },
+            DriverLicenseManagement: {
+                image: "Image/license_management_mockup.png",
+                github: "https://github.com/mohamed68909/DriverLicenseManagement",
+                demo: "",
+                en: {
+                    title: "Driver License Management System",
+                    description: "A desktop-based enterprise application built for local governments to streamline driver license issuance, tests, and violations. Built with C# and WinForms, integrated with SQL Server. Key highlights include relational database schema normalized to 3NF, automated test scoring logic, multi-stage application processing workflow, license PDF generation, and complete audit history logs.",
+                    technologies: ["C#", ".NET WinForms", "SQL Server", "ADO.NET", "Database Normalization (3NF)", "Reporting"]
+                },
+                ar: {
+                    title: "نظام إدارة رخص القيادة (Driver License System)",
+                    description: "تطبيق سطحي مكتبي متكامل مصمم لإدارة وتنظيم عمليات إصدار رخص القيادة، الاختبارات، والمخالفات المرورية. تم بناؤه باستخدام لغة C# وتقنية Windows Forms مع ربطه بقاعدة بيانات SQL Server. يشمل المشروع: تصميم قاعدة بيانات علائقية مطبعة بالكامل (3NF)، منطق احتساب نتائج الاختبارات تلقائياً، تدفقات عمل متعددة المستويات، وإصدار وطباعة شهادات الرخص.",
+                    technologies: ["C#", ".NET WinForms", "SQL Server", "ADO.NET", "Database Normalization (3NF)", "Reporting"]
+                }
+            },
+            SmartTrafficManagement: {
+                image: "Image/traffic_management_mockup.png",
+                github: "https://github.com/mohamed68909/SmartTrafficManagement",
+                demo: "",
+                en: {
+                    title: "Smart Traffic Management System",
+                    description: "A dynamic mobile application frontend showing smart city traffic patterns, real-time congested route highlights, and camera monitoring. Developed in Flutter with Dart. It demonstrates cross-platform responsive interface design, reactive state management using Provider/Bloc, interactive map overlays, and async integration with backend traffic feed APIs.",
+                    technologies: ["Flutter", "Dart", "State Management", "Map Integration", "REST API Consumption", "Responsive UI"]
+                },
+                ar: {
+                    title: "نظام إدارة المرور الذكي (Smart Traffic)",
+                    description: "تطبيق جوال تفاعلي يعرض أنماط حركة المرور في المدن الذكية، ويحدد الطرق المزدحمة لحظياً مع إمكانية عرض كاميرات المراقبة. تم تطويره باستخدام Flutter ولغة Dart لتوضيح كفاءة تصميم واجهات الاستخدام متعددة المنصات، الإدارة التفاعلية للمنافذ، والربط البرمجي غير المتزامن مع خوادم البيانات المرورية.",
+                    technologies: ["Flutter", "Dart", "State Management", "Map Integration", "REST API Consumption", "Responsive UI"]
+                }
             }
         };
 
@@ -1083,21 +1143,56 @@
             });
         }
 
-        // Render 3 Projects dynamically
+        // Render Projects dynamically
         function renderProjects() {
             const grid = document.getElementById('projects-grid');
             if (!grid) return;
 
-            const projectKeys = ['TechStoreCustomer', 'TechStoreAdmin', 'WarehouseSystem'];
+            const projectKeys = [
+                'TechStoreCustomer', 
+                'TechStoreAdmin', 
+                'WarehouseSystem',
+                'ClinicManagement',
+                'LibraryManagement',
+                'DriverLicenseManagement',
+                'SmartTrafficManagement'
+            ];
             const colors = {
                 TechStoreCustomer: 'brand-teal',
                 TechStoreAdmin: 'brand-cyan',
-                WarehouseSystem: 'brand-purple'
+                WarehouseSystem: 'brand-purple',
+                ClinicManagement: 'brand-teal',
+                LibraryManagement: 'brand-cyan',
+                DriverLicenseManagement: 'brand-purple',
+                SmartTrafficManagement: 'brand-violet'
             };
             const icons = {
                 TechStoreCustomer: 'shopping-cart',
                 TechStoreAdmin: 'layout',
-                WarehouseSystem: 'package'
+                WarehouseSystem: 'package',
+                ClinicManagement: 'activity',
+                LibraryManagement: 'book-open',
+                DriverLicenseManagement: 'file-text',
+                SmartTrafficManagement: 'navigation'
+            };
+
+            const borderGlows = {
+                'brand-teal': 'bg-brand-teal',
+                'brand-cyan': 'bg-brand-cyan',
+                'brand-purple': 'bg-brand-purple',
+                'brand-violet': 'bg-brand-violet'
+            };
+            const iconBgs = {
+                'brand-teal': 'bg-brand-teal/10 text-brand-teal group-hover:bg-brand-teal/20',
+                'brand-cyan': 'bg-brand-cyan/10 text-brand-cyan group-hover:bg-brand-cyan/20',
+                'brand-purple': 'bg-brand-purple/10 text-brand-purple group-hover:bg-brand-purple/20',
+                'brand-violet': 'bg-brand-violet/10 text-brand-violet group-hover:bg-brand-violet/20'
+            };
+            const hoverColors = {
+                'brand-teal': 'group-hover:text-brand-teal',
+                'brand-cyan': 'group-hover:text-brand-cyan',
+                'brand-purple': 'group-hover:text-brand-purple',
+                'brand-violet': 'group-hover:text-brand-violet'
             };
             
             let html = '';
@@ -1108,9 +1203,9 @@
                 const icon = icons[key];
                 const delay = 0.2 + (index * 0.1);
                 
-                const borderGlow = color === 'brand-teal' ? 'bg-brand-teal' : (color === 'brand-cyan' ? 'bg-brand-cyan' : 'bg-brand-purple');
-                const iconBg = color === 'brand-teal' ? 'bg-brand-teal/10 text-brand-teal group-hover:bg-brand-teal/20' : (color === 'brand-cyan' ? 'bg-brand-cyan/10 text-brand-cyan group-hover:bg-brand-cyan/20' : 'bg-brand-purple/10 text-brand-purple group-hover:bg-brand-purple/20');
-                const hoverColor = color === 'brand-teal' ? 'group-hover:text-brand-teal' : (color === 'brand-cyan' ? 'group-hover:text-brand-cyan' : 'group-hover:text-brand-purple');
+                const borderGlow = borderGlows[color] || 'bg-brand-teal';
+                const iconBg = iconBgs[color] || 'bg-brand-teal/10 text-brand-teal group-hover:bg-brand-teal/20';
+                const hoverColor = hoverColors[color] || 'group-hover:text-brand-teal';
 
                 html += `
                     <div id="${key}" class="glass-card p-8 rounded-2xl border border-white/5 flex flex-col h-full cursor-pointer relative overflow-hidden group reveal-item" style="--delay: ${delay}s;" onclick="showProjectDetails('${key}')">
