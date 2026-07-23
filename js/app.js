@@ -18,7 +18,7 @@ const projectsData = [
     duration: '4 Months',
     team: 'Graduation Project',
     challenge: 'Cities need an integrated platform to manage traffic incidents, dispatch emergency services, and provide roadside assistance — all in real-time with live tracking and instant communication.',
-    solution: 'Built a multi-platform ecosystem with a .NET 8 backend API, React admin dashboard with 4 role-based views, and a Flutter mobile app with Google Maps integration for real-time emergency tracking.',
+    solution: 'Built a multi-platform web ecosystem with a .NET 8 backend API, React admin dashboard with 4 role-based views, and real-time Google Maps integration for emergency tracking.',
     features: [
       { title: 'Real-Time Tracking', desc: 'Live ambulance and rescue vehicle tracking via SignalR Hubs and Google Maps API' },
       { title: 'Emergency SOS', desc: 'One-tap emergency requests with automatic nearest-responder dispatch' },
@@ -27,7 +27,7 @@ const projectsData = [
       { title: 'AutoCare Marketplace', desc: 'E-commerce platform for car parts and roadside services' },
       { title: 'JWT Security', desc: 'Token-based auth with automatic refresh interceptors' }
     ],
-    technologies: ['.NET 8', 'C#', 'Clean Architecture', 'SignalR', 'SQL Server', 'EF Core', 'React', 'Vite', 'Flutter', 'Riverpod', 'Stripe API', 'Google Maps API', 'JWT', 'REST API'],
+    technologies: ['.NET 8', 'C#', 'Clean Architecture', 'SignalR', 'SQL Server', 'EF Core', 'React', 'Vite', 'Stripe API', 'Google Maps API', 'JWT', 'REST API'],
     architecture: 'Clean Architecture with CQRS pattern, Repository + Unit of Work, 4-layer separation (Domain, Application, Infrastructure, Presentation)',
     database: 'SQL Server with EF Core, custom non-clustered indexes for performance, normalized to 3NF'
   },
@@ -133,13 +133,13 @@ const skillsData = [
     ]
   },
   {
-    category: 'Frontend & Mobile',
+    category: 'Frontend & UI',
     icon: '🎨',
     skills: [
       { name: 'React & TypeScript', level: 'Advanced' },
       { name: 'Tailwind CSS & Bootstrap', level: 'Expert' },
-      { name: 'Flutter & Dart', level: 'Proficient' },
-      { name: 'HTML5 & CSS3 & JavaScript', level: 'Expert' }
+      { name: 'HTML5 & CSS3 & JavaScript', level: 'Expert' },
+      { name: 'Responsive Web UI', level: 'Expert' }
     ]
   },
   {
@@ -180,10 +180,10 @@ const servicesData = [
     tags: ['React', 'SignalR', 'Charts', 'RBAC']
   },
   {
-    icon: '📱',
-    title: 'Mobile Applications',
-    desc: 'Cross-platform mobile apps with Flutter, integrated with backend APIs and real-time features.',
-    tags: ['Flutter', 'Dart', 'Google Maps', 'REST API']
+    icon: '⚡',
+    title: 'Database Design & Optimization',
+    desc: 'SQL Server schema design, index optimization, query tuning, EF Core performance optimization, and data migrations.',
+    tags: ['SQL Server', 'EF Core', 'T-SQL', 'Indexing']
   },
   {
     icon: '🏗️',
@@ -196,7 +196,7 @@ const servicesData = [
 const faqData = [
   {
     question: 'What technologies do you specialize in?',
-    answer: 'I specialize in the .NET ecosystem — ASP.NET Core Web API, MVC, C#, Entity Framework Core, and SQL Server for backend. For frontend, I work with React, TypeScript, and modern CSS. I also build mobile apps with Flutter.'
+    answer: 'I specialize in the .NET ecosystem — ASP.NET Core Web API, MVC, C#, Entity Framework Core, and SQL Server for backend. For frontend, I work with React, TypeScript, and modern CSS frameworks.'
   },
   {
     question: 'Can you work with existing codebases?',
@@ -204,7 +204,7 @@ const faqData = [
   },
   {
     question: 'What is your typical project timeline?',
-    answer: 'It depends on the scope. A standard web application typically takes 2-4 months. Complex systems with multiple dashboards and mobile apps may take 4-6 months. I provide detailed timelines during the planning phase.'
+    answer: 'It depends on the scope. A standard web application or API typically takes 2-4 weeks. Complex enterprise systems with multiple dashboards may take 1-3 months. I provide detailed timelines during the planning phase.'
   },
   {
     question: 'Do you offer ongoing maintenance and support?',
@@ -216,7 +216,7 @@ const faqData = [
   },
   {
     question: 'Can you handle both frontend and backend?',
-    answer: 'Yes. I am a Full Stack developer. I design database schemas, build backend APIs, create responsive frontends with React, and even develop mobile apps with Flutter — all within a single project.'
+    answer: 'Yes. I am a Full Stack developer. I design database schemas, build backend APIs, and create responsive frontends with React — delivering complete web applications.'
   }
 ];
 
