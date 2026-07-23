@@ -1,63 +1,62 @@
 <div align="center">
 
-# Personal Portfolio â€” Mohamed Ashraf
+# Mohamed Ashraf — Full-Stack .NET & Backend Developer Portfolio
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![.NET 9](https://img.shields.io/badge/.NET_9.0-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 [![Live Demo](https://img.shields.io/badge/Live_Demo-Visit_Portfolio-6C63FF?style=for-the-badge&logo=github-pages)](https://mohamed68909.github.io/Portfolio)
 
-My personal portfolio website â€” showcasing my projects, skills, and professional journey as a Backend Developer.
+Welcome to my interactive personal portfolio showcasing enterprise .NET applications, Clean Architecture systems, REST APIs, and full-stack solutions.
 
 </div>
 
 ---
 
-## Live Demo
+## 🌐 Live Demo
 
-**Visit:** [mohamed68909.github.io/Portfolio](https://mohamed68909.github.io/Portfolio)
-
----
-
-## About
-
-This portfolio represents my professional identity as a **.NET Backend Developer** transitioning into Full Stack development. It showcases my featured projects, technical skills, and experience in building scalable APIs and systems.
+**Portfolio URL:** [https://mohamed68909.github.io/Portfolio](https://mohamed68909.github.io/Portfolio)
 
 ---
 
-## Sections
+## 🚀 Featured Enterprise Projects
 
-| Section | Content |
-|---------|---------|
-| Hero | Introduction and role |
-| About | Background and education |
-| Skills | Tech stack and tools |
-| Projects | Featured work with links |
-| Contact | Ways to get in touch |
+### 🌿 1. El Mogy Fresh — Organic E-Commerce Platform
+- **Live Demo:** [elmogyfresh.runasp.net](https://elmogyfresh.runasp.net)
+- **Tech Stack:** ASP.NET Core 10 MVC, Entity Framework Core, SQL Server, Clean Architecture, DDD (4 Layers: Domain, Application, Infrastructure, Web).
+- **Key Features:** Hybrid Shopping Cart (session/cookies auto-merged to user account upon login), Glassmorphism UI with micro-animations, bilingual support via `LanguageController`, background service for guest cart cleanup.
 
----
+### 🚗 2. Smart Traffic & Emergency Management System (STMS)
+- **Tech Stack:** .NET 8 (C#) Clean Architecture, SQL Server (Custom Indexes), SignalR Hubs (Real-Time GPS & Chat), Stripe API (HMAC Verification), React 19 (Vite Dark Theme), Flutter + Riverpod + Google Maps API.
+- **Key Features:** 5 User Roles (Driver, Admin, CS Agent, Rescue Provider, Store Seller). SOS emergency roadside dispatch (towing, jumpstart, fuel, flat tire), real-time map tracking, live SignalR support chat, auto JWT refresh interceptors.
 
-## Featured Projects Showcased
+### 🏥 3. CurexMind — Hospital & Clinic Management System
+- **Tech Stack:** ASP.NET Core 9.0 Web API, React 19 + TypeScript + Vite, Tailwind CSS 4, Zustand, EF Core 9, MS SQL Server, Identity + JWT, FluentValidation.
+- **Key Features:** Patient Portal with doctor search filters, auto gender avatar rendering, 4-step smart booking stepper, 3 simulated payment gateways (Instapay, Wallets, Cards), Management Portal with revenue dashboards and 5-tab unified patient records (Info, Appointments, Invoices, Room Stays, Operations).
 
-- **ClinicManagementAPI** â€” REST API with JWT auth
-- **Warehouse Management System** â€” Clean Architecture + DDD
-- **Library Management API** â€” Full CRUD REST API
-- **TechStore** â€” E-commerce frontend
-- **SmartTrafficManagement** â€” Flutter mobile app
+### 🛒 4. TechStore — Enterprise E-Commerce System
+- **Tech Stack:** ASP.NET Core 9.0 (MVC + RESTful API), EF Core 9, SQL Server, ASP.NET Core Identity + 6-digit OTP verification + OAuth 2.0 (Google/Facebook), Stripe.net SDK, Bootstrap 5.3, DataTables.net.
+- **Architecture:** Enterprise N-Tier Architecture (`TechStore`, `TechStore.Api`, `TechStore.Entities`, `TechStore.Services`, `TechStore.DataAccess`, `TechStore.Utilities`).
 
----
-
-## Tech Stack
-
-- **HTML5** â€” Semantic markup
-- **CSS3** â€” Custom styling with animations
-- **JavaScript** â€” Interactive elements and smooth scrolling
-- **GitHub Pages** â€” Free hosting and deployment
+### 📦 5. Additional Systems
+- **Warehouse Management System (WMS):** ASP.NET Core Web API, Clean Architecture, DDD, JWT Auth.
+- **Library Management API:** ASP.NET Core RESTful API, Repository Pattern, Swagger.
+- **Driver License Management System:** C# WinForms, SQL Server, 3NF Normalized Relational DB.
 
 ---
 
-## Run Locally
+## 🛠️ Tech Stack & Skills
+
+- **Backend:** C#, .NET 8 / 9 / 10, ASP.NET Core Web API, MVC, Entity Framework Core, LINQ, SignalR, Identity, JWT, Clean Architecture, DDD, SOLID Principles.
+- **Frontend:** React 19, TypeScript, JavaScript (ES6+), Vite, Tailwind CSS 4, Bootstrap 5, Zustand, HTML5, CSS3, Glassmorphism UI.
+- **Databases:** MS SQL Server, T-SQL, Database Normalization (3NF), Performance Tuning & Indexing.
+- **Mobile & DevOps:** Flutter, Dart, Riverpod, Google Maps API, Stripe API Integration, Git, GitHub Actions CI/CD.
+
+---
+
+## ⚙️ Run Portfolio Locally
 
 ```bash
 git clone https://github.com/mohamed68909/Portfolio.git
@@ -67,13 +66,15 @@ start index.html
 
 ---
 
-## Connect
+## 📬 Contact & Links
 
-- **LinkedIn:** [linkedin.com/in/mohamed-ashraf-dot-netdevelper](https://www.linkedin.com/in/mohamed-ashraf-dot-netdevelper)
+- **Email:** mohamedashrafabdulkareem@gmail.com
+- **Phone / WhatsApp:** +20 105 050 0189
+- **LinkedIn:** [linkedin.com/in/mohamed-ashraf-ab5803268](https://www.linkedin.com/in/mohamed-ashraf-ab5803268)
 - **GitHub:** [github.com/mohamed68909](https://github.com/mohamed68909)
 
 ---
 
-## License
+## 📄 License
 
-MIT License â€” see [LICENSE](LICENSE) for details.
+MIT License — see [LICENSE](LICENSE) for details.

@@ -801,34 +801,64 @@
         };
 
         const projectsData = {
-            TechStoreCustomer: {
+            ElMogyFresh: {
+                image: "Image/elmogy_fresh_mockup.jpg",
+                github: "https://github.com/mohamed68909/ElMogyFresh",
+                demo: "https://elmogyfresh.runasp.net",
+                en: {
+                    title: "El Mogy Fresh - Organic E-Commerce Platform",
+                    description: "An enterprise e-commerce web application dedicated to selling fresh organic vegetables. Engineered with ASP.NET Core 10 MVC using Clean Architecture and Domain-Driven Design (DDD) principles across 4 decoupled layers (FreshVeg.Domain, FreshVeg.Application, FreshVeg.Infrastructure, FreshVeg.Web). Features a Hybrid Shopping Cart (guest session cart seamlessly auto-merged into user profile upon login), custom Glassmorphism UI with micro-animations, multi-language support via LanguageController, and automated background cleanup services for guest carts.",
+                    technologies: ["ASP.NET Core 10 MVC", "EF Core", "SQL Server", "Clean Architecture", "DDD", "Hybrid Cart", "Bootstrap 5", "Glassmorphism"]
+                },
+                ar: {
+                    title: "منصة التجزئة الإلكترونية للخضروات الطازجة (El Mogy Fresh)",
+                    description: "منصة تسوق إلكترونية متكاملة لبيع الخضروات والفواكه الطازجة مبنية بأحدث تقنيات ASP.NET Core 10 MVC مع تطبيق مبادئ Clean Architecture و Domain-Driven Design (DDD). يتكون النظام من 4 طبقات مستقلة (Domain, Application, Infrastructure, Web). يتميز بسلة تسوق هجينة (تدمج سلة التصفح بدون تسجيل دخول تلقائياً مع حساب المستخدم فور تسجيل الدخول)، واجهة مستخدم زجاجية (Glassmorphism) مع دمج المؤثرات البصرية الدقيقة (Micro-animations)، دعم كامل لتعدد اللغات، وخدمة خلفية (Background Service) لتنظيف السلال المهجورة تلقائياً.",
+                    technologies: ["ASP.NET Core 10 MVC", "EF Core", "SQL Server", "Clean Architecture", "DDD", "Hybrid Cart", "Bootstrap 5", "Glassmorphism"]
+                }
+            },
+            SmartTrafficManagement: {
+                image: "Image/traffic_management_mockup.png",
+                github: "https://github.com/mohamed68909/SmartTrafficManagement",
+                demo: "",
+                en: {
+                    title: "Smart Traffic & Emergency Management System (STMS)",
+                    description: "An integrated smart city traffic and roadside emergency response ecosystem. The backend is built with .NET 8 (C#) using Clean Architecture, SQL Server + EF Core with custom non-clustered indexes, real-time SignalR Hubs for live location tracking & instant support chat, Stripe API with HMAC signature verification, and automatic JWT token refresh interceptors. Includes a React web portal (Vite, Premium Dark Theme) with 4 role-based dashboards (System Admin, CS Agent, Rescue Provider, Store Seller) and a Flutter mobile client with Google Maps API and Riverpod for drivers to request emergency assistance (towing, jumpstart, fuel, flat tire).",
+                    technologies: [".NET 8 C#", "Clean Architecture", "SignalR Hubs", "Stripe API", "React.js + Vite", "Flutter + Riverpod", "SQL Server Indexes", "JWT Interceptors"]
+                },
+                ar: {
+                    title: "نظام إدارة المرور والطوارئ الذكي (STMS)",
+                    description: "نظام متكامل لإدارة حركة المرور وحالات الطوارئ على الطرق في المدن الذكية. يتكون الخلفية (Backend) من .NET 8 بمعمارية Clean Architecture وقاعدة بيانات SQL Server محسنة بفهارس Indexes مخصصة، واتصال لحظي عبر SignalR Hubs ومقبض مدفوعات Stripe آمن بمعالج HMAC. يحتوي على بوابة ويب React مبنية بـ Vite تضم 4 لوحات تحكم حسب الصلاحية (المدير، خدمة العملاء، مزودي الإنقاذ، والبائعين)، وتطبيق هاتف محمول Flutter مزود بـ Google Maps و Riverpod لتلقي بلاغات الطوارئ (سحب السيارات، شحن البطارية، التزود بالوقود، وإصلاح الإطارات) وتتبع شاحنات الإنقاذ لحظياً.",
+                    technologies: [".NET 8 C#", "Clean Architecture", "SignalR Hubs", "Stripe API", "React.js + Vite", "Flutter + Riverpod", "SQL Server Indexes", "JWT Interceptors"]
+                }
+            },
+            CurexMind: {
+                image: "Image/clinic_api_mockup.png",
+                github: "https://github.com/mohamed68909/ClinicManagementAPI",
+                demo: "",
+                en: {
+                    title: "CurexMind - Hospital & Clinic Management System",
+                    description: "An end-to-end Healthcare & Hospital Management System connecting patients, medical staff, and receptionist administration. The backend (CurexMind.API) is built using ASP.NET Core 9.0 Web API with Clean Architecture, EF Core 9, SQL Server, ASP.NET Identity + JWT, and FluentValidation. The frontend (CurexMind.Frontend) is built with React 19, TypeScript, Vite, Tailwind CSS 4, and Zustand. Features a Patient Portal with search filters, 4-step smart booking stepper, 3 simulated payment gateways (Instapay, Mobile Wallets, Credit Cards), patient medical history, and a Management Portal with interactive revenue dashboards and 5-tab patient files (Info, Appointments, Invoices, Room Stays, Surgical Operations).",
+                    technologies: ["ASP.NET Core 9.0 API", "React 19 + TypeScript", "Tailwind CSS 4", "Clean Architecture", "Zustand", "EF Core 9", "JWT RBAC", "SQL Server"]
+                },
+                ar: {
+                    title: "نظام كيروكس مايند لإدارة العيادات والمستشفيات (CurexMind)",
+                    description: "نظام متكامل لإدارة العيادات والمستشفيات يربط بين المرضى والأطباء وموظفي الاستقبال والإدارة. يتكون الجزء الخلفي من ASP.NET Core 9.0 Web API مع Clean Architecture و EF Core 9 و FluentValidation. بينما تم بناء الواجهة الأمامية بـ React 19 و TypeScript و Vite و Tailwind CSS 4 و Zustand. يشتمل على بوابة مريض ببحث وفلاتر تفاعلية ونظام حجز من 4 خطوات مع 3 بوابات دفع محاكاة (Instapay، المحافظ الإلكترونية، البطاقات)، ولوحة استقبال وإدارة متطورة تعرض إحصائيات مالية وشاشات متابعة تفصيلية للمريض (البيانات، المواعيد، الفواتير، إقامة الغرف، والعمليات الجراحية).",
+                    technologies: ["ASP.NET Core 9.0 API", "React 19 + TypeScript", "Tailwind CSS 4", "Clean Architecture", "Zustand", "EF Core 9", "JWT RBAC", "SQL Server"]
+                }
+            },
+            TechStore: {
                 image: "Image/techstore_customer_mockup.png",
                 github: "https://github.com/mohamed68909/Portfolio",
                 demo: "",
                 en: {
-                    title: "TechStore - Customer Interface",
-                    description: "A comprehensive e-commerce customer storefront designed for purchasing high-tech devices. Built with ASP.NET Core MVC, it offers an end-to-end shopping experience. Core capabilities include user authentication and profiles, robust catalog search and advanced category filtering, responsive shopping cart, dynamic checkout processes with validation, and direct backend integration for order tracking.",
-                    technologies: ["ASP.NET Core MVC", "Entity Framework Core", "SQL Server", "C#", "Bootstrap", "jQuery", "CSS3 / HTML5"]
+                    title: "TechStore - Enterprise E-Commerce Platform",
+                    description: "A high-performance enterprise e-commerce web application built with ASP.NET Core 9.0 (MVC + RESTful API) and N-Tier Architecture (TechStore, TechStore.Api, TechStore.Entities, TechStore.Services, TechStore.DataAccess, TechStore.Utilities). Features multi-area management (Customer, Admin, Identity), ASP.NET Core Identity with 6-digit email OTP verification & OAuth 2.0 (Google/Facebook), Stripe.net SDK checkout integration, dynamic catalog search/filtering, multi-image product management, low-stock warnings, Unit of Work pattern, and real-time order lifecycle tracking (Pending -> Approved -> Processing -> Shipped -> Completed).",
+                    technologies: ["ASP.NET Core 9.0", "EF Core 9", "N-Tier Architecture", "Stripe Checkout", "OTP Verification", "SQL Server", "Bootstrap 5.3", "DataTables.net"]
                 },
                 ar: {
-                    title: "متجر إلكتروني متكامل لبيع الأجهزة التقنية - واجهة العميل",
-                    description: "متجر إلكتروني متكامل لبيع الأجهزة التقنية يركز على تجربة العميل وتسهيل الشراء. تم بناؤه باستخدام تقنية ASP.NET Core MVC ليوفر تجربة تسوق متكاملة وآمنة. تشمل الميزات الأساسية: إدارة حسابات العملاء وتسجيل الدخول، تصفح المنتجات والتصفية الذكية حسب الفئة، سلة تسوق ديناميكية، عملية إتمام الطلب والدفع مع التحقق الفوري من البيانات، ومتابعة الطلبات مباشرة من خوادم النظام الخلفية.",
-                    technologies: ["ASP.NET Core MVC", "Entity Framework Core", "SQL Server", "C#", "Bootstrap", "jQuery", "CSS3 / HTML5"]
-                }
-            },
-            TechStoreAdmin: {
-                image: "Image/techstore_admin_mockup.png",
-                github: "https://github.com/mohamed68909/Portfolio",
-                demo: "",
-                en: {
-                    title: "TechStore - Admin Dashboard",
-                    description: "A sophisticated administrative control panel for the TechStore ecosystem. Built for security and administrative efficiency, it features dynamic analytics charts for sales metrics, inventory management (stock status, low-stock warnings), product catalogs configuration (CRUD operations), customer account auditing, and order state transition management.",
-                    technologies: ["ASP.NET Core MVC", "Entity Framework Core", "SQL Server", "Chart.js", "C#", "Bootstrap", "Responsive Layout"]
-                },
-                ar: {
-                    title: "لوحة تحكم إحترافية لإدارة المتاجر الإلكترونية - لوحة المدير",
-                    description: "لوحة تحكم إدارية احترافية وشاملة لمتابعة وإدارة متجر الأجهزة التقنية بالكامل. تم تصميمها لتوفير أعلى درجات الأمان والكفاءة التشغيلية للمشرفين. تشمل الميزات: لوحة إحصائيات تفاعلية للمبيعات والأرباح، إدارة المنتجات والأقسام والمخزون مع إشعارات نقص الكميات، إدارة شؤون العملاء والصلاحيات، ومتابعة حالات الشحنات والطلبات وإعداد التقارير.",
-                    technologies: ["ASP.NET Core MVC", "Entity Framework Core", "SQL Server", "Chart.js", "C#", "Bootstrap", "Responsive Layout"]
+                    title: "منصة تك ستور المتكاملة للتجارة الإلكترونية (TechStore)",
+                    description: "منصة تجارة إلكترونية احترافية مبنية بأحدث تقنيات ASP.NET Core 9.0 (MVC + RESTful API) بتصميم معمارية المؤسسات متعددة الطبقات (Enterprise N-Tier Architecture). تضم تقسيم Areas (Customer, Admin, Identity) ونظام أمان متطور مع تأكيد الحسابات عبر OTP مكون من 6 أرقام وتسجيل الدخول عبر Google/Facebook. تشمل الميزات: ربط بوابة Stripe.net للمدفوعات، سلة تسوق تفاعلية، تتبع لحظي لحالات الطلبات، ولوحة إدارية شاملة لإدارة المنتجات بالصور المتعددة، تنبيهات المخزون، وتطبيق نمط Repositories & Unit of Work على SQL Server.",
+                    technologies: ["ASP.NET Core 9.0", "EF Core 9", "N-Tier Architecture", "Stripe Checkout", "OTP Verification", "SQL Server", "Bootstrap 5.3", "DataTables.net"]
                 }
             },
             WarehouseSystem: {
@@ -844,21 +874,6 @@
                     title: "برمجة وتطوير نظام متكامل لإدارة المستودعات (WMS)",
                     description: "نظام متكامل لإدارة المستودعات مصمم لتبسيط سلاسل الإمداد ومراقبة الأصول اللوجستية بكفاءة عالية. تم بناؤه باستخدام تقنية ASP.NET Core Web API مع الالتزام بمعمارية البنية النظيفة (Clean Architecture). يوفر النظام: تتبعاً لحظياً لمستويات المخزون وحركة القطع، تخطيط وإدارة مواقع التخزين داخل المستودع، أتمتة عمليات استلام الشحنات وتصديرها، تتبع الموردين والمشترين، سجلات تدقيق متكاملة، ونظام حماية معتمد على رموز JWT لتأمين المعاملات والربط البرمجي السلس.",
                     technologies: ["C#", "ASP.NET Core Web API", "Entity Framework Core", "SQL Server", "Clean Architecture", "JWT Security", "Repository Pattern"]
-                }
-            },
-            ClinicManagement: {
-                image: "Image/clinic_api_mockup.png",
-                github: "https://github.com/mohamed68909/ClinicManagementAPI",
-                demo: "",
-                en: {
-                    title: "Clinic Management API",
-                    description: "A robust RESTful API designed for clinic administrative management, overseeing patient registration, doctor schedules, and appointments. Engineered with ASP.NET Core and Entity Framework Core following Clean Architecture. Core capabilities include secure role-based access, patient history logs, automated booking validations, and full CRUD operations on SQL Server with optimized queries.",
-                    technologies: ["ASP.NET Core Web API", "Entity Framework Core", "SQL Server", "C#", "Clean Architecture", "JWT Authentication"]
-                },
-                ar: {
-                    title: "واجهة برمجة تطبيقات إدارة العيادات (Clinic API)",
-                    description: "واجهة برمجية (RESTful API) متكاملة لإدارة العيادات الطبية وتنظيم مواعيد المرضى وجداول الأطباء. تم بناؤها باستخدام ASP.NET Core و Entity Framework Core مع الالتزام بمعمارية البنية النظيفة (Clean Architecture). يشمل النظام: حماية متطورة وتوزيع الصلاحيات، سجلات تاريخية للمرضى، أتمتة حجز المواعيد والتحقق منها، والربط البرمجي مع قاعدة بيانات SQL Server.",
-                    technologies: ["ASP.NET Core Web API", "Entity Framework Core", "SQL Server", "C#", "Clean Architecture", "JWT Authentication"]
                 }
             },
             LibraryManagement: {
@@ -889,21 +904,6 @@
                     title: "نظام إدارة رخص القيادة (Driver License System)",
                     description: "تطبيق سطحي مكتبي متكامل مصمم لإدارة وتنظيم عمليات إصدار رخص القيادة، الاختبارات، والمخالفات المرورية. تم بناؤه باستخدام لغة C# وتقنية Windows Forms مع ربطه بقاعدة بيانات SQL Server. يشمل المشروع: تصميم قاعدة بيانات علائقية مطبعة بالكامل (3NF)، منطق احتساب نتائج الاختبارات تلقائياً، تدفقات عمل متعددة المستويات، وإصدار وطباعة شهادات الرخص.",
                     technologies: ["C#", ".NET WinForms", "SQL Server", "ADO.NET", "Database Normalization (3NF)", "Reporting"]
-                }
-            },
-            SmartTrafficManagement: {
-                image: "Image/traffic_management_mockup.png",
-                github: "https://github.com/mohamed68909/SmartTrafficManagement",
-                demo: "",
-                en: {
-                    title: "Smart Traffic Management System",
-                    description: "A dynamic mobile application frontend showing smart city traffic patterns, real-time congested route highlights, and camera monitoring. Developed in Flutter with Dart. It demonstrates cross-platform responsive interface design, reactive state management using Provider/Bloc, interactive map overlays, and async integration with backend traffic feed APIs.",
-                    technologies: ["Flutter", "Dart", "State Management", "Map Integration", "REST API Consumption", "Responsive UI"]
-                },
-                ar: {
-                    title: "نظام إدارة المرور الذكي (Smart Traffic)",
-                    description: "تطبيق جوال تفاعلي يعرض أنماط حركة المرور في المدن الذكية، ويحدد الطرق المزدحمة لحظياً مع إمكانية عرض كاميرات المراقبة. تم تطويره باستخدام Flutter ولغة Dart لتوضيح كفاءة تصميم واجهات الاستخدام متعددة المنصات، الإدارة التفاعلية للمنافذ، والربط البرمجي غير المتزامن مع خوادم البيانات المرورية.",
-                    technologies: ["Flutter", "Dart", "State Management", "Map Integration", "REST API Consumption", "Responsive UI"]
                 }
             }
         };
@@ -1148,31 +1148,31 @@
             if (!grid) return;
 
             const projectKeys = [
-                'TechStoreCustomer', 
-                'TechStoreAdmin', 
+                'ElMogyFresh', 
+                'SmartTrafficManagement', 
+                'CurexMind',
+                'TechStore',
                 'WarehouseSystem',
-                'ClinicManagement',
                 'LibraryManagement',
-                'DriverLicenseManagement',
-                'SmartTrafficManagement'
+                'DriverLicenseManagement'
             ];
             const colors = {
-                TechStoreCustomer: 'brand-teal',
-                TechStoreAdmin: 'brand-cyan',
-                WarehouseSystem: 'brand-purple',
-                ClinicManagement: 'brand-teal',
+                ElMogyFresh: 'brand-teal',
+                SmartTrafficManagement: 'brand-cyan',
+                CurexMind: 'brand-violet',
+                TechStore: 'brand-purple',
+                WarehouseSystem: 'brand-teal',
                 LibraryManagement: 'brand-cyan',
-                DriverLicenseManagement: 'brand-purple',
-                SmartTrafficManagement: 'brand-violet'
+                DriverLicenseManagement: 'brand-purple'
             };
             const icons = {
-                TechStoreCustomer: 'shopping-cart',
-                TechStoreAdmin: 'layout',
+                ElMogyFresh: 'shopping-bag',
+                SmartTrafficManagement: 'navigation',
+                CurexMind: 'activity',
+                TechStore: 'shopping-cart',
                 WarehouseSystem: 'package',
-                ClinicManagement: 'activity',
                 LibraryManagement: 'book-open',
-                DriverLicenseManagement: 'file-text',
-                SmartTrafficManagement: 'navigation'
+                DriverLicenseManagement: 'file-text'
             };
 
             const borderGlows = {
