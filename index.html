@@ -434,12 +434,28 @@
                     <h3 class="text-3xl sm:text-4xl font-extrabold text-white mb-3 reveal-item" style="--delay: 0.05s;" data-i18n="projectsTitle">
                         Featured Projects
                     </h3>
-                    <p class="text-slate-400 mb-12 text-sm sm:text-base reveal-item animate-pulse-slow" style="--delay: 0.1s;" id="projects-info-desc">
+                    <p class="text-slate-400 mb-8 text-sm sm:text-base reveal-item animate-pulse-slow" style="--delay: 0.1s;" id="projects-info-desc">
                         <i data-lucide="info" class="w-4 h-4 inline-block mr-1 align-text-bottom text-brand-teal"></i>
-                        <span data-i18n="projectsInfo">Click on any project to view comprehensive technical details and GitHub repositories.</span>
+                        <span data-i18n="projectsInfo">Click on any project card or image to view comprehensive technical architecture, live demos, and GitHub repositories.</span>
                     </p>
                     
-                    <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Category Filter Tabs -->
+                    <div class="flex flex-wrap gap-2.5 mb-10 reveal-item" style="--delay: 0.15s;">
+                        <button onclick="filterProjects('all')" id="filter-all" class="project-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 bg-gradient-to-r from-brand-teal to-brand-cyan text-brand-deep shadow-lg">
+                            <span data-i18n="filterAll">All Projects</span> (7)
+                        </button>
+                        <button onclick="filterProjects('web')" id="filter-web" class="project-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 bg-slate-900/80 text-slate-400 hover:text-white border border-white/5">
+                            <span data-i18n="filterWeb">Full-Stack & Web</span>
+                        </button>
+                        <button onclick="filterProjects('api')" id="filter-api" class="project-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 bg-slate-900/80 text-slate-400 hover:text-white border border-white/5">
+                            <span data-i18n="filterApi">APIs & Backend</span>
+                        </button>
+                        <button onclick="filterProjects('mobile')" id="filter-mobile" class="project-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 bg-slate-900/80 text-slate-400 hover:text-white border border-white/5">
+                            <span data-i18n="filterMobile">Mobile & Desktop</span>
+                        </button>
+                    </div>
+
+                    <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         <!-- Rendered dynamically via JS -->
                     </div>
                 </div>
@@ -802,6 +818,7 @@
 
         const projectsData = {
             ElMogyFresh: {
+                category: "web",
                 image: "Image/elmogy_fresh_mockup.jpg",
                 github: "https://github.com/mohamed68909/ElMogyFresh",
                 demo: "https://elmogyfresh.runasp.net",
@@ -817,6 +834,7 @@
                 }
             },
             SmartTrafficManagement: {
+                category: "mobile",
                 image: "Image/traffic_management_mockup.png",
                 github: "https://github.com/mohamed68909/SmartTrafficManagement",
                 demo: "",
@@ -832,6 +850,7 @@
                 }
             },
             CurexMind: {
+                category: "web",
                 image: "Image/clinic_api_mockup.png",
                 github: "https://github.com/mohamed68909/ClinicManagementAPI",
                 demo: "",
@@ -847,6 +866,7 @@
                 }
             },
             TechStore: {
+                category: "web",
                 image: "Image/techstore_customer_mockup.png",
                 github: "https://github.com/mohamed68909/Portfolio",
                 demo: "",
@@ -862,6 +882,7 @@
                 }
             },
             WarehouseSystem: {
+                category: "api",
                 image: "Image/warehouse_wms_mockup.png",
                 github: "https://github.com/mohamed68909/Portfolio",
                 demo: "",
@@ -877,6 +898,7 @@
                 }
             },
             LibraryManagement: {
+                category: "api",
                 image: "Image/library_api_mockup.png",
                 github: "https://github.com/mohamed68909/LibraryManagementAPI",
                 demo: "",
@@ -892,6 +914,7 @@
                 }
             },
             DriverLicenseManagement: {
+                category: "mobile",
                 image: "Image/license_management_mockup.png",
                 github: "https://github.com/mohamed68909/DriverLicenseManagement",
                 demo: "",
@@ -908,94 +931,29 @@
             }
         };
 
-        // Certificates Data Catalog
-        const certificatesData = {
-            microsoft: {
-                en: {
-                    title: "Microsoft Certified Professional: C#",
-                    trackDescription: "Foundational certification demonstrating high competency in C# programming fundamentals. Validates core concepts including variables, object-oriented syntax (OOP), arrays, loops, exception handling, data structures, and .NET runtime execution, laying a solid framework for web services development."
-                },
-                ar: {
-                    title: "محترف معتمد من مايكروسوفت: لغة C#",
-                    trackDescription: "شهادة تأسيسية تثبت الكفاءة العالية في أساسيات برمجة C#. تؤكد على المفاهيم الجوهرية بما في ذلك المتغيرات، البرمجة كائنية التوجه (OOP)، المصفوفات، التكرارات، معالجة الاستثناءات، هياكل البيانات، وتشغيل منصة .NET، مما يمهد الطريق لتطوير خدمات الويب."
-                },
-                images: [
-                    { src: "Image/C_Sqrp.jpeg", altEn: "Microsoft Certified: C# Programming basics", altAr: "شهادة مايكروسوفت معتمد: أساسيات برمجة C#" }
-                ]
-            },
-            abuhadhood: {
-                en: {
-                    title: "Backend .NET Track (Programming Advice)",
-                    trackDescription: "Comprehensive training track by Eng. Abou Hadhoud spanning 16 rigorous courses that trace backend development from basic computer science logic to modern .NET Web APIs. The catalog below compiles all 16 course credentials representing fundamental algorithms, low-level data structures, system modeling, relational databases, and enterprise architectural principles."
-                },
-                ar: {
-                    title: "مسار تطوير الويب والـ Backend (أكاديمية Programming Advice)",
-                    trackDescription: "مسار تدريبي شامل يقدمه المهندس محمد أبو هدهود يمتد عبر 16 دورة تدريبية صارمة تبدأ من منطق علوم الكمبيوتر الأساسية وتصل إلى بناء RESTful Web APIs الحديثة باستخدام .NET. يضم الكتالوج أدناه جميع شهادات الدورات الـ 16 التي تمثل الخوارزميات، هياكل البيانات منخفضة المستوى، نمذجة الأنظمة، قواعد البيانات العلائقية، ومبادئ البنية البرمجية للمؤسسات."
-                },
-                images: [
-                    { src: "Image/Algorith_and_Problem_solving_1.png", altEn: "Algorithms & Problem Solving Level 1", altAr: "الخوارزميات وحل المشكلات - المستوى الأول" },
-                    { src: "Image/Algorazm_And_problem_solving_2.png", altEn: "Algorithms & Problem Solving Level 2", altAr: "الخوارزميات وحل المشكلات - المستوى الثاني" },
-                    { src: "Image/Algorazim_and_problem_soliving.png", altEn: "Algorithms & Problem Solving Level 3", altAr: "الخوارزميات وحل المشكلات - المستوى الثالث" },
-                    { src: "Image/Algorazim_and_problem_soliving_4.png", altEn: "Algorithms & Problem Solving Level 4", altAr: "الخوارزميات وحل المشكلات - المستوى الرابع" },
-                    { src: "Image/Algorazim_and_problem_soliving_3.png", altEn: "Algorithms & Problem Solving Specialization", altAr: "تخصص الخوارزميات وحل المشكلات" },
-                    { src: "Image/Introdtion_of_programming_with_C_Sharp_2.png", altEn: "C# programming Level 2 Introduction", altAr: "مقدمة برمجة C# - المستوى الثاني" },
-                    { src: "Image/oop_C_Sharp .png", altEn: "Object Oriented Programming in C#", altAr: "البرمجة كائنية التوجه في C#" },
-                    { src: "Image/OOP_Project.png", altEn: "OOP Capstone Project (WinForms)", altAr: "مشروع البرمجة كائنية التوجه (WinForms)" },
-                    { src: "Image/Solid_principle.png", altEn: "SOLID Architecture & Principles", altAr: "مبادئ وهندسة SOLID البرمجية" },
-                    { src: "Image/RestFull_Api.png", altEn: "Building RESTful Web APIs", altAr: "بناء واجهات تطبيقات الويب RESTful APIs" },
-                    { src: "Image/T_Sql.png", altEn: "Advanced Transact-SQL (T-SQL)", altAr: "لغة قواعد البيانات المتقدمة Transact-SQL" },
-                    { src: "Image/Full_Project.png", altEn: "Full Backend System Capstone", altAr: "مشروع التخرج المتكامل للـ Backend" },
-                    { src: "Image/DataBase.png", altEn: "Database Foundations & Normalization", altAr: "أسس وقواعد البيانات وتطبيعها" },
-                    { src: "Image/Data_structur_1.png", altEn: "Data Structures Level 1", altAr: "هياكل البيانات - المستوى الأول" },
-                    { src: "Image/Data_Structure_2.png", altEn: "Data Structures Level 2", altAr: "هياكل البيانات - المستوى الثاني" },
-                    { src: "Image/DataBase_Project.png", altEn: "Database Management Capstone Project", altAr: "مشروع إدارة قواعد البيانات المتكامل" }
-                ]
-            },
-            iti: {
-                en: {
-                    title: "ITI .NET Web Development Track",
-                    trackDescription: "Professional web engineering training at the Information Technology Institute (ITI). Focuses heavily on building high-performance web systems utilizing the ASP.NET MVC framework, database normalization, Entity Framework Core ORM design, secure user state management, dynamic UI engines, and design patterns."
-                },
-                ar: {
-                    title: "منحة معهد تكنولوجيا المعلومات ITI - مسار تطوير الويب .NET",
-                    trackDescription: "تدريب هندسة الويب الاحترافي بمعهد تكنولوجيا المعلومات (ITI). يركز بشكل كبير على بناء مواقع وأنظمة الويب عالية الأداء باستخدام ASP.NET MVC، تطبيع وتصميم قواعد البيانات، تصميم Entity Framework Core ORM design، إدارة الجلسات الآمنة، محركات واجهات الاستخدام الديناميكية، وأنماط التصميم البرمجي."
-                },
-                images: [
-                    { src: "Image/ITI.jpeg", altEn: "ITI Web Development Track Diploma", altAr: "دبلوم مسار تطوير الويب ITI" },
-                    { src: "Image/ITI1.jpeg", altEn: "ITI Web Development Course Credentials", altAr: "شهادات ودورات تطوير الويب ITI" }
-                ]
-            }
-        };
-
-        // 20 Core Skills catalog
+        // Modern Technical Skills Catalog
         const skillsData = [
-            // Languages
-            { category: "languages", name: "C# Programming", rating: 92, icon: "code-2" },
-            { category: "languages", name: "C++ Programming", rating: 80, icon: "code" },
-            { category: "languages", name: "SQL", rating: 90, icon: "database" },
-            { category: "languages", name: "Node.js", rating: 75, icon: "terminal" },
-            { category: "languages", name: "HTML / CSS", rating: 95, icon: "file-code" },
-            
-            // Frameworks & Web
-            { category: "frameworks", name: "Microsoft .NET", rating: 90, icon: "cpu" },
-            { category: "frameworks", name: "ASP.NET", rating: 92, icon: "globe" },
-            { category: "frameworks", name: "MVC", rating: 90, icon: "layout" },
-            { category: "frameworks", name: "React", rating: 70, icon: "atom" },
-            { category: "frameworks", name: "Bootstrap", rating: 88, icon: "layers" },
-            
-            // Database & Architecture
-            { category: "architecture", name: "Database Programming", rating: 90, icon: "server" },
-            { category: "architecture", name: "Database Administration", rating: 85, icon: "shield-alert" },
-            { category: "architecture", name: "Software Architecture", rating: 88, icon: "git-fork" },
-            { category: "architecture", name: "RESTful Web APIs", rating: 92, icon: "link-2" },
-            { category: "architecture", name: "Software Development", rating: 92, icon: "braces" },
-            
-            // Methodologies & Management
-            { category: "management", name: "Agile Development", rating: 85, icon: "users" },
-            { category: "management", name: "Project Management", rating: 80, icon: "kanban" },
-            { category: "management", name: "Inventory Management", rating: 88, icon: "package" },
-            { category: "management", name: "Website Design", rating: 90, icon: "palette" },
-            { category: "management", name: "Git & Version Control", rating: 90, icon: "git-commit" }
+            // Backend Core
+            { category: "backend", name: "C# & .NET 8/9/10", levelEn: "Expert", levelAr: "خبير معتمد", icon: "code-2", descEn: "OOP, LINQ, Async/Await, Memory & Generics", descAr: "البرمجة كائنية التوجه والاستعلامات" },
+            { category: "backend", name: "ASP.NET Core Web API", levelEn: "Expert", levelAr: "خبير ممتاز", icon: "globe", descEn: "RESTful Architecture, Middleware, JWT Security", descAr: "معمارية RESTful وتأمين التوكن" },
+            { category: "backend", name: "ASP.NET Core MVC", levelEn: "Expert", levelAr: "خبير متمكن", icon: "layout", descEn: "Razor Engine, Custom Helpers, Multi-Area Apps", descAr: "محرك Razor وتقسيمات المناطق" },
+            { category: "backend", name: "Clean Architecture & DDD", levelEn: "Advanced", levelAr: "متقدم جداً", icon: "git-fork", descEn: "4-Layer Isolation, SOLID Principles", descAr: "فصل الطبقات الأربعة ومبادئ SOLID" },
+            { category: "backend", name: "SignalR Communications", levelEn: "Advanced", levelAr: "متقدم", icon: "zap", descEn: "Live Location Tracking & Instant Support Chat", descAr: "الاتصال غير المتزامن والدردشة" },
+
+            // Databases
+            { category: "database", name: "MS SQL Server & T-SQL", levelEn: "Expert", levelAr: "خبير معتمد", icon: "database", descEn: "Stored Procedures, Triggers, Views & Functions", descAr: "إجراءات مخزنة واستعلامات هامة" },
+            { category: "database", name: "Entity Framework Core 9", levelEn: "Expert", levelAr: "خبير متمكن", icon: "server", descEn: "Code-First, Migrations, Fluent API Mapping", descAr: "إدارة البيانات والربط البرمجي" },
+            { category: "database", name: "Database Tuning & Indexing", levelEn: "Advanced", levelAr: "متقدم", icon: "cpu", descEn: "Custom Non-Clustered Indexes, 3NF Normalization", descAr: "فهارس الجداول وتسريع الاستجابة" },
+
+            // Frontend & Apps
+            { category: "frontend", name: "React 19 & TypeScript", levelEn: "Advanced", levelAr: "متقدم", icon: "atom", descEn: "Vite, Zustand State Management, Custom Hooks", descAr: "واجهات تفاعلية سريعة ومتقدمة" },
+            { category: "frontend", name: "Tailwind CSS 4 & Bootstrap 5", levelEn: "Expert", levelAr: "خبير ممتاز", icon: "palette", descEn: "Glassmorphism UI, Responsive Web Design", descAr: "تصميم عصري متجاوب لكافة الأجهزة" },
+            { category: "frontend", name: "Flutter & Riverpod (Dart)", levelEn: "Proficient", levelAr: "متخصص", icon: "smartphone", descEn: "Google Maps Integration, Cross-Platform UI", descAr: "تطبيقات الجوال والخرائط اللحظية" },
+
+            // Integrations
+            { category: "integrations", name: "Stripe Payment Gateway", levelEn: "Advanced", levelAr: "متقدم", icon: "credit-card", descEn: "Stripe SDK, Checkout & HMAC Webhooks", descAr: "بوابات الدفع الإلكتروني وتأمينها" },
+            { category: "integrations", name: "ASP.NET Identity & OTP", levelEn: "Expert", levelAr: "خبير", icon: "shield-check", descEn: "6-Digit Email OTP, OAuth 2.0 (Google/FB)", descAr: "تأكيد الحسابات والتحقق الآمن" },
+            { category: "integrations", name: "Git & Version Control", levelEn: "Expert", levelAr: "خبير", icon: "git-commit", descEn: "Branching Workflows, GitHub Actions CI/CD", descAr: "إدارة النسخ والنشر التلقائي" }
         ];
 
         // Layout View DOM references
@@ -1073,30 +1031,38 @@
             isDeleting = false;
         }
 
-        // Render 20 Technical Skills dynamically
+        // Render Technical Skills dynamically
         function renderSkills() {
             const container = document.getElementById('skills-grid');
             if (!container) return;
 
             const categories = {
-                languages: {
-                    title: currentLang === 'ar' ? "لغات البرمجة" : "Languages",
+                backend: {
+                    title: currentLang === 'ar' ? "هندسة الـ Backend والنظام" : "Backend & Enterprise Core",
                     icon: "code-2",
+                    color: "text-brand-teal",
+                    border: "border-brand-teal/20",
                     delay: "0.1s"
                 },
-                frameworks: {
-                    title: currentLang === 'ar' ? "الأطر والويب" : "Frameworks & Web",
-                    icon: "cpu",
+                database: {
+                    title: currentLang === 'ar' ? "قواعد البيانات والأداء" : "Databases & Performance",
+                    icon: "database",
+                    color: "text-brand-cyan",
+                    border: "border-brand-cyan/20",
                     delay: "0.2s"
                 },
-                architecture: {
-                    title: currentLang === 'ar' ? "قواعد البيانات والهندسة" : "Database & Architecture",
-                    icon: "server",
+                frontend: {
+                    title: currentLang === 'ar' ? "تطبيقات الويب والجوال" : "Frontend & Mobile Apps",
+                    icon: "layout",
+                    color: "text-brand-violet",
+                    border: "border-brand-violet/20",
                     delay: "0.3s"
                 },
-                management: {
-                    title: currentLang === 'ar' ? "منهجيات العمل والإدارة" : "Methodologies & Management",
-                    icon: "layers",
+                integrations: {
+                    title: currentLang === 'ar' ? "الأمان وبوابات الدفع" : "Security & Integrations",
+                    icon: "shield-check",
+                    color: "text-brand-purple",
+                    border: "border-brand-purple/20",
                     delay: "0.4s"
                 }
             };
@@ -1106,27 +1072,32 @@
                 const catSkills = skillsData.filter(s => s.category === key);
                 
                 let skillsHtml = catSkills.map(skill => {
+                    const level = currentLang === 'ar' ? skill.levelAr : skill.levelEn;
+                    const desc = currentLang === 'ar' ? skill.descAr : skill.descEn;
                     return `
-                        <div>
-                            <div class="flex justify-between text-sm mb-1.5">
-                                <span class="text-slate-300 font-medium">${skill.name}</span>
-                                <span class="text-brand-teal font-semibold">${skill.rating}%</span>
+                        <div class="p-3.5 bg-slate-900/60 rounded-xl border border-white/5 hover:border-brand-teal/30 transition duration-300 group/skill">
+                            <div class="flex items-center justify-between mb-1.5">
+                                <div class="flex items-center gap-2">
+                                    <i data-lucide="${skill.icon}" class="w-4 h-4 text-brand-teal group-hover/skill:scale-110 transition duration-300"></i>
+                                    <span class="text-slate-200 font-semibold text-sm">${skill.name}</span>
+                                </div>
+                                <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-brand-teal/10 text-brand-teal border border-brand-teal/20">${level}</span>
                             </div>
-                            <div class="w-full bg-slate-950 rounded-full h-1.5 overflow-hidden">
-                                <div class="bg-gradient-to-r from-brand-teal to-brand-cyan h-full rounded-full transition-all duration-1000" style="width: ${skill.rating}%"></div>
-                            </div>
+                            <p class="text-xs text-slate-400 font-mono">${desc}</p>
                         </div>
                     `;
                 }).join('');
 
                 html += `
-                    <div class="glass-card p-6 rounded-2xl border border-white/5 reveal-item" style="--delay: ${catInfo.delay};">
-                        <h4 class="text-lg font-bold mb-6 text-white flex items-center gap-2.5">
-                            <i data-lucide="${catInfo.icon}" class="text-brand-teal w-5 h-5"></i>
-                            ${catInfo.title}
-                        </h4>
-                        <div class="space-y-5">
-                            ${skillsHtml}
+                    <div class="glass-card p-6 rounded-2xl border ${catInfo.border} reveal-item flex flex-col justify-between" style="--delay: ${catInfo.delay};">
+                        <div>
+                            <h4 class="text-lg font-bold mb-5 text-white flex items-center gap-2.5">
+                                <i data-lucide="${catInfo.icon}" class="${catInfo.color} w-5 h-5"></i>
+                                ${catInfo.title}
+                            </h4>
+                            <div class="space-y-3">
+                                ${skillsHtml}
+                            </div>
                         </div>
                     </div>
                 `;
@@ -1135,19 +1106,36 @@
             container.innerHTML = html;
             lucide.createIcons();
             
-            // Setup intersection reveal observer
             const newRevealItems = container.querySelectorAll('.reveal-item');
             newRevealItems.forEach(item => {
                 observer.observe(item);
             });
         }
 
-        // Render Projects dynamically
+        // Project category filter state
+        let activeProjectFilter = 'all';
+
+        function filterProjects(category) {
+            activeProjectFilter = category;
+            
+            // Update button styles
+            document.querySelectorAll('.project-filter-btn').forEach(btn => {
+                btn.className = 'project-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 bg-slate-900/80 text-slate-400 hover:text-white border border-white/5';
+            });
+            const activeBtn = document.getElementById(`filter-${category}`);
+            if (activeBtn) {
+                activeBtn.className = 'project-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 bg-gradient-to-r from-brand-teal to-brand-cyan text-brand-deep shadow-lg';
+            }
+
+            renderProjects();
+        }
+
+        // Render Projects dynamically with cover images and quick actions
         function renderProjects() {
             const grid = document.getElementById('projects-grid');
             if (!grid) return;
 
-            const projectKeys = [
+            const allKeys = [
                 'ElMogyFresh', 
                 'SmartTrafficManagement', 
                 'CurexMind',
@@ -1156,76 +1144,71 @@
                 'LibraryManagement',
                 'DriverLicenseManagement'
             ];
-            const colors = {
-                ElMogyFresh: 'brand-teal',
-                SmartTrafficManagement: 'brand-cyan',
-                CurexMind: 'brand-violet',
-                TechStore: 'brand-purple',
-                WarehouseSystem: 'brand-teal',
-                LibraryManagement: 'brand-cyan',
-                DriverLicenseManagement: 'brand-purple'
-            };
-            const icons = {
-                ElMogyFresh: 'shopping-bag',
-                SmartTrafficManagement: 'navigation',
-                CurexMind: 'activity',
-                TechStore: 'shopping-cart',
-                WarehouseSystem: 'package',
-                LibraryManagement: 'book-open',
-                DriverLicenseManagement: 'file-text'
-            };
 
-            const borderGlows = {
-                'brand-teal': 'bg-brand-teal',
-                'brand-cyan': 'bg-brand-cyan',
-                'brand-purple': 'bg-brand-purple',
-                'brand-violet': 'bg-brand-violet'
-            };
-            const iconBgs = {
-                'brand-teal': 'bg-brand-teal/10 text-brand-teal group-hover:bg-brand-teal/20',
-                'brand-cyan': 'bg-brand-cyan/10 text-brand-cyan group-hover:bg-brand-cyan/20',
-                'brand-purple': 'bg-brand-purple/10 text-brand-purple group-hover:bg-brand-purple/20',
-                'brand-violet': 'bg-brand-violet/10 text-brand-violet group-hover:bg-brand-violet/20'
-            };
-            const hoverColors = {
-                'brand-teal': 'group-hover:text-brand-teal',
-                'brand-cyan': 'group-hover:text-brand-cyan',
-                'brand-purple': 'group-hover:text-brand-purple',
-                'brand-violet': 'group-hover:text-brand-violet'
-            };
-            
+            const projectKeys = allKeys.filter(key => {
+                if (activeProjectFilter === 'all') return true;
+                return projectsData[key].category === activeProjectFilter;
+            });
+
             let html = '';
             let index = 0;
             for (const key of projectKeys) {
-                const project = projectsData[key][currentLang];
-                const color = colors[key];
-                const icon = icons[key];
-                const delay = 0.2 + (index * 0.1);
-                
-                const borderGlow = borderGlows[color] || 'bg-brand-teal';
-                const iconBg = iconBgs[color] || 'bg-brand-teal/10 text-brand-teal group-hover:bg-brand-teal/20';
-                const hoverColor = hoverColors[color] || 'group-hover:text-brand-teal';
+                const projectInfo = projectsData[key];
+                const project = projectInfo[currentLang];
+                const delay = 0.1 + (index * 0.08);
+
+                const hasDemo = !!projectInfo.demo;
+                const demoBadge = hasDemo 
+                    ? `<span class="bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Live Demo</span>`
+                    : `<span class="bg-brand-teal/10 text-brand-teal border border-brand-teal/20 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Enterprise System</span>`;
 
                 html += `
-                    <div id="${key}" class="glass-card p-8 rounded-2xl border border-white/5 flex flex-col h-full cursor-pointer relative overflow-hidden group reveal-item" style="--delay: ${delay}s;" onclick="showProjectDetails('${key}')">
-                        <div class="absolute top-0 left-0 w-2 h-full ${borderGlow} transform scale-y-0 group-hover:scale-y-100 transition duration-300"></div>
-                        
-                        <div class="flex justify-between items-start mb-6">
-                            <span class="p-3 ${iconBg} rounded-xl transition duration-300">
-                                <i data-lucide="${icon}" class="w-6 h-6"></i>
-                            </span>
-                            <i data-lucide="arrow-up-right" class="w-5 h-5 text-slate-500 group-hover:text-white transform group-hover:translate-x-1 group-hover:-translate-y-1 transition duration-300"></i>
+                    <div id="${key}" class="glass-card rounded-2xl border border-white/5 flex flex-col h-full overflow-hidden group reveal-item hover:border-brand-teal/40 transition duration-300" style="--delay: ${delay}s;">
+                        <!-- Project Cover Image -->
+                        <div class="h-48 w-full overflow-hidden relative bg-brand-deep cursor-pointer" onclick="showProjectDetails('${key}')">
+                            <img src="${projectInfo.image}" alt="${project.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#060b13] via-transparent to-black/30"></div>
+                            
+                            <div class="absolute top-3 left-3 right-3 flex justify-between items-center z-10">
+                                ${demoBadge}
+                                <button onclick="event.stopPropagation(); showProjectDetails('${key}')" class="p-2 bg-slate-900/80 hover:bg-brand-teal text-slate-300 hover:text-brand-deep rounded-xl transition duration-300">
+                                    <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                                </button>
+                            </div>
                         </div>
-                        
-                        <h4 class="text-xl font-bold text-white mb-3 ${hoverColor} transition duration-300">${project.title}</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
-                            ${project.description.length > 150 ? project.description.substring(0, 145) + '...' : project.description}
-                        </p>
-                        
-                        <div class="flex flex-wrap gap-2 mt-auto">
-                            ${project.technologies.slice(0, 3).map(tech => 
-                                `<span class="bg-slate-900 text-slate-300 border border-white/5 px-2.5 py-1 rounded-lg text-xs font-semibold">${tech}</span>`
-                            ).join('')}
+
+                        <!-- Card Body -->
+                        <div class="p-6 flex flex-col flex-grow cursor-pointer" onclick="showProjectDetails('${key}')">
+                            <h4 class="text-lg font-bold text-white mb-2.5 group-hover:text-brand-teal transition duration-300 leading-snug">${project.title}</h4>
+                            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6 flex-grow">
+                                ${project.description.length > 140 ? project.description.substring(0, 135) + '...' : project.description}
+                            </p>
+                            
+                            <!-- Tech Tags -->
+                            <div class="flex flex-wrap gap-1.5 mb-6">
+                                ${project.technologies.slice(0, 4).map(tech => 
+                                    `<span class="bg-slate-900/90 text-slate-300 border border-white/5 px-2.5 py-1 rounded-md text-[11px] font-semibold">${tech}</span>`
+                                ).join('')}
+                            </div>
+
+                            <!-- Card Action Footer -->
+                            <div class="pt-4 border-t border-white/5 flex items-center justify-between mt-auto" onclick="event.stopPropagation()">
+                                <button onclick="showProjectDetails('${key}')" class="text-xs font-bold text-brand-teal hover:underline flex items-center gap-1">
+                                    <span>${currentLang === 'ar' ? 'التفاصيل والمعمارية' : 'View Architecture'}</span>
+                                    <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                                </button>
+                                
+                                <div class="flex items-center gap-2">
+                                    <a href="${projectInfo.github}" target="_blank" title="GitHub Repo" class="p-2 bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white rounded-lg transition duration-200 border border-white/5">
+                                        <i data-lucide="github" class="w-4 h-4"></i>
+                                    </a>
+                                    ${hasDemo ? `
+                                    <a href="${projectInfo.demo}" target="_blank" title="Live Demo" class="p-2 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 rounded-lg transition duration-200 border border-emerald-500/20">
+                                        <i data-lucide="external-link" class="w-4 h-4"></i>
+                                    </a>
+                                    ` : ''}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 `;
