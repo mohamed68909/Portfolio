@@ -1,1608 +1,476 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohamed Ashraf | Backend Developer Portfolio</title>
-    
-    <!-- SEO Optimization -->
-    <meta name="description" content="Mohamed Ashraf - Dedicated .NET & Backend Developer. Specializing in ASP.NET Core Web API, SQL Server, Clean Architecture, and high-performance backend systems.">
-    <meta name="keywords" content="Mohamed Ashraf, Backend Developer, .NET Developer, C#, ASP.NET Core, Web API, SQL Server, Clean Architecture, Portfolio, Software Engineer">
-    <meta name="author" content="Mohamed Ashraf">
-    
-    <!-- Open Graph / Social Sharing -->
-    <meta property="og:title" content="Mohamed Ashraf | Backend Developer Portfolio">
-    <meta property="og:description" content="Explore my backend projects, .NET APIs, databases, and certifications. Built with performance and clean architecture in mind.">
-    <meta property="og:image" content="Image/Gemini_Generated_Image_jqha85jqha85jqha.png">
-    <meta property="og:type" content="website">
-    
-    <!-- Tailwind CSS CDN & Config -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            deep: '#060b13',
-                            card: '#0c1322',
-                            border: '#1e293b',
-                            teal: '#14b8a6',
-                            cyan: '#06b6d4',
-                            violet: '#8b5cf6',
-                            purple: '#a78bfa'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Outfit', 'Cairo', 'sans-serif'],
-                    },
-                    animation: {
-                        'pulse-slow': 'pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'blob': 'blob 20s infinite',
-                    },
-                    keyframes: {
-                        blob: {
-                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                            '66%': { transform: 'translate(-20px, 20px) scale(0.95)' },
-                            '100%': { transform: 'translate(0px, 0px) scale(1)' }
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <!-- Modern Premium Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Outfit:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <style>
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #060b13;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #1e293b;
-            border-radius: 9999px;
-            border: 2px solid #060b13;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #14b8a6;
-        }
-
-        body {
-            font-family: 'Outfit', 'Cairo', sans-serif;
-            background-color: #060b13;
-            color: #f1f5f9;
-            overflow-x: hidden;
-        }
-
-        /* Glassmorphism utility */
-        .glass-panel {
-            background: rgba(12, 19, 34, 0.75);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .glass-card {
-            background: rgba(15, 23, 42, 0.45);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .glass-card:hover {
-            background: rgba(15, 23, 42, 0.7);
-            border-color: rgba(20, 184, 166, 0.35);
-            box-shadow: 0 12px 30px -10px rgba(6, 182, 212, 0.15), 
-                        0 0 20px -5px rgba(20, 184, 166, 0.05);
-            transform: translateY(-4px);
-        }
-
-        /* Scroll reveal class animations */
-        .reveal-item {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
-                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-            transition-delay: var(--delay);
-        }
-
-        .reveal-item.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Glowing text effects */
-        .glow-text-teal {
-            text-shadow: 0 0 20px rgba(20, 184, 166, 0.35);
-        }
-        .glow-text-cyan {
-            text-shadow: 0 0 20px rgba(6, 182, 212, 0.35);
-        }
-
-        /* Custom Button Styles */
-        .btn-gradient {
-            background: linear-gradient(135deg, #14b8a6 0%, #06b6d4 100%);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 20px -2px rgba(6, 182, 212, 0.3);
-        }
-        .btn-gradient:hover {
-            box-shadow: 0 4px 25px 2px rgba(20, 184, 166, 0.45);
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            border: 1px solid rgba(20, 184, 166, 0.4);
-            color: #22d3ee;
-            transition: all 0.3s ease;
-        }
-        .btn-outline:hover {
-            background: rgba(20, 184, 166, 0.1);
-            border-color: #14b8a6;
-            color: #fff;
-            transform: translateY(-1px);
-        }
-
-        /* Active Navigation Link Indicator */
-        .nav-active {
-            color: #14b8a6 !important;
-            font-weight: 600;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohamed Ashraf Abdelkarim — Full Stack .NET Developer</title>
+  <meta name="description" content="Full Stack .NET Developer specializing in ASP.NET Core, React, TypeScript, and SQL Server. I build production-ready web platforms, scalable APIs, and premium digital products.">
+  <meta name="keywords" content="Mohamed Ashraf Abdelkarim, Full Stack Developer, .NET Developer, ASP.NET Core, React, TypeScript, SQL Server, Software Engineer">
+  <meta name="author" content="Mohamed Ashraf Abdelkarim">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Mohamed Ashraf Abdelkarim — Full Stack .NET Developer">
+  <meta property="og:description" content="Full Stack .NET Developer specializing in ASP.NET Core, React, TypeScript, and SQL Server. I build production-ready web platforms, scalable APIs, and premium digital products.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/og-image.jpg">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/animations.css">
 </head>
-<body class="bg-[#060b13] text-slate-100 min-h-screen relative font-sans overflow-x-hidden">
+<body>
 
-    <!-- Interactive Terminal Intro Screen -->
-    <div id="terminal-intro" class="fixed inset-0 z-[200] bg-[#030712] flex items-center justify-center font-mono p-4 transition-transform duration-700 ease-in-out">
-        <div class="max-w-2xl w-full bg-[#070d19]/95 border border-white/10 rounded-2xl shadow-2xl p-6 relative overflow-hidden glass-panel">
-            <!-- Header buttons bar -->
-            <div class="flex items-center gap-1.5 mb-6 border-b border-white/5 pb-4">
-                <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
-                <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
-                <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
-                <span class="text-xs text-slate-500 ml-3" data-i18n="terminalTitle">guest@ashraf-api:~</span>
-            </div>
-            <!-- Logs output -->
-            <div id="terminal-logs" class="space-y-2 text-[11px] sm:text-xs text-slate-300 min-h-[160px] max-h-[250px] overflow-y-auto">
-                <!-- Typed automatically -->
-            </div>
-            <!-- Input line -->
-            <div id="terminal-input-line" class="hidden items-center gap-2 text-xs sm:text-sm text-slate-300 mt-4 border-t border-white/5 pt-4">
-                <span class="text-brand-teal font-bold">guest@ashraf:~$</span>
-                <input type="text" id="terminal-input" class="bg-transparent border-none outline-none text-brand-cyan caret-brand-teal flex-grow" autofocus data-i18n-placeholder="terminalInputPlaceholder" placeholder="type 'run' or 'enter'...">
-                <button onclick="bootPortfolio()" class="btn-gradient px-4 py-1.5 rounded-lg text-xs font-semibold text-white" data-i18n="terminalBtn">Enter</button>
-            </div>
+  <!-- 1. LOADING SCREEN -->
+  <div id="loading-screen" class="loading-screen">
+    <div class="loading-logo">MA</div>
+    <div class="loading-bar-track">
+      <div class="loading-bar-fill"></div>
+    </div>
+  </div>
+
+  <!-- 2. SCROLL PROGRESS -->
+  <div class="scroll-progress-wrap">
+    <div id="scroll-progress-bar" class="scroll-progress-bar"></div>
+  </div>
+
+  <!-- 3. NAVIGATION -->
+  <nav id="navbar" class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner container">
+      <a href="#hero" class="nav-logo">
+        <span class="nav-logo-accent">Mohamed</span> Ashraf
+      </a>
+      
+      <div class="nav-links">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#tech-stack" class="nav-link">Skills</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+      
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" style="display:none" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="#contact" class="btn btn-primary btn-sm nav-cta">Get In Touch</a>
+        <button id="mobile-menu-btn" class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+          <svg class="hamburger-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+          <svg class="close-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu">
+      <a href="#about" class="mobile-menu-link" onclick="toggleMobileMenu()">About</a>
+      <a href="#services" class="mobile-menu-link" onclick="toggleMobileMenu()">Services</a>
+      <a href="#projects" class="mobile-menu-link" onclick="toggleMobileMenu()">Projects</a>
+      <a href="#tech-stack" class="mobile-menu-link" onclick="toggleMobileMenu()">Skills</a>
+      <a href="#contact" class="mobile-menu-link" onclick="toggleMobileMenu()">Contact</a>
+      <button id="theme-toggle-mobile" class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" style="display:none" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- 4. MAIN CONTENT -->
+  <main id="main-content">
+    
+    <!-- 4a. HERO SECTION -->
+    <section id="hero" class="hero section">
+      <div class="container hero-content">
+        <div class="hero-badge reveal" style="--reveal-delay: 0s">
+          <span class="hero-badge-dot"></span>
+          Available for freelance projects
         </div>
+        <h1 class="hero-title reveal" style="--reveal-delay: 0.1s">
+          I Build <span class="accent gradient-text">Production-Ready</span><br>
+          Web Platforms That Scale
+        </h1>
+        <p class="hero-subtitle reveal" style="--reveal-delay: 0.2s">
+          Full Stack .NET Developer — Turning complex business requirements into 
+          <span id="typewriter"></span><span class="typewriter-cursor"></span>
+        </p>
+        <div class="hero-actions reveal" style="--reveal-delay: 0.3s">
+          <a href="#projects" class="btn btn-primary btn-lg">View My Work</a>
+          <a href="#contact" class="btn btn-secondary btn-lg">Get In Touch</a>
+        </div>
+      </div>
+      <div class="hero-bg" aria-hidden="true">
+        <div class="hero-blob hero-blob-1"></div>
+        <div class="hero-blob hero-blob-2"></div>
+      </div>
+    </section>
+
+    <!-- 4b. TRUST BAR -->
+    <div class="trust-bar">
+      <div class="container">
+        <div class="trust-bar-grid">
+          <div class="trust-stat reveal" style="--reveal-delay: 0s">
+            <div class="trust-stat-value">4+</div>
+            <div class="trust-stat-label">Production Projects</div>
+          </div>
+          <div class="trust-stat reveal" style="--reveal-delay: 0.1s">
+            <div class="trust-stat-value">18+</div>
+            <div class="trust-stat-label">Certifications</div>
+          </div>
+          <div class="trust-stat reveal" style="--reveal-delay: 0.2s">
+            <div class="trust-stat-value">Full Stack</div>
+            <div class="trust-stat-label">Frontend & Backend</div>
+          </div>
+          <div class="trust-stat reveal" style="--reveal-delay: 0.3s">
+            <div class="trust-stat-value">Clean</div>
+            <div class="trust-stat-label">Architecture & Code</div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- Glowing Background Mesh Blobs -->
-    <div class="absolute inset-0 overflow-hidden pointer-events-none z-[-10]">
-        <div class="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] rounded-full bg-brand-teal/10 blur-[120px] animate-blob"></div>
-        <div class="absolute top-[30%] right-[-10%] w-[45vw] h-[45vw] max-w-[500px] max-h-[500px] rounded-full bg-brand-purple/5 blur-[100px] animate-blob [animation-delay:4s]"></div>
-        <div class="absolute bottom-[10%] left-[10%] w-[40vw] h-[40vw] max-w-[450px] max-h-[450px] rounded-full bg-brand-cyan/10 blur-[110px] animate-blob [animation-delay:8s]"></div>
-    </div>
+    <!-- 4c. ABOUT SECTION -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="about-grid">
+          <div class="reveal" style="--reveal-delay: 0s">
+            <div class="about-avatar">MA</div>
+          </div>
+          <div class="about-content">
+            <span class="section-label badge badge-primary reveal" style="--reveal-delay: 0.1s">About Me</span>
+            <h2 class="text-h1 reveal" style="--reveal-delay: 0.15s">Building scalable systems<br>that solve real problems</h2>
+            <p class="about-text reveal" style="--reveal-delay: 0.2s">
+              I'm Mohamed Ashraf, a Full Stack .NET Developer who builds production-ready web platforms from database design to deployment. I specialize in ASP.NET Core, React, and SQL Server — creating clean, maintainable, and high-performance applications.
+            </p>
+            <p class="about-text reveal" style="--reveal-delay: 0.25s">
+              I've built complete systems including smart city platforms, e-commerce solutions, clinic management systems, and enterprise dashboards — all following Clean Architecture principles and modern engineering best practices.
+            </p>
+            <div class="about-highlights reveal" style="--reveal-delay: 0.3s">
+              <div class="about-highlight-card">
+                <div class="about-highlight-icon">🏗️</div>
+                <div class="about-highlight-title">Clean Architecture</div>
+              </div>
+              <div class="about-highlight-card">
+                <div class="about-highlight-icon">⚡</div>
+                <div class="about-highlight-title">High Performance</div>
+              </div>
+              <div class="about-highlight-card">
+                <div class="about-highlight-icon">🔒</div>
+                <div class="about-highlight-title">Security First</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <!-- Header/Navigation -->
-    <nav class="sticky top-0 z-50 glass-panel border-b border-white/5 py-4 transition-all duration-300">
-        <div class="container mx-auto px-6 flex justify-between items-center">
-            <a href="#hero" class="text-2xl font-extrabold tracking-tight text-white flex items-center gap-2">
-                <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-teal to-brand-cyan">Mohamed</span>
-                <span class="text-slate-400 font-light">Ashraf</span>
+    <!-- 4d. SERVICES SECTION -->
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label badge badge-primary reveal">Services</span>
+          <h2 class="section-title reveal" style="--reveal-delay: 0.1s">What I Can Build For You</h2>
+          <p class="section-desc reveal" style="--reveal-delay: 0.15s">
+            End-to-end software solutions from architecture design to deployment.
+          </p>
+        </div>
+        <div id="services-grid" class="services-grid">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 4e. PROJECTS SECTION -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label badge badge-primary reveal">Projects</span>
+          <h2 class="section-title reveal" style="--reveal-delay: 0.1s">Featured Case Studies</h2>
+          <p class="section-desc reveal" style="--reveal-delay: 0.15s">
+            Each project represents a complete engineering challenge — from architecture to deployment.
+          </p>
+        </div>
+        <div class="project-filters reveal" style="--reveal-delay: 0.2s">
+          <button class="project-filter-btn active" data-filter="all" onclick="filterProjects('all')">All Projects</button>
+          <button class="project-filter-btn" data-filter="fullstack" onclick="filterProjects('fullstack')">Full-Stack</button>
+          <button class="project-filter-btn" data-filter="api" onclick="filterProjects('api')">APIs & Backend</button>
+        </div>
+        <div id="projects-grid" class="projects-grid">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 4f. TECH STACK SECTION -->
+    <section id="tech-stack" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label badge badge-primary reveal">Technical Skills</span>
+          <h2 class="section-title reveal" style="--reveal-delay: 0.1s">Technology Stack</h2>
+          <p class="section-desc reveal" style="--reveal-delay: 0.15s">
+            The technologies I use to build production-ready applications.
+          </p>
+        </div>
+        <div id="tech-grid" class="tech-grid">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 4g. FAQ SECTION -->
+    <section id="faq" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label badge badge-primary reveal">FAQ</span>
+          <h2 class="section-title reveal" style="--reveal-delay: 0.1s">Frequently Asked Questions</h2>
+          <p class="section-desc reveal" style="--reveal-delay: 0.15s">
+            Common questions from potential clients and collaborators.
+          </p>
+        </div>
+        <div id="faq-list" class="faq-list">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 4h. CONTACT SECTION -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <span class="section-label badge badge-primary reveal">Contact</span>
+            <h2 class="text-h1 reveal" style="--reveal-delay: 0.1s">Let's Work Together</h2>
+            <p class="contact-text reveal" style="--reveal-delay: 0.15s">
+              I'm available for freelance projects, full-time opportunities, and technical consulting. Let's discuss how I can help bring your vision to life.
+            </p>
+            <div class="contact-methods reveal" style="--reveal-delay: 0.2s">
+              <a href="mailto:mohamedashrafabdulkareem@gmail.com" class="contact-method">
+                <div class="contact-method-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                </div>
+                <div>
+                  <div class="contact-method-label">Email</div>
+                  <div class="contact-method-value">mohamedashrafabdulkareem@gmail.com</div>
+                </div>
+              </a>
+              <a href="https://wa.me/201050500189" target="_blank" rel="noopener" class="contact-method">
+                <div class="contact-method-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                <div>
+                  <div class="contact-method-label">WhatsApp</div>
+                  <div class="contact-method-value">+20 105 050 0189</div>
+                </div>
+              </a>
+              <a href="https://github.com/mohamed68909" target="_blank" rel="noopener" class="contact-method">
+                <div class="contact-method-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                </div>
+                <div>
+                  <div class="contact-method-label">GitHub</div>
+                  <div class="contact-method-value">github.com/mohamed68909</div>
+                </div>
+              </a>
+              <a href="https://www.linkedin.com/in/mohamed-ashraf-ab5803268" target="_blank" rel="noopener" class="contact-method">
+                <div class="contact-method-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                </div>
+                <div>
+                  <div class="contact-method-label">LinkedIn</div>
+                  <div class="contact-method-value">mohamed-ashraf</div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="reveal" style="--reveal-delay: 0.25s">
+            <div class="card">
+              <h3 class="text-h3" style="margin-bottom: var(--space-6)">Send a Message</h3>
+              <form id="contact-form">
+                <div class="form-group">
+                  <label class="form-label" for="name">Your Name</label>
+                  <input type="text" id="name" name="name" class="form-input" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="email">Your Email</label>
+                  <input type="email" id="email" name="email" class="form-input" placeholder="john@example.com" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="message">Message</label>
+                  <textarea id="message" name="message" class="form-textarea" placeholder="Tell me about your project..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%">Send Message</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 5. CASE STUDY VIEW -->
+  <div id="case-study-view" class="hidden">
+    <div class="container case-study">
+      <button class="btn btn-ghost case-study-back" onclick="hideCaseStudy()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Back to Projects
+      </button>
+      
+      <div class="case-study-hero">
+        <span class="section-label badge badge-primary">Case Study</span>
+        <h1 id="cs-title" class="case-study-title"></h1>
+        <p id="cs-subtitle" class="case-study-subtitle"></p>
+      </div>
+      
+      <div class="case-study-meta">
+        <div class="case-study-meta-item">
+          <label>Role</label>
+          <span id="cs-role"></span>
+        </div>
+        <div class="case-study-meta-item">
+          <label>Duration</label>
+          <span id="cs-duration"></span>
+        </div>
+        <div class="case-study-meta-item">
+          <label>Team</label>
+          <span id="cs-team"></span>
+        </div>
+        <div class="case-study-meta-item">
+          <label>Category</label>
+          <span id="cs-category"></span>
+        </div>
+      </div>
+      
+      <div class="case-study-image">
+        <img id="cs-image" src="" alt="" loading="lazy">
+      </div>
+      
+      <div class="case-study-section">
+        <h2 class="case-study-section-title">Overview</h2>
+        <p id="cs-description" class="text-body-lg" style="color: var(--text-secondary); line-height: 1.8"></p>
+      </div>
+      
+      <div class="case-study-section">
+        <h2 class="case-study-section-title">The Challenge</h2>
+        <p id="cs-challenge" class="text-body-lg" style="color: var(--text-secondary); line-height: 1.8"></p>
+      </div>
+      
+      <div class="case-study-section">
+        <h2 class="case-study-section-title">The Solution</h2>
+        <p id="cs-solution" class="text-body-lg" style="color: var(--text-secondary); line-height: 1.8"></p>
+      </div>
+      
+      <div class="case-study-section">
+        <h2 class="case-study-section-title">Key Features</h2>
+        <div id="cs-features" class="case-study-features-grid"></div>
+      </div>
+      
+      <div class="case-study-section">
+        <h2 class="case-study-section-title">Architecture</h2>
+        <p id="cs-architecture" class="text-body" style="color: var(--text-secondary); line-height: 1.8"></p>
+      </div>
+      
+      <div class="case-study-section">
+        <h2 class="case-study-section-title">Database Design</h2>
+        <p id="cs-database" class="text-body" style="color: var(--text-secondary); line-height: 1.8"></p>
+      </div>
+      
+      <div class="case-study-section">
+        <h2 class="case-study-section-title">Technology Stack</h2>
+        <div id="cs-technologies" class="case-study-tech-grid"></div>
+      </div>
+      
+      <div class="case-study-section">
+        <h2 class="case-study-section-title">Project Links</h2>
+        <div style="display: flex; gap: var(--space-4); flex-wrap: wrap">
+          <a id="cs-github-link" href="#" target="_blank" rel="noopener" class="btn btn-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+            GitHub Repository
+          </a>
+          <div id="cs-demo-container">
+            <a id="cs-demo-link" href="#" target="_blank" rel="noopener" class="btn btn-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Live Demo
             </a>
-            
-            <!-- Desktop Navigation Links -->
-            <div class="hidden md:flex items-center gap-2">
-                <div class="space-x-1 flex items-center mr-4">
-                    <a href="#about" data-i18n="navAbout" class="px-4 py-2 text-slate-300 hover:text-white transition duration-200 nav-link text-sm font-medium">About</a>
-                    <a href="#certifications" data-i18n="navCertificates" class="px-4 py-2 text-slate-300 hover:text-white transition duration-200 nav-link text-sm font-medium">Certificates</a>
-                    <a href="#skills" data-i18n="navSkills" class="px-4 py-2 text-slate-300 hover:text-white transition duration-200 nav-link text-sm font-medium">Skills</a>
-                    <a href="#projects" data-i18n="navProjects" class="px-4 py-2 text-slate-300 hover:text-white transition duration-200 nav-link text-sm font-medium">Projects</a>
-                    <a href="#contact" data-i18n="navContact" class="px-4 py-2 text-slate-300 hover:text-white transition duration-200 nav-link text-sm font-medium">Contact</a>
-                </div>
-                <!-- Language Toggle -->
-                <button onclick="toggleLanguage()" class="px-3 py-1.5 rounded-lg border border-white/10 hover:border-brand-teal/50 hover:bg-white/5 text-xs font-bold text-brand-teal transition duration-300 flex items-center gap-1.5 focus:outline-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-languages"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>
-                    <span id="lang-btn-text">AR</span>
-                </button>
-            </div>
-
-            <!-- Mobile Menu Toggle -->
-            <div class="flex items-center gap-3 md:hidden">
-                <!-- Language Toggle Mobile -->
-                <button onclick="toggleLanguage()" class="px-2.5 py-1.5 rounded-lg border border-white/10 hover:border-brand-teal/50 hover:bg-white/5 text-xs font-bold text-brand-teal flex items-center gap-1 focus:outline-none transition">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-languages"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>
-                    <span id="lang-btn-text-mobile">AR</span>
-                </button>
-                <button id="mobile-menu-btn" class="text-slate-300 hover:text-white focus:outline-none p-1 rounded-lg hover:bg-white/5 transition">
-                    <svg id="menu-icon-hamburger" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-                    <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x hidden"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-                </button>
-            </div>
+          </div>
         </div>
-
-        <!-- Mobile Navigation Menu -->
-        <div id="mobile-menu" class="hidden md:hidden glass-panel border-t border-white/5 absolute top-full left-0 w-full shadow-2xl py-4 px-6 flex flex-col space-y-3">
-            <a href="#about" data-i18n="navAbout" class="py-2 text-slate-300 hover:text-white transition nav-link text-base font-medium" onclick="toggleMobileMenu()">About</a>
-            <a href="#certifications" data-i18n="navCertificates" class="py-2 text-slate-300 hover:text-white transition nav-link text-base font-medium" onclick="toggleMobileMenu()">Certificates</a>
-            <a href="#skills" data-i18n="navSkills" class="py-2 text-slate-300 hover:text-white transition nav-link text-base font-medium" onclick="toggleMobileMenu()">Skills</a>
-            <a href="#projects" data-i18n="navProjects" class="py-2 text-slate-300 hover:text-white transition nav-link text-base font-medium" onclick="toggleMobileMenu()">Projects</a>
-            <a href="#contact" data-i18n="navContact" class="py-2 text-slate-300 hover:text-white transition nav-link text-base font-medium" onclick="toggleMobileMenu()">Contact</a>
-        </div>
-    </nav>
-
-    <main class="container mx-auto px-4 py-8 max-w-7xl">
-
-        
-        <div id="main-portfolio-view">
-
-        
-            <!-- Hero Section -->
-            <section id="hero" class="min-h-[90vh] flex items-center justify-center pt-20 pb-16">
-                <div class="text-center max-w-4xl px-4">
-                    <!-- Glowing Avatar Container -->
-                    <div class="relative w-40 h-40 mx-auto mb-8 reveal-item" style="--delay: 0s;">
-                        <div class="absolute inset-[-4px] rounded-full bg-gradient-to-r from-brand-teal via-brand-purple to-brand-cyan opacity-75 blur-md animate-pulse"></div>
-                        <div class="absolute inset-0 rounded-full bg-[#0c1322] border border-white/10 z-10 overflow-hidden">
-                            <img src="Image/Gemini_Generated_Image_jqha85jqha85jqha.png" 
-                                 alt="Mohamed Ashraf Profile"
-                                 class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
-                        </div>
-                    </div>
-                    
-                    <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 reveal-item" style="--delay: 0.15s;">
-                        <span class="block text-slate-400 text-sm sm:text-base font-semibold uppercase tracking-wider mb-3" data-i18n="heroGreeting">Hello, I'm</span>
-                        <span class="bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-100 to-slate-300">Mohamed Ashraf</span>
-                    </h1>
-
-                    <h2 class="text-2xl sm:text-3xl font-bold mb-6 reveal-item flex flex-wrap justify-center items-center gap-2 h-10" style="--delay: 0.25s;">
-                        <span class="text-slate-400" data-i18n="heroRole">Backend Developer focused on</span>
-                        <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-teal to-brand-cyan font-bold tracking-tight glow-text-teal" id="typewriter-text">.NET Core</span>
-                    </h2>
-                    
-                    <p class="text-base sm:text-lg text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed reveal-item" style="--delay: 0.35s;" data-i18n="heroDesc">
-                        I design and build high-performance APIs, robust database architectures, and clean, maintainable codebases to solve complex backend problems.
-                    </p>
-                    
-                    <div class="flex flex-col sm:flex-row justify-center items-center gap-4 reveal-item" style="--delay: 0.45s;">
-                        <a href="#projects" class="btn-gradient w-full sm:w-auto px-8 py-3.5 rounded-xl text-white font-semibold flex items-center justify-center gap-2 text-sm">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-terminal"><polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/></svg>
-                            <span data-i18n="heroBtnProjects">Explore Projects</span>
-                        </a>
-                        <a href="#contact" class="btn-outline w-full sm:w-auto px-8 py-3.5 rounded-xl font-semibold flex items-center justify-center gap-2 text-sm">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                            <span data-i18n="heroBtnContact">Get In Touch</span>
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- About Section -->
-            <section id="about" class="py-24 border-t border-slate-900">
-                <div class="max-w-6xl mx-auto">
-                    <span class="text-brand-teal text-xs font-bold tracking-widest uppercase block mb-2 reveal-item" style="--delay: 0s;" data-i18n="aboutSub">Introduction</span>
-                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white mb-10 reveal-item" style="--delay: 0.05s;" data-i18n="aboutTitle">
-                        About Me
-                    </h3>
-                    
-                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
-                        <!-- Left Column: Biography -->
-                        <div class="lg:col-span-2 space-y-6 reveal-item" style="--delay: 0.15s;">
-                            <div class="glass-card p-8 rounded-2xl border border-white/5 space-y-4">
-                                <p id="about-bio-1" class="text-slate-300 leading-relaxed text-base sm:text-lg" data-i18n="aboutBio1">
-                                    I'm Mohamed Ashraf, a passionate software developer specializing in .NET and modern backend technologies. I thrive on building clean, efficient, and highly scalable systems that solve real-world problems.
-                                </p>
-                                <p id="about-bio-2" class="text-slate-300 leading-relaxed text-base sm:text-lg" data-i18n="aboutBio2">
-                                    Over the course of my engineering journey, I've developed deep technical proficiency in backend design using ASP.NET Core, C#, Entity Framework Core, and SQL Server database optimization.
-                                </p>
-                                <p id="about-bio-3" class="text-slate-300 leading-relaxed text-base sm:text-lg" data-i18n="aboutBio3">
-                                    I also possess valuable experience mentoring fellow developers, distilling complex programming architectures into clear, actionable knowledge. I love turning architectural plans into practical, secure, and production-ready applications.
-                                </p>
-                            </div>
-                        </div>
-                        
-                        <!-- Right Column: Stats Highlights -->
-                        <div class="space-y-6 reveal-item" style="--delay: 0.25s;">
-                            <div class="glass-card p-8 rounded-2xl border border-white/5 h-full flex flex-col justify-between space-y-6">
-                                <h4 class="text-lg font-bold text-white mb-2 pb-2 border-b border-white/5" data-i18n="aboutHighlightTitle">Focus & Highlights</h4>
-                                <div class="grid grid-cols-2 gap-4">
-                                    <div class="bg-brand-deep/60 p-4 rounded-xl border border-white/5 text-center">
-                                        <div class="text-brand-teal font-black text-2xl mb-1">18+</div>
-                                        <div class="text-xs text-slate-400" data-i18n="aboutStatCert">Certificates Earned</div>
-                                    </div>
-                                    <div class="bg-brand-deep/60 p-4 rounded-xl border border-white/5 text-center">
-                                        <div class="text-brand-cyan font-black text-2xl mb-1">3+</div>
-                                        <div class="text-xs text-slate-400" data-i18n="aboutStatProj">Core APIs & Apps</div>
-                                    </div>
-                                </div>
-                                <ul class="space-y-3 text-sm text-slate-300 mt-4">
-                                    <li class="flex items-center gap-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#14b8a6" stroke-width="2" class="flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
-                                        <span data-i18n="aboutSkillCleanCode">Clean Code & SOLID Design</span>
-                                    </li>
-                                    <li class="flex items-center gap-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#14b8a6" stroke-width="2" class="flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
-                                        <span data-i18n="aboutSkillRestApis">RESTful Web APIs & JWT</span>
-                                    </li>
-                                    <li class="flex items-center gap-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#14b8a6" stroke-width="2" class="flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
-                                        <span data-i18n="aboutSkillDbTuning">Database Tuning & T-SQL</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Certifications Section -->
-            <section id="certifications" class="py-24 border-t border-slate-900">
-                <div class="max-w-6xl mx-auto">
-                    <span class="text-brand-teal text-xs font-bold tracking-widest uppercase block mb-2 reveal-item" style="--delay: 0s;" data-i18n="certSub">Credentials</span>
-                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white mb-10 reveal-item" style="--delay: 0.05s;" data-i18n="certTitle">
-                        Education & Certificates
-                    </h3>
-                    
-                    <!-- Major Highlights Grid -->
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <!-- Microsoft Card -->
-                        <div class="glass-card p-8 rounded-2xl border border-white/5 relative group cursor-pointer reveal-item flex flex-col justify-between" style="--delay: 0.1s;" onclick="showCertificateDetails('microsoft')">
-                            <div>
-                                <div class="flex justify-between items-start mb-6">
-                                    <span class="p-3 bg-brand-teal/10 rounded-xl text-brand-teal group-hover:bg-brand-teal/20 transition duration-300">
-                                        <i data-lucide="award" class="w-6 h-6"></i>
-                                    </span>
-                                </div>
-                                <h4 class="text-xl font-bold text-white mb-3" data-i18n="certMicrosoftTitle">Microsoft Certified</h4>
-                                <p class="text-slate-400 text-sm leading-relaxed mb-6" data-i18n="certMicrosoftDesc">
-                                    C# programming certification, verifying core competencies in OOP logic, syntax, data structures, and .NET runtime execution.
-                                </p>
-                            </div>
-                            <div class="text-brand-teal text-xs font-semibold flex items-center gap-1 group-hover:underline mt-auto">
-                                <span data-i18n="certMicrosoftAction">View Credentials</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                            </div>
-                        </div>
-
-                        <!-- Programming Advice Card -->
-                        <div class="glass-card p-8 rounded-2xl border border-white/5 relative group cursor-pointer reveal-item flex flex-col justify-between" style="--delay: 0.2s;" onclick="showCertificateDetails('abuhadhood')">
-                            <div>
-                                <div class="flex justify-between items-start mb-6">
-                                    <span class="p-3 bg-brand-cyan/10 rounded-xl text-brand-cyan group-hover:bg-brand-cyan/20 transition duration-300">
-                                        <i data-lucide="graduation-cap" class="w-6 h-6"></i>
-                                    </span>
-                                </div>
-                                <h4 class="text-xl font-bold text-white mb-3" data-i18n="certAbuhadhoodTitle">Backend .NET Track</h4>
-                                <p class="text-slate-400 text-sm leading-relaxed mb-6" data-i18n="certAbuhadhoodDesc">
-                                    16 specialized courses from Programming Advice Academy, covering low-level C++, algorithms, UI (WinForms), SQL, and REST APIs.
-                                </p>
-                            </div>
-                            <div class="text-brand-cyan text-xs font-semibold flex items-center gap-1 group-hover:underline mt-auto">
-                                <span data-i18n="certAbuhadhoodAction">View 16 Course Certificates</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                            </div>
-                        </div>
-
-                        <!-- ITI Card -->
-                        <div class="glass-card p-8 rounded-2xl border border-white/5 relative group cursor-pointer reveal-item flex flex-col justify-between" style="--delay: 0.3s;" onclick="showCertificateDetails('iti')">
-                            <div>
-                                <div class="flex justify-between items-start mb-6">
-                                    <span class="p-3 bg-brand-purple/10 rounded-xl text-brand-purple group-hover:bg-brand-purple/20 transition duration-300">
-                                        <i data-lucide="school" class="w-6 h-6"></i>
-                                    </span>
-                                </div>
-                                <h4 class="text-xl font-bold text-white mb-3" data-i18n="certItiTitle">ITI .NET Web Development</h4>
-                                <p class="text-slate-400 text-sm leading-relaxed mb-6" data-i18n="certItiDesc">
-                                    Intensive professional training focusing on ASP.NET Core, MVC architectures, database schemas, and enterprise software engineering.
-                                </p>
-                            </div>
-                            <div class="text-brand-purple text-xs font-semibold flex items-center gap-1 group-hover:underline mt-auto">
-                                <span data-i18n="certItiAction">View ITI Certificates</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- Skills Section -->
-            <section id="skills" class="py-24 border-t border-slate-900">
-                <div class="max-w-6xl mx-auto">
-                    <span class="text-brand-teal text-xs font-bold tracking-widest uppercase block mb-2 reveal-item" style="--delay: 0s;" data-i18n="skillsSub">Capabilities</span>
-                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white mb-12 reveal-item" style="--delay: 0.05s;" data-i18n="skillsTitle">
-                        Technical Skills
-                    </h3>
-                    
-                    <div id="skills-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        <!-- Rendered dynamically via JS -->
-                    </div>
-                </div>
-            </section>
-
-            <!-- Projects Section -->
-            <section id="projects" class="py-24 border-t border-slate-900">
-                <div class="max-w-6xl mx-auto">
-                    <span class="text-brand-teal text-xs font-bold tracking-widest uppercase block mb-2 reveal-item" style="--delay: 0s;" data-i18n="projectsSub">Showcase</span>
-                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white mb-3 reveal-item" style="--delay: 0.05s;" data-i18n="projectsTitle">
-                        Featured Projects
-                    </h3>
-                    <p class="text-slate-400 mb-8 text-sm sm:text-base reveal-item animate-pulse-slow" style="--delay: 0.1s;" id="projects-info-desc">
-                        <i data-lucide="info" class="w-4 h-4 inline-block mr-1 align-text-bottom text-brand-teal"></i>
-                        <span data-i18n="projectsInfo">Click on any project card or image to view comprehensive technical architecture, live demos, and GitHub repositories.</span>
-                    </p>
-                    
-                    <!-- Category Filter Tabs -->
-                    <div class="flex flex-wrap gap-2.5 mb-10 reveal-item" style="--delay: 0.15s;">
-                        <button onclick="filterProjects('all')" id="filter-all" class="project-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 bg-gradient-to-r from-brand-teal to-brand-cyan text-brand-deep shadow-lg">
-                            <span data-i18n="filterAll">All Projects</span> (7)
-                        </button>
-                        <button onclick="filterProjects('web')" id="filter-web" class="project-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 bg-slate-900/80 text-slate-400 hover:text-white border border-white/5">
-                            <span data-i18n="filterWeb">Full-Stack & Web</span>
-                        </button>
-                        <button onclick="filterProjects('api')" id="filter-api" class="project-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 bg-slate-900/80 text-slate-400 hover:text-white border border-white/5">
-                            <span data-i18n="filterApi">APIs & Backend</span>
-                        </button>
-                        <button onclick="filterProjects('mobile')" id="filter-mobile" class="project-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 bg-slate-900/80 text-slate-400 hover:text-white border border-white/5">
-                            <span data-i18n="filterMobile">Mobile & Desktop</span>
-                        </button>
-                    </div>
-
-                    <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <!-- Rendered dynamically via JS -->
-                    </div>
-                </div>
-            </section>
-
-          
-            <!-- Contact Section -->
-            <section id="contact" class="py-24 border-t border-slate-900">
-                <div class="max-w-6xl mx-auto">
-                    <span class="text-brand-teal text-xs font-bold tracking-widest uppercase block mb-2 reveal-item" style="--delay: 0s;" data-i18n="contactSub">Get In Touch</span>
-                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white mb-12 reveal-item" style="--delay: 0.05s;" data-i18n="contactTitle">
-                        Let's Work Together
-                    </h3>
-                    
-                    <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 items-start">
-                        <!-- Direct Contact Methods (Left Column, 3/5 width on LG) -->
-                        <div class="lg:col-span-3 space-y-6">
-                            <p class="text-slate-300 text-base sm:text-lg mb-8 leading-relaxed reveal-item" style="--delay: 0.1s;" data-i18n="contactDesc">
-                                I'm always open to discussing backend architectures, full-stack .NET web integration, mentoring opportunities, or joining innovative dev teams. Click email or phone to instantly copy details!
-                            </p>
-                            
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <!-- Email Card -->
-                                <div onclick="copyText('mohamedashrafabdulkareem@gmail.com', 'email-tooltip')" class="glass-card p-6 rounded-2xl border border-white/5 flex items-start gap-4 cursor-pointer relative group reveal-item" style="--delay: 0.15s;">
-                                    <div class="p-3 bg-brand-teal/10 rounded-xl text-brand-teal group-hover:bg-brand-teal/20 transition duration-300">
-                                        <i data-lucide="mail" class="w-6 h-6"></i>
-                                    </div>
-                                    <div class="overflow-hidden">
-                                        <h4 class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Email</h4>
-                                        <p class="text-sm font-semibold text-white break-all pr-2">mohamedashrafabdulkareem@gmail.com</p>
-                                    </div>
-                                    <!-- Tooltip alert -->
-                                    <div id="email-tooltip" class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-brand-teal text-brand-deep text-xs font-bold px-3 py-1 rounded-full opacity-0 pointer-events-none transition duration-300" data-i18n="contactTooltip">Copied!</div>
-                                </div>
-
-                                <!-- Phone Card -->
-                                <div onclick="copyText('+201050500189', 'phone-tooltip')" class="glass-card p-6 rounded-2xl border border-white/5 flex items-start gap-4 cursor-pointer relative group reveal-item" style="--delay: 0.25s;">
-                                    <div class="p-3 bg-brand-cyan/10 rounded-xl text-brand-cyan group-hover:bg-brand-cyan/20 transition duration-300">
-                                        <i data-lucide="phone" class="w-6 h-6"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Phone (Whatsapp)</h4>
-                                        <p class="text-sm font-semibold text-white">+20 105 050 0189</p>
-                                    </div>
-                                    <!-- Tooltip alert -->
-                                    <div id="phone-tooltip" class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-brand-cyan text-brand-deep text-xs font-bold px-3 py-1 rounded-full opacity-0 pointer-events-none transition duration-300" data-i18n="contactTooltip">Copied!</div>
-                                </div>
-
-                                <!-- GitHub Card -->
-                                <a href="https://github.com/mohamed68909" target="_blank" class="glass-card p-6 rounded-2xl border border-white/5 flex items-start gap-4 cursor-pointer group reveal-item" style="--delay: 0.35s;">
-                                    <div class="p-3 bg-brand-violet/10 rounded-xl text-brand-violet group-hover:bg-brand-violet/20 transition duration-300">
-                                        <i data-lucide="github" class="w-6 h-6"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">GitHub</h4>
-                                        <p class="text-sm font-semibold text-white group-hover:underline">github.com/mohamed68909</p>
-                                    </div>
-                                </a>
-
-                                <!-- LinkedIn Card -->
-                                <a href="https://www.linkedin.com/in/mohamed-ashraf-ab5803268" target="_blank" class="glass-card p-6 rounded-2xl border border-white/5 flex items-start gap-4 cursor-pointer group reveal-item" style="--delay: 0.45s;">
-                                    <div class="p-3 bg-brand-purple/10 rounded-xl text-brand-purple group-hover:bg-brand-purple/20 transition duration-300">
-                                        <i data-lucide="linkedin" class="w-6 h-6"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">LinkedIn</h4>
-                                        <p class="text-sm font-semibold text-white group-hover:underline">linkedin.com/in/mohamed-ashraf</p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Email Form (Right Column, 2/5 width on LG) -->
-                        <div class="lg:col-span-2 reveal-item" style="--delay: 0.2s;">
-                            <div class="glass-card p-8 rounded-2xl border border-white/5 space-y-6">
-                                <h4 class="text-lg font-bold text-white mb-2 pb-2 border-b border-white/5" data-i18n="contactFormTitle">Send Message</h4>
-                                <form action="https://formspree.io/f/mohamedashrafabdulkareem@gmail.com" method="POST" class="space-y-4">
-                                    <div>
-                                        <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5" data-i18n="contactFormName">Your Name</label>
-                                        <input type="text" name="name" required class="w-full bg-[#060b13] border border-white/5 focus:border-brand-teal focus:ring-1 focus:ring-brand-teal rounded-xl px-4 py-3 text-sm text-white placeholder-slate-600 outline-none transition duration-200" data-i18n-placeholder="contactFormNamePlaceholder" placeholder="John Doe">
-                                    </div>
-                                    <div>
-                                        <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5" data-i18n="contactFormEmail">Your Email</label>
-                                        <input type="email" name="email" required class="w-full bg-[#060b13] border border-white/5 focus:border-brand-teal focus:ring-1 focus:ring-brand-teal rounded-xl px-4 py-3 text-sm text-white placeholder-slate-600 outline-none transition duration-200" data-i18n-placeholder="contactFormEmailPlaceholder" placeholder="john@example.com">
-                                    </div>
-                                    <div>
-                                        <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5" data-i18n="contactFormMsg">Message</label>
-                                        <textarea name="message" rows="4" required class="w-full bg-[#060b13] border border-white/5 focus:border-brand-teal focus:ring-1 focus:ring-brand-teal rounded-xl px-4 py-3 text-sm text-white placeholder-slate-600 outline-none transition duration-200" data-i18n-placeholder="contactFormMsgPlaceholder" placeholder="Hi Mohamed, let's talk about..."></textarea>
-                                    </div>
-                                    <button type="submit" class="btn-gradient w-full py-3.5 rounded-xl font-bold text-sm text-white" data-i18n="contactFormBtn">Send Message</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div> 
-
-        
-        <!-- Project Detail View -->
-        <div id="project-detail-view" class="hidden min-h-screen pt-24 pb-12">
-            <button onclick="hideProjectDetails()" class="btn-outline flex items-center mb-10 reveal-item px-5 py-2.5 rounded-xl text-sm font-semibold">
-                <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i>
-                <span data-i18n="projectDetailBackBtn">Back to Projects</span>
-            </button>
-            
-            <h1 id="detail-title" class="text-4xl md:text-5xl font-extrabold text-white mb-6 reveal-item bg-clip-text text-transparent bg-gradient-to-r from-brand-teal to-brand-cyan" style="--delay: 0.1s;">Project Title</h1>
-            
-            <div class="glass-card p-8 rounded-2xl border border-white/5 space-y-6 reveal-item" style="--delay: 0.2s;">
-                <!-- Project Image Preview -->
-                <div id="detail-image-container" class="w-full aspect-video rounded-xl overflow-hidden border border-white/5 bg-brand-deep hidden">
-                    <img id="detail-image" src="" alt="Project Preview" class="w-full h-full object-cover">
-                </div>
-
-                <div>
-                    <h2 class="text-xl font-bold mb-3 text-white border-b border-white/5 pb-2" data-i18n="projectDetailOverview">Overview</h2>
-                    <p id="detail-description" class="text-slate-300 leading-relaxed text-base sm:text-lg mb-4">Detailed description goes here...</p>
-                </div>
-
-                <div>
-                    <h2 class="text-xl font-bold mb-3 text-white border-b border-white/5 pb-2" data-i18n="projectDetailTechTitle">Technologies Used</h2>
-                    <div id="detail-technologies" class="flex flex-wrap gap-2.5"></div>
-                </div>
-                
-                <div>
-                    <h2 class="text-xl font-bold mb-3 text-white border-b border-white/5 pb-2" data-i18n="projectDetailLinksTitle">Project Links</h2>
-                    <div class="flex flex-col sm:flex-row gap-4 pt-2">
-                        <a id="detail-github-link" href="#" target="_blank" class="btn-outline flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold">
-                            <i data-lucide="github" class="w-4 h-4"></i>
-                            <span data-i18n="projectDetailGitBtn">GitHub Repository</span>
-                        </a>
-                        <a id="detail-demo-link" href="#" target="_blank" class="btn-gradient flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold hidden">
-                            <i data-lucide="external-link" class="w-4 h-4"></i>
-                            <span data-i18n="projectDetailDemoBtn">Live Demo / API Endpoint</span>
-                        </a>
-                        <p id="demo-unavailable" class="text-slate-500 text-xs self-center flex items-center gap-1.5">
-                            <i data-lucide="info" class="w-3.5 h-3.5"></i>
-                            <span data-i18n="projectDetailNoDemo">No live demo available (Backend API / Desktop Application).</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Certificate Detail View -->
-        <div id="certificate-detail-view" class="hidden min-h-screen pt-24 pb-12">
-            <button onclick="hideCertificateDetails()" class="btn-outline flex items-center mb-10 reveal-item px-5 py-2.5 rounded-xl text-sm font-semibold">
-                <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i>
-                Back to Certificates
-            </button>
-            
-            <h1 id="cert-detail-title" class="text-4xl md:text-5xl font-extrabold text-white mb-6 reveal-item bg-clip-text text-transparent bg-gradient-to-r from-brand-cyan via-white to-brand-purple" style="--delay: 0.1s;">Certificate Title</h1>
-            
-            <div class="glass-card p-8 rounded-2xl border border-white/5 space-y-8 reveal-item" style="--delay: 0.2s;">
-                <div>
-                    <h2 class="text-xl font-bold mb-3 text-white border-b border-white/5 pb-2">Track Overview</h2>
-                    <p id="cert-detail-track-description" class="text-slate-300 leading-relaxed text-base sm:text-lg"></p>
-                </div>
-        
-                <div>
-                    <h2 class="text-xl font-bold mb-4 text-white border-b border-white/5 pb-2">Credential Catalog</h2>
-                    <div id="cert-detail-images" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
-                </div>
-            </div>
-        </div>
-
-
-    </main>
-
-    <!-- Lightbox Modal for Certificate Viewing -->
-    <div id="lightbox-modal" class="fixed inset-0 z-[100] bg-slate-950/95 backdrop-blur-md hidden flex-col justify-center items-center p-4">
-        <!-- Close Button -->
-        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-slate-400 hover:text-white bg-white/5 hover:bg-white/10 p-2.5 rounded-full transition duration-200 focus:outline-none">
-            <i data-lucide="x" class="w-6 h-6"></i>
+      </div>
+      
+      <div class="case-study-nav">
+        <button id="cs-prev" class="btn btn-ghost" onclick="navigateProject(-1)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          Previous Project
         </button>
-        
-        <!-- Navigation Controls -->
-        <button onclick="prevLightboxImage()" class="absolute left-4 md:left-8 text-slate-400 hover:text-white bg-white/5 hover:bg-white/10 p-3 rounded-full transition duration-200 focus:outline-none">
-            <i data-lucide="chevron-left" class="w-6 h-6"></i>
+        <button id="cs-next" class="btn btn-ghost" onclick="navigateProject(1)">
+          Next Project
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </button>
-        <button onclick="nextLightboxImage()" class="absolute right-4 md:right-8 text-slate-400 hover:text-white bg-white/5 hover:bg-white/10 p-3 rounded-full transition duration-200 focus:outline-none">
-            <i data-lucide="chevron-right" class="w-6 h-6"></i>
-        </button>
-        
-        <!-- Image Container -->
-        <div class="max-w-4xl max-h-[70vh] flex justify-center items-center overflow-hidden rounded-xl border border-white/10 shadow-2xl relative bg-brand-deep">
-            <img id="lightbox-img" src="" alt="Certificate" class="max-w-full max-h-[70vh] object-contain transition-transform duration-300">
-        </div>
-        
-        <!-- Info Container -->
-        <div class="mt-6 text-center max-w-2xl px-4">
-            <h4 id="lightbox-title" class="text-lg font-bold text-white">Certificate Name</h4>
-            <p id="lightbox-caption" class="text-xs text-slate-400 mt-1 uppercase tracking-widest font-semibold">Track</p>
-            <span id="lightbox-index" class="inline-block mt-3 text-[10px] bg-brand-teal/10 text-brand-teal border border-brand-teal/20 px-2.5 py-0.5 rounded-full font-medium">1 / 16</span>
-        </div>
+      </div>
     </div>
-
-    <!-- Premium Footer -->
-    <footer class="bg-[#05080f] py-12 mt-24 border-t border-slate-900">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="text-center md:text-start">
-                <a href="#hero" class="text-xl font-extrabold tracking-tight text-white">
-                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-teal to-brand-cyan">Mohamed</span>
-                    <span class="text-slate-500 font-light">Ashraf</span>
-                </a>
-                <p class="text-xs text-slate-500 mt-1" data-i18n="contactFooterRights">&copy; 2026 Mohamed Ashraf. All rights reserved.</p>
-            </div>
-            
-            <div class="flex items-center gap-6">
-                <a href="https://github.com/mohamed68909" target="_blank" class="text-slate-400 hover:text-brand-teal transition-all duration-200">
-                    <i data-lucide="github" class="w-5 h-5"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/mohamed-ashraf-ab5803268" target="_blank" class="text-slate-400 hover:text-brand-teal transition-all duration-200">
-                    <i data-lucide="linkedin" class="w-5 h-5"></i>
-                </a>
-            </div>
-    <!-- Main JavaScript Logic -->
-    <script>
-        // Translations Dictionary
-        const i18n = {
-            en: {
-                navAbout: "About",
-                navCertificates: "Certificates",
-                navSkills: "Skills",
-                navProjects: "Projects",
-                navContact: "Contact",
-                // Hero
-                heroGreeting: "Hello, I'm",
-                heroRole: "Backend Developer focused on",
-                heroDesc: "I design and build high-performance APIs, robust database architectures, and clean, maintainable codebases to solve complex backend problems.",
-                heroBtnProjects: "Explore Projects",
-                heroBtnContact: "Get In Touch",
-                // About
-                aboutSub: "Introduction",
-                aboutTitle: "About Me",
-                aboutBio1: "I'm Mohamed Ashraf, a passionate software developer specializing in .NET and modern backend technologies. I thrive on building clean, efficient, and highly scalable systems that solve real-world problems.",
-                aboutBio2: "Over the course of my engineering journey, I've developed deep technical proficiency in backend design using ASP.NET Core, C#, Entity Framework Core, and SQL Server database optimization.",
-                aboutBio3: "I also possess valuable experience mentoring fellow developers, distilling complex programming architectures into clear, actionable knowledge. I love turning architectural plans into practical, secure, and production-ready applications.",
-                aboutHighlightTitle: "Focus & Highlights",
-                aboutStatCert: "Certificates",
-                aboutStatProj: "APIs & Apps",
-                aboutSkillCleanCode: "Clean Code & SOLID Design",
-                aboutSkillRestApis: "RESTful Web APIs & JWT",
-                aboutSkillDbTuning: "Database Tuning & T-SQL",
-                // Certificates
-                certSub: "Credentials",
-                certTitle: "Education & Certificates",
-                certMicrosoftTitle: "Microsoft Certified",
-                certMicrosoftDesc: "C# programming certification, verifying core competencies in OOP logic, syntax, data structures, and .NET runtime execution.",
-                certMicrosoftAction: "View Credentials",
-                certAbuhadhoodTitle: "Backend .NET Track",
-                certAbuhadhoodDesc: "16 specialized courses from Programming Advice Academy, covering low-level C++, algorithms, UI (WinForms), SQL, and REST APIs.",
-                certAbuhadhoodAction: "View 16 Course Certificates",
-                certItiTitle: "ITI .NET Web Development",
-                certItiDesc: "Intensive professional training focusing on ASP.NET Core, MVC architectures, database schemas, and enterprise software engineering.",
-                certItiAction: "View ITI Certificates",
-                // Skills
-                skillsSub: "Capabilities",
-                skillsTitle: "Technical Skills",
-                // Projects
-                projectsSub: "Showcase",
-                projectsTitle: "Featured Projects",
-                projectsInfo: "Click on any project to view comprehensive technical details and GitHub repositories.",
-                projectDetailBackBtn: "Back to Projects",
-                projectDetailOverview: "Overview",
-                projectDetailTechTitle: "Technologies Used",
-                projectDetailLinksTitle: "Project Links",
-                projectDetailGitBtn: "GitHub Repository",
-                projectDetailDemoBtn: "Live Demo / API Endpoint",
-                projectDetailNoDemo: "No live demo available (Backend API / Desktop Application).",
-                // Contact
-                contactSub: "Get In Touch",
-                contactTitle: "Let's Work Together",
-                contactDesc: "I'm always open to discussing backend architectures, full-stack .NET web integration, mentoring opportunities, or joining innovative dev teams. Click email or phone to instantly copy details!",
-                contactTooltip: "Copied!",
-                contactFormTitle: "Send Message",
-                contactFormName: "Your Name",
-                contactFormNamePlaceholder: "John Doe",
-                contactFormEmail: "Your Email",
-                contactFormEmailPlaceholder: "john@example.com",
-                contactFormMsg: "Message",
-                contactFormMsgPlaceholder: "Hi Mohamed, let's talk about...",
-                contactFormBtn: "Send Message",
-                contactFooterRights: "© 2026 Mohamed Ashraf. All rights reserved.",
-                // Terminal
-                terminalTitle: "guest@ashraf-api:~",
-                terminalInputPlaceholder: "type 'run' or 'enter'...",
-                terminalBtn: "Enter"
-            },
-            ar: {
-                navAbout: "نبذة عني",
-                navCertificates: "الشهادات",
-                navSkills: "المهارات",
-                navProjects: "المشاريع",
-                navContact: "اتصل بي",
-                // Hero
-                heroGreeting: "مرحباً، أنا",
-                heroRole: "مطور ويب متكامل متخصص في",
-                heroDesc: "أقوم بتصميم وبناء واجهات استخدام سلسة وأنظمة مؤسسية تجمع بين الأداء العالي في الواجهة الخلفية (Backend) والتجربة المتميزة للعملاء.",
-                heroBtnProjects: "استكشف المشاريع",
-                heroBtnContact: "تواصل معي",
-                // About
-                aboutSub: "مقدمة",
-                aboutTitle: "نبذة عني",
-                aboutBio1: "السلام عليكم ورحمة الله وبركاته، أنا محمد أشرف، مطور ويب متكامل (Full-Stack .NET Developer) متخصص في بناء وتصميم تطبيقات الويب الشاملة والأنظمة المؤسسية التي تجمع بين واجهات الاستخدام السلسة والأداء العالي في الواجهة الخلفية (Backend).",
-                aboutBio2: "حاصل على تدريب مكثف من معهد تكنولوجيا المعلومات (ITI) في مسار تطوير الويب باستخدام تقنيات .NET، وقد اكتسبت خبرة عملية قوية في برمجة مواقع الويب كاملة من الصفر (Front-End & Back-End) معتمداً على معمارية MVC (Model-View-Controller).",
-                aboutBio3: "أمتلك خبرة واسعة في تنفيذ مشاريع حقيقية (مثل منصات التجارة الإلكترونية وأنظمة المستودعات) باستخدام أحدث التقنيات مثل: C# – ASP.NET Core MVC – Web API – Entity Framework – SQL Server – HTML/CSS/JS. كما أن لدي أساساً متيناً في هندسة البرمجيات وتصميم قواعد البيانات، مما يمكنني من كتابة كود نظيف (Clean Code) وتطبيق معايير معمارية متقدمة (مثل Clean Architecture) لضمان استدامة المشاريع وسهولة تطويرها مستقبلاً.",
-                aboutHighlightTitle: "أبرز التركيزات",
-                aboutStatCert: "شهادة معتمدة",
-                aboutStatProj: "أنظمة ويب و APIs",
-                aboutSkillCleanCode: "الكتابة البرمجية النظيفة ومبادئ SOLID",
-                aboutSkillRestApis: "RESTful Web APIs وحماية JWT",
-                aboutSkillDbTuning: "تحسين قواعد البيانات ولغة T-SQL",
-                // Certificates
-                certSub: "المؤهلات والاعتمادات",
-                certTitle: "التعليم والشهادات",
-                certMicrosoftTitle: "شهادة مايكروسوفت معتمد",
-                certMicrosoftDesc: "شهادة محترف معتمد في لغة C#، تؤكد الكفاءات الأساسية في مبادئ البرمجة كائنية التوجه (OOP) وهيكل لغة .NET.",
-                certMicrosoftAction: "عرض الشهادة والاعتماد",
-                certAbuhadhoodTitle: "مسار تطوير الويب والـ Backend",
-                certAbuhadhoodDesc: "16 دورة تدريبية متخصصة من أكاديمية Programming Advice تشمل الخوارزميات، هياكل البيانات، وقواعد البيانات و REST APIs.",
-                certAbuhadhoodAction: "عرض 16 شهادة دورة",
-                certItiTitle: "معهد تكنولوجيا المعلومات ITI",
-                certItiDesc: "تدريب مهني مكثف متخصص في مسار تطوير الويب باستخدام تقنيات .NET MVC، قواعد البيانات وهندسة البرمجيات.",
-                certItiAction: "عرض شهادات ITI",
-                // Skills
-                skillsSub: "القدرات الفنية",
-                skillsTitle: "المهارات التقنية",
-                // Projects
-                projectsSub: "معرض الأعمال",
-                projectsTitle: "المشاريع المميزة",
-                projectsInfo: "اضغط على أي مشروع لعرض التفاصيل التقنية الشاملة وروابط مستودع الكود على GitHub.",
-                projectDetailBackBtn: "العودة للمشاريع",
-                projectDetailOverview: "نظرة عامة",
-                projectDetailTechTitle: "التقنيات المستخدمة",
-                projectDetailLinksTitle: "روابط المشروع",
-                projectDetailGitBtn: "مستودع GitHub",
-                projectDetailDemoBtn: "عرض حي / رابط الـ API",
-                projectDetailNoDemo: "لا يوجد عرض حي حالياً (API خلفي أو تطبيق سطح مكتب).",
-                // Contact
-                contactSub: "تواصل معي",
-                contactTitle: "لنعمل معاً",
-                contactDesc: "أنا متاح دائماً لمناقشة بنيات الـ Backend، وتطوير مواقع وتطبيقات الويب باستخدام .NET، أو تقديم التوجيه والتدريب للفرق. اضغط على البريد الإلكتروني أو الهاتف لنسخ التفاصيل فوراً!",
-                contactTooltip: "تم النسخ!",
-                contactFormTitle: "أرسل رسالة",
-                contactFormName: "اسمك الكريم",
-                contactFormNamePlaceholder: "الاسم بالكامل",
-                contactFormEmail: "بريدك الإلكتروني",
-                contactFormEmailPlaceholder: "email@example.com",
-                contactFormMsg: "الرسالة",
-                contactFormMsgPlaceholder: "أكتب تفاصيل رسالتك هنا...",
-                contactFormBtn: "إرسال الرسالة",
-                contactFooterRights: "© 2026 محمد أشرف. جميع الحقوق محفوظة.",
-                // Terminal
-                terminalTitle: "guest@ashraf-api:~",
-                terminalInputPlaceholder: "اكتب 'run' أو 'enter'...",
-                terminalBtn: "دخول"
-            }
-        };
-
-        const projectsData = {
-            ElMogyFresh: {
-                category: "web",
-                image: "Image/elmogy_fresh_mockup.jpg",
-                github: "https://github.com/mohamed68909/ElMogyFresh",
-                demo: "https://elmogyfresh.runasp.net",
-                en: {
-                    title: "El Mogy Fresh - Organic E-Commerce Platform",
-                    description: "An enterprise e-commerce web application dedicated to selling fresh organic vegetables. Engineered with ASP.NET Core 10 MVC using Clean Architecture and Domain-Driven Design (DDD) principles across 4 decoupled layers (FreshVeg.Domain, FreshVeg.Application, FreshVeg.Infrastructure, FreshVeg.Web). Features a Hybrid Shopping Cart (guest session cart seamlessly auto-merged into user profile upon login), custom Glassmorphism UI with micro-animations, multi-language support via LanguageController, and automated background cleanup services for guest carts.",
-                    technologies: ["ASP.NET Core 10 MVC", "EF Core", "SQL Server", "Clean Architecture", "DDD", "Hybrid Cart", "Bootstrap 5", "Glassmorphism"]
-                },
-                ar: {
-                    title: "منصة التجزئة الإلكترونية للخضروات الطازجة (El Mogy Fresh)",
-                    description: "منصة تسوق إلكترونية متكاملة لبيع الخضروات والفواكه الطازجة مبنية بأحدث تقنيات ASP.NET Core 10 MVC مع تطبيق مبادئ Clean Architecture و Domain-Driven Design (DDD). يتكون النظام من 4 طبقات مستقلة (Domain, Application, Infrastructure, Web). يتميز بسلة تسوق هجينة (تدمج سلة التصفح بدون تسجيل دخول تلقائياً مع حساب المستخدم فور تسجيل الدخول)، واجهة مستخدم زجاجية (Glassmorphism) مع دمج المؤثرات البصرية الدقيقة (Micro-animations)، دعم كامل لتعدد اللغات، وخدمة خلفية (Background Service) لتنظيف السلال المهجورة تلقائياً.",
-                    technologies: ["ASP.NET Core 10 MVC", "EF Core", "SQL Server", "Clean Architecture", "DDD", "Hybrid Cart", "Bootstrap 5", "Glassmorphism"]
-                }
-            },
-            SmartTrafficManagement: {
-                category: "mobile",
-                image: "Image/traffic_management_mockup.png",
-                github: "https://github.com/mohamed68909/SmartTrafficManagement",
-                demo: "",
-                en: {
-                    title: "Smart Traffic & Emergency Management System (STMS)",
-                    description: "An integrated smart city traffic and roadside emergency response ecosystem. The backend is built with .NET 8 (C#) using Clean Architecture, SQL Server + EF Core with custom non-clustered indexes, real-time SignalR Hubs for live location tracking & instant support chat, Stripe API with HMAC signature verification, and automatic JWT token refresh interceptors. Includes a React web portal (Vite, Premium Dark Theme) with 4 role-based dashboards (System Admin, CS Agent, Rescue Provider, Store Seller) and a Flutter mobile client with Google Maps API and Riverpod for drivers to request emergency assistance (towing, jumpstart, fuel, flat tire).",
-                    technologies: [".NET 8 C#", "Clean Architecture", "SignalR Hubs", "Stripe API", "React.js + Vite", "Flutter + Riverpod", "SQL Server Indexes", "JWT Interceptors"]
-                },
-                ar: {
-                    title: "نظام إدارة المرور والطوارئ الذكي (STMS)",
-                    description: "نظام متكامل لإدارة حركة المرور وحالات الطوارئ على الطرق في المدن الذكية. يتكون الخلفية (Backend) من .NET 8 بمعمارية Clean Architecture وقاعدة بيانات SQL Server محسنة بفهارس Indexes مخصصة، واتصال لحظي عبر SignalR Hubs ومقبض مدفوعات Stripe آمن بمعالج HMAC. يحتوي على بوابة ويب React مبنية بـ Vite تضم 4 لوحات تحكم حسب الصلاحية (المدير، خدمة العملاء، مزودي الإنقاذ، والبائعين)، وتطبيق هاتف محمول Flutter مزود بـ Google Maps و Riverpod لتلقي بلاغات الطوارئ (سحب السيارات، شحن البطارية، التزود بالوقود، وإصلاح الإطارات) وتتبع شاحنات الإنقاذ لحظياً.",
-                    technologies: [".NET 8 C#", "Clean Architecture", "SignalR Hubs", "Stripe API", "React.js + Vite", "Flutter + Riverpod", "SQL Server Indexes", "JWT Interceptors"]
-                }
-            },
-            CurexMind: {
-                category: "web",
-                image: "Image/clinic_api_mockup.png",
-                github: "https://github.com/mohamed68909/ClinicManagementAPI",
-                demo: "",
-                en: {
-                    title: "CurexMind - Hospital & Clinic Management System",
-                    description: "An end-to-end Healthcare & Hospital Management System connecting patients, medical staff, and receptionist administration. The backend (CurexMind.API) is built using ASP.NET Core 9.0 Web API with Clean Architecture, EF Core 9, SQL Server, ASP.NET Identity + JWT, and FluentValidation. The frontend (CurexMind.Frontend) is built with React 19, TypeScript, Vite, Tailwind CSS 4, and Zustand. Features a Patient Portal with search filters, 4-step smart booking stepper, 3 simulated payment gateways (Instapay, Mobile Wallets, Credit Cards), patient medical history, and a Management Portal with interactive revenue dashboards and 5-tab patient files (Info, Appointments, Invoices, Room Stays, Surgical Operations).",
-                    technologies: ["ASP.NET Core 9.0 API", "React 19 + TypeScript", "Tailwind CSS 4", "Clean Architecture", "Zustand", "EF Core 9", "JWT RBAC", "SQL Server"]
-                },
-                ar: {
-                    title: "نظام كيروكس مايند لإدارة العيادات والمستشفيات (CurexMind)",
-                    description: "نظام متكامل لإدارة العيادات والمستشفيات يربط بين المرضى والأطباء وموظفي الاستقبال والإدارة. يتكون الجزء الخلفي من ASP.NET Core 9.0 Web API مع Clean Architecture و EF Core 9 و FluentValidation. بينما تم بناء الواجهة الأمامية بـ React 19 و TypeScript و Vite و Tailwind CSS 4 و Zustand. يشتمل على بوابة مريض ببحث وفلاتر تفاعلية ونظام حجز من 4 خطوات مع 3 بوابات دفع محاكاة (Instapay، المحافظ الإلكترونية، البطاقات)، ولوحة استقبال وإدارة متطورة تعرض إحصائيات مالية وشاشات متابعة تفصيلية للمريض (البيانات، المواعيد، الفواتير، إقامة الغرف، والعمليات الجراحية).",
-                    technologies: ["ASP.NET Core 9.0 API", "React 19 + TypeScript", "Tailwind CSS 4", "Clean Architecture", "Zustand", "EF Core 9", "JWT RBAC", "SQL Server"]
-                }
-            },
-            TechStore: {
-                category: "web",
-                image: "Image/techstore_customer_mockup.png",
-                github: "https://github.com/mohamed68909/Portfolio",
-                demo: "",
-                en: {
-                    title: "TechStore - Enterprise E-Commerce Platform",
-                    description: "A high-performance enterprise e-commerce web application built with ASP.NET Core 9.0 (MVC + RESTful API) and N-Tier Architecture (TechStore, TechStore.Api, TechStore.Entities, TechStore.Services, TechStore.DataAccess, TechStore.Utilities). Features multi-area management (Customer, Admin, Identity), ASP.NET Core Identity with 6-digit email OTP verification & OAuth 2.0 (Google/Facebook), Stripe.net SDK checkout integration, dynamic catalog search/filtering, multi-image product management, low-stock warnings, Unit of Work pattern, and real-time order lifecycle tracking (Pending -> Approved -> Processing -> Shipped -> Completed).",
-                    technologies: ["ASP.NET Core 9.0", "EF Core 9", "N-Tier Architecture", "Stripe Checkout", "OTP Verification", "SQL Server", "Bootstrap 5.3", "DataTables.net"]
-                },
-                ar: {
-                    title: "منصة تك ستور المتكاملة للتجارة الإلكترونية (TechStore)",
-                    description: "منصة تجارة إلكترونية احترافية مبنية بأحدث تقنيات ASP.NET Core 9.0 (MVC + RESTful API) بتصميم معمارية المؤسسات متعددة الطبقات (Enterprise N-Tier Architecture). تضم تقسيم Areas (Customer, Admin, Identity) ونظام أمان متطور مع تأكيد الحسابات عبر OTP مكون من 6 أرقام وتسجيل الدخول عبر Google/Facebook. تشمل الميزات: ربط بوابة Stripe.net للمدفوعات، سلة تسوق تفاعلية، تتبع لحظي لحالات الطلبات، ولوحة إدارية شاملة لإدارة المنتجات بالصور المتعددة، تنبيهات المخزون، وتطبيق نمط Repositories & Unit of Work على SQL Server.",
-                    technologies: ["ASP.NET Core 9.0", "EF Core 9", "N-Tier Architecture", "Stripe Checkout", "OTP Verification", "SQL Server", "Bootstrap 5.3", "DataTables.net"]
-                }
-            },
-            WarehouseSystem: {
-                category: "api",
-                image: "Image/warehouse_wms_mockup.png",
-                github: "https://github.com/mohamed68909/Portfolio",
-                demo: "",
-                en: {
-                    title: "Warehouse Management System (WMS)",
-                    description: "An enterprise-grade inventory and warehouse tracking system designed to streamline supply chains. Built with .NET Core and Web API following Clean Architecture and DDD principles. Features include real-time stock levels monitoring, storage bin location mapping, automated inbound (receiving) and outbound (shipping) processing, supplier relationship management, comprehensive audit logs, and JWT-secured token authentication for microservices safety.",
-                    technologies: ["C#", "ASP.NET Core Web API", "Entity Framework Core", "SQL Server", "Clean Architecture", "JWT Security", "Repository Pattern"]
-                },
-                ar: {
-                    title: "برمجة وتطوير نظام متكامل لإدارة المستودعات (WMS)",
-                    description: "نظام متكامل لإدارة المستودعات مصمم لتبسيط سلاسل الإمداد ومراقبة الأصول اللوجستية بكفاءة عالية. تم بناؤه باستخدام تقنية ASP.NET Core Web API مع الالتزام بمعمارية البنية النظيفة (Clean Architecture). يوفر النظام: تتبعاً لحظياً لمستويات المخزون وحركة القطع، تخطيط وإدارة مواقع التخزين داخل المستودع، أتمتة عمليات استلام الشحنات وتصديرها، تتبع الموردين والمشترين، سجلات تدقيق متكاملة، ونظام حماية معتمد على رموز JWT لتأمين المعاملات والربط البرمجي السلس.",
-                    technologies: ["C#", "ASP.NET Core Web API", "Entity Framework Core", "SQL Server", "Clean Architecture", "JWT Security", "Repository Pattern"]
-                }
-            },
-            LibraryManagement: {
-                category: "api",
-                image: "Image/library_api_mockup.png",
-                github: "https://github.com/mohamed68909/LibraryManagementAPI",
-                demo: "",
-                en: {
-                    title: "Library Management API",
-                    description: "An enterprise-level Library Management RESTful API to orchestrate borrowing systems, catalog indexes, and member relationships. Developed using .NET Web API and Entity Framework Core. Features include multi-tier book borrowing policy validation, automated due date tracking, real-time inventory adjustments, and deep repository pattern abstractions for database portability.",
-                    technologies: [".NET Web API", "Entity Framework Core", "SQL Server", "C#", "Repository Pattern", "Swagger/OpenAPI"]
-                },
-                ar: {
-                    title: "واجهة برمجة تطبيقات إدارة المكتبات (Library API)",
-                    description: "واجهة برمجية متطورة لإدارة المكتبات وفهرسة الكتب وتنظيم عمليات الاستعارة وتتبع الاشتراكات. تم بناؤها باستخدام .NET Web API و Entity Framework Core. يوفر النظام: قواعد مرنة للتحقق من سياسات الاستعارة، إشعارات وتتبع تواريخ الإرجاع التلقائي، تحديث لحظي للمخزون، وتطبيق نمط المستودع (Repository Pattern) لتبسيط التعامل مع البيانات.",
-                    technologies: [".NET Web API", "Entity Framework Core", "SQL Server", "C#", "Repository Pattern", "Swagger/OpenAPI"]
-                }
-            },
-            DriverLicenseManagement: {
-                category: "mobile",
-                image: "Image/license_management_mockup.png",
-                github: "https://github.com/mohamed68909/DriverLicenseManagement",
-                demo: "",
-                en: {
-                    title: "Driver License Management System",
-                    description: "A desktop-based enterprise application built for local governments to streamline driver license issuance, tests, and violations. Built with C# and WinForms, integrated with SQL Server. Key highlights include relational database schema normalized to 3NF, automated test scoring logic, multi-stage application processing workflow, license PDF generation, and complete audit history logs.",
-                    technologies: ["C#", ".NET WinForms", "SQL Server", "ADO.NET", "Database Normalization (3NF)", "Reporting"]
-                },
-                ar: {
-                    title: "نظام إدارة رخص القيادة (Driver License System)",
-                    description: "تطبيق سطحي مكتبي متكامل مصمم لإدارة وتنظيم عمليات إصدار رخص القيادة، الاختبارات، والمخالفات المرورية. تم بناؤه باستخدام لغة C# وتقنية Windows Forms مع ربطه بقاعدة بيانات SQL Server. يشمل المشروع: تصميم قاعدة بيانات علائقية مطبعة بالكامل (3NF)، منطق احتساب نتائج الاختبارات تلقائياً، تدفقات عمل متعددة المستويات، وإصدار وطباعة شهادات الرخص.",
-                    technologies: ["C#", ".NET WinForms", "SQL Server", "ADO.NET", "Database Normalization (3NF)", "Reporting"]
-                }
-            }
-        };
-
-        // Modern Technical Skills Catalog
-        const skillsData = [
-            // Backend Core
-            { category: "backend", name: "C# & .NET 8/9/10", levelEn: "Expert", levelAr: "خبير معتمد", icon: "code-2", descEn: "OOP, LINQ, Async/Await, Memory & Generics", descAr: "البرمجة كائنية التوجه والاستعلامات" },
-            { category: "backend", name: "ASP.NET Core Web API", levelEn: "Expert", levelAr: "خبير ممتاز", icon: "globe", descEn: "RESTful Architecture, Middleware, JWT Security", descAr: "معمارية RESTful وتأمين التوكن" },
-            { category: "backend", name: "ASP.NET Core MVC", levelEn: "Expert", levelAr: "خبير متمكن", icon: "layout", descEn: "Razor Engine, Custom Helpers, Multi-Area Apps", descAr: "محرك Razor وتقسيمات المناطق" },
-            { category: "backend", name: "Clean Architecture & DDD", levelEn: "Advanced", levelAr: "متقدم جداً", icon: "git-fork", descEn: "4-Layer Isolation, SOLID Principles", descAr: "فصل الطبقات الأربعة ومبادئ SOLID" },
-            { category: "backend", name: "SignalR Communications", levelEn: "Advanced", levelAr: "متقدم", icon: "zap", descEn: "Live Location Tracking & Instant Support Chat", descAr: "الاتصال غير المتزامن والدردشة" },
-
-            // Databases
-            { category: "database", name: "MS SQL Server & T-SQL", levelEn: "Expert", levelAr: "خبير معتمد", icon: "database", descEn: "Stored Procedures, Triggers, Views & Functions", descAr: "إجراءات مخزنة واستعلامات هامة" },
-            { category: "database", name: "Entity Framework Core 9", levelEn: "Expert", levelAr: "خبير متمكن", icon: "server", descEn: "Code-First, Migrations, Fluent API Mapping", descAr: "إدارة البيانات والربط البرمجي" },
-            { category: "database", name: "Database Tuning & Indexing", levelEn: "Advanced", levelAr: "متقدم", icon: "cpu", descEn: "Custom Non-Clustered Indexes, 3NF Normalization", descAr: "فهارس الجداول وتسريع الاستجابة" },
-
-            // Frontend & Apps
-            { category: "frontend", name: "React 19 & TypeScript", levelEn: "Advanced", levelAr: "متقدم", icon: "atom", descEn: "Vite, Zustand State Management, Custom Hooks", descAr: "واجهات تفاعلية سريعة ومتقدمة" },
-            { category: "frontend", name: "Tailwind CSS 4 & Bootstrap 5", levelEn: "Expert", levelAr: "خبير ممتاز", icon: "palette", descEn: "Glassmorphism UI, Responsive Web Design", descAr: "تصميم عصري متجاوب لكافة الأجهزة" },
-            { category: "frontend", name: "Flutter & Riverpod (Dart)", levelEn: "Proficient", levelAr: "متخصص", icon: "smartphone", descEn: "Google Maps Integration, Cross-Platform UI", descAr: "تطبيقات الجوال والخرائط اللحظية" },
-
-            // Integrations
-            { category: "integrations", name: "Stripe Payment Gateway", levelEn: "Advanced", levelAr: "متقدم", icon: "credit-card", descEn: "Stripe SDK, Checkout & HMAC Webhooks", descAr: "بوابات الدفع الإلكتروني وتأمينها" },
-            { category: "integrations", name: "ASP.NET Identity & OTP", levelEn: "Expert", levelAr: "خبير", icon: "shield-check", descEn: "6-Digit Email OTP, OAuth 2.0 (Google/FB)", descAr: "تأكيد الحسابات والتحقق الآمن" },
-            { category: "integrations", name: "Git & Version Control", levelEn: "Expert", levelAr: "خبير", icon: "git-commit", descEn: "Branching Workflows, GitHub Actions CI/CD", descAr: "إدارة النسخ والنشر التلقائي" }
-        ];
-
-        // Layout View DOM references
-        const mainView = document.getElementById('main-portfolio-view');
-        const projectDetailView = document.getElementById('project-detail-view');
-        const certificateDetailView = document.getElementById('certificate-detail-view');
-
-        const detailTitle = document.getElementById('detail-title');
-        const detailDescription = document.getElementById('detail-description');
-        const detailTechnologies = document.getElementById('detail-technologies');
-        const detailGithubLink = document.getElementById('detail-github-link');
-        const detailDemoLink = document.getElementById('detail-demo-link');
-        const demoUnavailable = document.getElementById('demo-unavailable');
-        
-        const certDetailTitle = document.getElementById('cert-detail-title');
-        const certDetailTrackDescription = document.getElementById('cert-detail-track-description');
-        const certDetailImages = document.getElementById('cert-detail-images');
-
-        // Lightbox state variables
-        let activeCertId = '';
-        let activeImageIndex = 0;
-
-        // Language state variables
-        let currentLang = localStorage.getItem('portfolio-lang') || 'en';
-
-        // Toggle Language Function
-        function toggleLanguage() {
-            currentLang = currentLang === 'en' ? 'ar' : 'en';
-            localStorage.setItem('portfolio-lang', currentLang);
-            updatePageLanguage();
-        }
-
-        // Update Page language, direction, and elements text content
-        function updatePageLanguage() {
-            const htmlEl = document.documentElement;
-            htmlEl.setAttribute('lang', currentLang);
-            
-            if (currentLang === 'ar') {
-                htmlEl.setAttribute('dir', 'rtl');
-                document.body.style.fontFamily = "'Cairo', 'Outfit', sans-serif";
-            } else {
-                htmlEl.setAttribute('dir', 'ltr');
-                document.body.style.fontFamily = "'Outfit', 'Cairo', sans-serif";
-            }
-
-            // Translate text contents
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                if (i18n[currentLang][key]) {
-                    el.innerText = i18n[currentLang][key];
-                }
-            });
-
-            // Translate placeholders
-            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-                const key = el.getAttribute('data-i18n-placeholder');
-                if (i18n[currentLang][key]) {
-                    el.setAttribute('placeholder', i18n[currentLang][key]);
-                }
-            });
-
-            // Update language toggle buttons text
-            const langBtnText = document.getElementById('lang-btn-text');
-            const langBtnTextMobile = document.getElementById('lang-btn-text-mobile');
-            if (langBtnText) langBtnText.innerText = currentLang === 'en' ? 'AR' : 'EN';
-            if (langBtnTextMobile) langBtnTextMobile.innerText = currentLang === 'en' ? 'AR' : 'EN';
-
-            // Re-render lists
-            renderSkills();
-            renderProjects();
-
-            // Reset typewriter values to start typing in the correct language
-            charIndex = 0;
-            wordIndex = 0;
-            isDeleting = false;
-        }
-
-        // Render Technical Skills dynamically
-        function renderSkills() {
-            const container = document.getElementById('skills-grid');
-            if (!container) return;
-
-            const categories = {
-                backend: {
-                    title: currentLang === 'ar' ? "هندسة الـ Backend والنظام" : "Backend & Enterprise Core",
-                    icon: "code-2",
-                    color: "text-brand-teal",
-                    border: "border-brand-teal/20",
-                    delay: "0.1s"
-                },
-                database: {
-                    title: currentLang === 'ar' ? "قواعد البيانات والأداء" : "Databases & Performance",
-                    icon: "database",
-                    color: "text-brand-cyan",
-                    border: "border-brand-cyan/20",
-                    delay: "0.2s"
-                },
-                frontend: {
-                    title: currentLang === 'ar' ? "تطبيقات الويب والجوال" : "Frontend & Mobile Apps",
-                    icon: "layout",
-                    color: "text-brand-violet",
-                    border: "border-brand-violet/20",
-                    delay: "0.3s"
-                },
-                integrations: {
-                    title: currentLang === 'ar' ? "الأمان وبوابات الدفع" : "Security & Integrations",
-                    icon: "shield-check",
-                    color: "text-brand-purple",
-                    border: "border-brand-purple/20",
-                    delay: "0.4s"
-                }
-            };
-
-            let html = '';
-            for (const [key, catInfo] of Object.entries(categories)) {
-                const catSkills = skillsData.filter(s => s.category === key);
-                
-                let skillsHtml = catSkills.map(skill => {
-                    const level = currentLang === 'ar' ? skill.levelAr : skill.levelEn;
-                    const desc = currentLang === 'ar' ? skill.descAr : skill.descEn;
-                    return `
-                        <div class="p-3.5 bg-slate-900/60 rounded-xl border border-white/5 hover:border-brand-teal/30 transition duration-300 group/skill">
-                            <div class="flex items-center justify-between mb-1.5">
-                                <div class="flex items-center gap-2">
-                                    <i data-lucide="${skill.icon}" class="w-4 h-4 text-brand-teal group-hover/skill:scale-110 transition duration-300"></i>
-                                    <span class="text-slate-200 font-semibold text-sm">${skill.name}</span>
-                                </div>
-                                <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-brand-teal/10 text-brand-teal border border-brand-teal/20">${level}</span>
-                            </div>
-                            <p class="text-xs text-slate-400 font-mono">${desc}</p>
-                        </div>
-                    `;
-                }).join('');
-
-                html += `
-                    <div class="glass-card p-6 rounded-2xl border ${catInfo.border} reveal-item flex flex-col justify-between" style="--delay: ${catInfo.delay};">
-                        <div>
-                            <h4 class="text-lg font-bold mb-5 text-white flex items-center gap-2.5">
-                                <i data-lucide="${catInfo.icon}" class="${catInfo.color} w-5 h-5"></i>
-                                ${catInfo.title}
-                            </h4>
-                            <div class="space-y-3">
-                                ${skillsHtml}
-                            </div>
-                        </div>
-                    </div>
-                `;
-            }
-
-            container.innerHTML = html;
-            lucide.createIcons();
-            
-            const newRevealItems = container.querySelectorAll('.reveal-item');
-            newRevealItems.forEach(item => {
-                observer.observe(item);
-            });
-        }
-
-        // Project category filter state
-        let activeProjectFilter = 'all';
-
-        function filterProjects(category) {
-            activeProjectFilter = category;
-            
-            // Update button styles
-            document.querySelectorAll('.project-filter-btn').forEach(btn => {
-                btn.className = 'project-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 bg-slate-900/80 text-slate-400 hover:text-white border border-white/5';
-            });
-            const activeBtn = document.getElementById(`filter-${category}`);
-            if (activeBtn) {
-                activeBtn.className = 'project-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 bg-gradient-to-r from-brand-teal to-brand-cyan text-brand-deep shadow-lg';
-            }
-
-            renderProjects();
-        }
-
-        // Render Projects dynamically with cover images and quick actions
-        function renderProjects() {
-            const grid = document.getElementById('projects-grid');
-            if (!grid) return;
-
-            const allKeys = [
-                'ElMogyFresh', 
-                'SmartTrafficManagement', 
-                'CurexMind',
-                'TechStore',
-                'WarehouseSystem',
-                'LibraryManagement',
-                'DriverLicenseManagement'
-            ];
-
-            const projectKeys = allKeys.filter(key => {
-                if (activeProjectFilter === 'all') return true;
-                return projectsData[key].category === activeProjectFilter;
-            });
-
-            let html = '';
-            let index = 0;
-            for (const key of projectKeys) {
-                const projectInfo = projectsData[key];
-                const project = projectInfo[currentLang];
-                const delay = 0.1 + (index * 0.08);
-
-                const hasDemo = !!projectInfo.demo;
-                const demoBadge = hasDemo 
-                    ? `<span class="bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Live Demo</span>`
-                    : `<span class="bg-brand-teal/10 text-brand-teal border border-brand-teal/20 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Enterprise System</span>`;
-
-                html += `
-                    <div id="${key}" class="glass-card rounded-2xl border border-white/5 flex flex-col h-full overflow-hidden group reveal-item hover:border-brand-teal/40 transition duration-300" style="--delay: ${delay}s;">
-                        <!-- Project Cover Image -->
-                        <div class="h-48 w-full overflow-hidden relative bg-brand-deep cursor-pointer" onclick="showProjectDetails('${key}')">
-                            <img src="${projectInfo.image}" alt="${project.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#060b13] via-transparent to-black/30"></div>
-                            
-                            <div class="absolute top-3 left-3 right-3 flex justify-between items-center z-10">
-                                ${demoBadge}
-                                <button onclick="event.stopPropagation(); showProjectDetails('${key}')" class="p-2 bg-slate-900/80 hover:bg-brand-teal text-slate-300 hover:text-brand-deep rounded-xl transition duration-300">
-                                    <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- Card Body -->
-                        <div class="p-6 flex flex-col flex-grow cursor-pointer" onclick="showProjectDetails('${key}')">
-                            <h4 class="text-lg font-bold text-white mb-2.5 group-hover:text-brand-teal transition duration-300 leading-snug">${project.title}</h4>
-                            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6 flex-grow">
-                                ${project.description.length > 140 ? project.description.substring(0, 135) + '...' : project.description}
-                            </p>
-                            
-                            <!-- Tech Tags -->
-                            <div class="flex flex-wrap gap-1.5 mb-6">
-                                ${project.technologies.slice(0, 4).map(tech => 
-                                    `<span class="bg-slate-900/90 text-slate-300 border border-white/5 px-2.5 py-1 rounded-md text-[11px] font-semibold">${tech}</span>`
-                                ).join('')}
-                            </div>
-
-                            <!-- Card Action Footer -->
-                            <div class="pt-4 border-t border-white/5 flex items-center justify-between mt-auto" onclick="event.stopPropagation()">
-                                <button onclick="showProjectDetails('${key}')" class="text-xs font-bold text-brand-teal hover:underline flex items-center gap-1">
-                                    <span>${currentLang === 'ar' ? 'التفاصيل والمعمارية' : 'View Architecture'}</span>
-                                    <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
-                                </button>
-                                
-                                <div class="flex items-center gap-2">
-                                    <a href="${projectInfo.github}" target="_blank" title="GitHub Repo" class="p-2 bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white rounded-lg transition duration-200 border border-white/5">
-                                        <i data-lucide="github" class="w-4 h-4"></i>
-                                    </a>
-                                    ${hasDemo ? `
-                                    <a href="${projectInfo.demo}" target="_blank" title="Live Demo" class="p-2 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 rounded-lg transition duration-200 border border-emerald-500/20">
-                                        <i data-lucide="external-link" class="w-4 h-4"></i>
-                                    </a>
-                                    ` : ''}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                `;
-                index++;
-            }
-            
-            grid.innerHTML = html;
-            lucide.createIcons();
-            
-            const newRevealItems = grid.querySelectorAll('.reveal-item');
-            newRevealItems.forEach(item => {
-                observer.observe(item);
-            });
-        }
-
-        // Project View Details Toggle
-        function showProjectDetails(projectId) {
-            const projectInfo = projectsData[projectId];
-            if (!projectInfo) return;
-
-            const project = projectInfo[currentLang];
-
-            detailTitle.innerHTML = project.title;
-            detailDescription.innerText = project.description;
-            detailGithubLink.href = projectInfo.github;
-
-            if (projectInfo.demo) {
-                detailDemoLink.href = projectInfo.demo;
-                detailDemoLink.classList.remove('hidden');
-                demoUnavailable.classList.add('hidden');
-            } else {
-                detailDemoLink.classList.add('hidden');
-                demoUnavailable.classList.remove('hidden');
-            }
-
-            const detailImg = document.getElementById('detail-image');
-            const detailImgContainer = document.getElementById('detail-image-container');
-            if (projectInfo.image && detailImg && detailImgContainer) {
-                detailImg.src = projectInfo.image;
-                detailImg.alt = project.title;
-                detailImgContainer.classList.remove('hidden');
-            } else if (detailImgContainer) {
-                detailImgContainer.classList.add('hidden');
-            }
-
-            detailTechnologies.innerHTML = project.technologies.map(tech => 
-                `<span class="inline-block bg-brand-teal/10 text-brand-teal border border-brand-teal/20 rounded-lg px-3.5 py-1 text-xs font-semibold">${tech}</span>`
-            ).join('');
-
-            mainView.classList.add('hidden');
-            projectDetailView.classList.remove('hidden');
-            certificateDetailView.classList.add('hidden'); 
-            window.scrollTo({ top: 0, behavior: 'instant' });
-            lucide.createIcons();
-        }
-
-        function hideProjectDetails() {
-            projectDetailView.classList.add('hidden');
-            mainView.classList.remove('hidden');
-            
-            const projectsSection = document.getElementById('projects');
-            if (projectsSection) {
-                projectsSection.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-
-        // Certificate View Details Toggle
-        function showCertificateDetails(certId) {
-            const cert = certificatesData[certId];
-            if (!cert) return;
-
-            const certLang = cert[currentLang];
-
-            certDetailTitle.innerHTML = certLang.title;
-            certDetailTrackDescription.innerHTML = certLang.trackDescription;
-
-            certDetailImages.innerHTML = cert.images.map((img, idx) => {
-                const altText = currentLang === 'ar' ? img.altAr : img.altEn;
-                return `<div onclick="openLightbox('${certId}', ${idx})" class="block overflow-hidden rounded-xl border border-white/5 bg-[#0c1322]/85 shadow-md hover:shadow-brand-teal/15 hover:border-brand-teal/30 transform hover:scale-[1.02] cursor-pointer transition duration-300">
-                    <div class="aspect-video w-full overflow-hidden bg-black/40 flex items-center justify-center">
-                        <img src="${img.src}" alt="${altText}" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-4 flex items-center justify-between">
-                        <div class="overflow-hidden mr-2">
-                            <p class="text-sm font-semibold text-slate-200 truncate">${altText}</p>
-                        </div>
-                        <i data-lucide="zoom-in" class="w-4 h-4 text-brand-teal flex-shrink-0"></i>
-                    </div>
-                </div>`;
-            }).join('');
-
-            mainView.classList.add('hidden');
-            projectDetailView.classList.add('hidden'); 
-            certificateDetailView.classList.remove('hidden');
-            window.scrollTo({ top: 0, behavior: 'instant' });
-            lucide.createIcons();
-        }
-
-        function hideCertificateDetails() {
-            certificateDetailView.classList.add('hidden');
-            mainView.classList.remove('hidden');
-            
-            const certsSection = document.getElementById('certifications');
-            if (certsSection) {
-                certsSection.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-
-        // Lightbox Carousel Logic
-        function openLightbox(certId, index) {
-            const cert = certificatesData[certId];
-            if (!cert || !cert.images[index]) return;
-
-            activeCertId = certId;
-            activeImageIndex = index;
-
-            updateLightbox();
-            document.getElementById('lightbox-modal').classList.remove('hidden');
-            document.getElementById('lightbox-modal').classList.add('flex');
-            document.body.style.overflow = 'hidden';
-            lucide.createIcons();
-        }
-
-        function closeLightbox() {
-            document.getElementById('lightbox-modal').classList.add('hidden');
-            document.getElementById('lightbox-modal').classList.remove('flex');
-            document.body.style.overflow = '';
-        }
-
-        function updateLightbox() {
-            const cert = certificatesData[activeCertId];
-            const img = cert.images[activeImageIndex];
-            const certLang = cert[currentLang];
-            const altText = currentLang === 'ar' ? img.altAr : img.altEn;
-
-            const lbImg = document.getElementById('lightbox-img');
-            const lbTitle = document.getElementById('lightbox-title');
-            const lbCaption = document.getElementById('lightbox-caption');
-            const lbIndex = document.getElementById('lightbox-index');
-
-            lbImg.src = img.src;
-            lbTitle.innerText = altText;
-            lbCaption.innerText = certLang.title;
-            lbIndex.innerText = `${activeImageIndex + 1} / ${cert.images.length}`;
-        }
-
-        function prevLightboxImage() {
-            const cert = certificatesData[activeCertId];
-            if (!cert) return;
-            activeImageIndex = (activeImageIndex - 1 + cert.images.length) % cert.images.length;
-            updateLightbox();
-        }
-
-        function nextLightboxImage() {
-            const cert = certificatesData[activeCertId];
-            if (!cert) return;
-            activeImageIndex = (activeImageIndex + 1) % cert.images.length;
-            updateLightbox();
-        }
-
-        // Keyboard inputs for lightbox
-        document.addEventListener('keydown', function(e) {
-            const lbModal = document.getElementById('lightbox-modal');
-            if (lbModal && !lbModal.classList.contains('hidden')) {
-                if (e.key === 'ArrowRight') {
-                    if (currentLang === 'ar') prevLightboxImage();
-                    else nextLightboxImage();
-                } else if (e.key === 'ArrowLeft') {
-                    if (currentLang === 'ar') nextLightboxImage();
-                    else prevLightboxImage();
-                } else if (e.key === 'Escape') {
-                    closeLightbox();
-                }
-            }
-        });
-
-        // Copy Text Helper
-        function copyText(text, tooltipId) {
-            navigator.clipboard.writeText(text).then(() => {
-                const tooltip = document.getElementById(tooltipId);
-                if (tooltip) {
-                    tooltip.innerText = i18n[currentLang].contactTooltip || "Copied!";
-                    tooltip.classList.remove('opacity-0');
-                    tooltip.classList.add('opacity-100');
-                    setTimeout(() => {
-                        tooltip.classList.remove('opacity-100');
-                        tooltip.classList.add('opacity-0');
-                    }, 2000);
-                }
-            }).catch(err => {
-                console.error('Could not copy text: ', err);
-            });
-        }
-
-        // Mobile menu toggle
-        function toggleMobileMenu() {
-            const mobileMenu = document.getElementById('mobile-menu');
-            const hamburgerIcon = document.getElementById('menu-icon-hamburger');
-            const closeIcon = document.getElementById('menu-icon-close');
-            
-            if (mobileMenu.classList.contains('hidden')) {
-                mobileMenu.classList.remove('hidden');
-                hamburgerIcon.classList.add('hidden');
-                closeIcon.classList.remove('hidden');
-            } else {
-                mobileMenu.classList.add('hidden');
-                hamburgerIcon.classList.remove('hidden');
-                closeIcon.classList.add('hidden');
-            }
-        }
-
-        // Typewriter Effect
-        const wordsByLang = {
-            en: ['ASP.NET Core APIs', 'C# & .NET Systems', 'SQL Database Design', 'Clean Architecture'],
-            ar: ['تطبيقات ASP.NET Core', 'أنظمة C# و .NET', 'تصميم قواعد بيانات SQL', 'معمارية برمجية نظيفة']
-        };
-        let wordIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        let typewriterEl;
-        let typewriterTimeout;
-
-        function type() {
-            const words = wordsByLang[currentLang];
-            const currentWord = words[wordIndex];
-            typewriterEl = document.getElementById('typewriter-text');
-            if (!typewriterEl) return;
-
-            if (isDeleting) {
-                typewriterEl.innerText = currentWord.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                typewriterEl.innerText = currentWord.substring(0, charIndex + 1);
-                charIndex++;
-            }
-
-            let typeSpeed = 100;
-            if (isDeleting) {
-                typeSpeed /= 2;
-            }
-
-            if (!isDeleting && charIndex === currentWord.length) {
-                typeSpeed = 2000; 
-                isDeleting = true;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                wordIndex = (wordIndex + 1) % words.length;
-                typeSpeed = 500;
-            }
-
-            if (typewriterTimeout) {
-                clearTimeout(typewriterTimeout);
-            }
-            typewriterTimeout = setTimeout(type, typeSpeed);
-        }
-
-        // Scroll reveal animation observer
-        const revealItems = document.querySelectorAll('.reveal-item');
-        const observerOptions = {
-            root: null, 
-            rootMargin: '0px',
-            threshold: 0.05 
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target); 
-                }
-            });
-        }, observerOptions);
-
-        revealItems.forEach(item => {
-            observer.observe(item);
-        });
-
-        // Navigation Active State Tracking
-        const navLinks = document.querySelectorAll('.nav-link');
-        const sections = document.querySelectorAll('section');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (window.scrollY >= (sectionTop - 150)) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('nav-active');
-                if (link.getAttribute('href').includes(current) && current !== '') {
-                    link.classList.add('nav-active');
-                }
-            });
-        });
-
-        // Terminal Simulation logs
-        const terminalLogs = {
-            en: [
-                { text: "> Initializing portfolio environment...", delay: 200 },
-                { text: "> Loading configuration dependencies...", delay: 400 },
-                { text: "> Establishing database connections... OK", delay: 700 },
-                { text: "> Starting .NET Core runtime application... OK", delay: 1000 },
-                { text: "> Resolving warehouse and store system APIs... OK", delay: 1300 },
-                { text: "> System status: ONLINE & SECURE.", delay: 1600 },
-                { text: "> Enter 'run' or 'enter' to boot the presentation console.", delay: 1800 }
-            ],
-            ar: [
-                { text: "> جاري تهيئة بيئة معرض الأعمال...", delay: 200 },
-                { text: "> جاري تحميل ملفات التكوين والاعتماديات...", delay: 400 },
-                { text: "> جاري إنشاء الاتصال بقواعد البيانات... تم بنجاح", delay: 700 },
-                { text: "> جاري تشغيل بيئة عمل .NET Core... تم بنجاح", delay: 1000 },
-                { text: "> جاري تجهيز خدمات وإدارات نظام المستودعات والمتجر... تم بنجاح", delay: 1300 },
-                { text: "> حالة النظام: متصل وآمن بالكامل.", delay: 1600 },
-                { text: "> اكتب 'run' أو اضغط 'دخول' لتشغيل لوحة العرض للموقع.", delay: 1800 }
-            ]
-        };
-
-        function runTerminalIntro() {
-            const logsContainer = document.getElementById('terminal-logs');
-            if (!logsContainer) return;
-            let logIndex = 0;
-            const logs = terminalLogs[currentLang];
-
-            function printLog() {
-                if (logIndex < logs.length) {
-                    const log = logs[logIndex];
-                    const logLine = document.createElement('p');
-                    logLine.className = 'leading-relaxed text-brand-teal';
-                    logLine.innerText = log.text;
-                    logsContainer.appendChild(logLine);
-                    logsContainer.scrollTop = logsContainer.scrollHeight;
-                    logIndex++;
-                    setTimeout(printLog, logIndex === logs.length ? 500 : 250);
-                } else {
-                    const inputLine = document.getElementById('terminal-input-line');
-                    if (inputLine) {
-                        inputLine.classList.remove('hidden');
-                        inputLine.classList.add('flex');
-                    }
-                    
-                    const terminalInput = document.getElementById('terminal-input');
-                    if (terminalInput) {
-                        terminalInput.focus();
-                        terminalInput.addEventListener('keydown', function(e) {
-                            if (e.key === 'Enter') {
-                                bootPortfolio();
-                            }
-                        });
-                    }
-                }
-            }
-            setTimeout(printLog, 400);
-        }
-
-        function bootPortfolio() {
-            const intro = document.getElementById('terminal-intro');
-            if (!intro) return;
-            
-            intro.classList.add('-translate-y-full');
-            setTimeout(() => {
-                intro.style.display = 'none';
-                type(); // Trigger landing typewriter animation after transition
-            }, 800);
-        }
-
-        // Setup dynamic listeners & typewriter
-        document.addEventListener('DOMContentLoaded', () => {
-            updatePageLanguage();
-            runTerminalIntro();
-            
-            // Smoothed anchor link scrolling
-            document.querySelectorAll('.nav-link[href^="#"], a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    if (mainView.classList.contains('hidden')) {
-                        // If in sub-view, go back to main first
-                        hideProjectDetails();
-                        hideCertificateDetails();
-                    }
-                    
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    if (targetId && targetId !== '#') {
-                        const targetEl = document.querySelector(targetId);
-                        if (targetEl) {
-                            targetEl.scrollIntoView({ behavior: 'smooth' });
-                        }
-                    }
-                });
-            });
-        });
-    </script>
+  </div>
+
+  <!-- 6. FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="#hero" class="nav-logo">
+            <span class="nav-logo-accent">Mohamed</span> Ashraf
+          </a>
+          <p class="footer-brand-desc">
+            Full Stack .NET Developer building production-ready web platforms, scalable APIs, and premium digital products.
+          </p>
+        </div>
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links">
+            <li><a href="#services">Web Applications</a></li>
+            <li><a href="#services">API Development</a></li>
+            <li><a href="#services">E-Commerce</a></li>
+            <li><a href="#services">Mobile Apps</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Connect</h4>
+          <ul class="footer-links">
+            <li><a href="https://github.com/mohamed68909" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/mohamed-ashraf-ab5803268" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://wa.me/201050500189" target="_blank" rel="noopener">WhatsApp</a></li>
+            <li><a href="mailto:mohamedashrafabdulkareem@gmail.com">Email</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2026 Mohamed Ashraf. All rights reserved.</p>
+        <div class="footer-socials">
+          <a href="https://github.com/mohamed68909" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/mohamed-ashraf-ab5803268" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 7. Scripts -->
+  <script src="js/app.js"></script>
 </body>
 </html>

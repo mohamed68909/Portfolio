@@ -1,0 +1,101 @@
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+
+/* Keyframes */
+@keyframes fadeIn { 
+  from { opacity: 0; } 
+  to { opacity: 1; } 
+}
+
+@keyframes slideUp { 
+  from { opacity: 0; transform: translateY(30px); } 
+  to { opacity: 1; transform: translateY(0); } 
+}
+
+@keyframes slideDown { 
+  from { opacity: 0; transform: translateY(-20px); } 
+  to { opacity: 1; transform: translateY(0); } 
+}
+
+@keyframes scaleIn { 
+  from { opacity: 0; transform: scale(0.95); } 
+  to { opacity: 1; transform: scale(1); } 
+}
+
+@keyframes float { 
+  0%, 100% { transform: translate(0, 0); } 
+  25% { transform: translate(10px, -30px); } 
+  50% { transform: translate(-15px, 15px); } 
+  75% { transform: translate(20px, -10px); } 
+}
+
+@keyframes pulse { 
+  0%, 100% { opacity: 1; } 
+  50% { opacity: 0.5; } 
+}
+
+@keyframes shimmer { 
+  0% { background-position: -200% 0; } 
+  100% { background-position: 200% 0; } 
+}
+
+@keyframes loading-fill { 
+  0% { width: 0%; } 
+  100% { width: 100%; } 
+}
+
+@keyframes gradient-shift { 
+  0% { background-position: 0% 50%; } 
+  50% { background-position: 100% 50%; } 
+  100% { background-position: 0% 50%; } 
+}
+
+@keyframes blink { 
+  0%, 100% { opacity: 1; } 
+  50% { opacity: 0; } 
+}
+
+@keyframes spin { 
+  0% { transform: rotate(0deg); } 
+  100% { transform: rotate(360deg); } 
+}
+
+/* Scroll Reveal */
+.reveal { 
+  opacity: 0; 
+  transform: translateY(30px); 
+  transition: opacity 0.7s var(--transition-spring), transform 0.7s var(--transition-spring); 
+  transition-delay: var(--reveal-delay, 0s); 
+}
+
+.reveal.visible { 
+  opacity: 1; 
+  transform: translateY(0); 
+}
+
+/* Typewriter cursor */
+.typewriter-cursor { 
+  display: inline-block; 
+  width: 2px; 
+  height: 1em; 
+  background: var(--accent-primary); 
+  margin-left: 2px; 
+  animation: blink 1s step-end infinite; 
+  vertical-align: text-bottom; 
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal { 
+    opacity: 1; 
+    transform: none; 
+    transition: none; 
+  }
+  
+  * { 
+    animation-duration: 0.01ms !important; 
+    animation-iteration-count: 1 !important; 
+    transition-duration: 0.01ms !important; 
+  }
+}
