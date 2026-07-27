@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Mogy Fresh Engineering Case Study — Mohamed Ashraf</title>
+  <meta name="description" content="Engineering case study report for El Mogy Fresh Organic E-Commerce Platform. ASP.NET Core 10, Clean Architecture 4-Layer Isolation, DDD, EF Core, and SQL Server.">
+  <link rel="canonical" href="https://mohamed68909.github.io/Portfolio/case-studies/elmogy-fresh.html">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../css/design-system.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/animations.css">
+</head>
+<body>
+  <a href="#main-content" class="sr-only focus:not-sr-only">Skip to main content</a>
+
+  <nav id="navbar" class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner container">
+      <a href="../index.html" class="nav-logo">
+        <span class="nav-logo-accent">&lt;MA/&gt;</span> Mohamed Ashraf
+      </a>
+      <div class="nav-links">
+        <a href="../work.html" class="nav-link active">Work</a>
+        <a href="../services.html" class="nav-link">Services</a>
+        <a href="../engineering.html" class="nav-link">Engineering</a>
+        <a href="../resume.html" class="nav-link">Resume</a>
+        <a href="../now.html" class="nav-link">Now</a>
+        <a href="../uses.html" class="nav-link">Uses</a>
+        <a href="../about.html" class="nav-link">About</a>
+        <a href="../contact.html" class="nav-link">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a href="https://elmogyfresh.runasp.net" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Live Site ↗</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content" class="section">
+    <div class="container" style="max-width: 900px;">
+      
+      <a href="../work.html" class="btn btn-ghost btn-sm" style="margin-bottom: var(--space-6);">← Back to All Projects</a>
+
+      <div class="section-header text-left" style="margin-bottom: var(--space-8);">
+        <span class="section-label badge badge-success"><span class="badge-dot"></span>Live Production URL</span>
+        <h1 class="text-display" style="font-size: 2.5rem; margin-top: var(--space-2);">El Mogy Fresh — Organic E-Commerce Platform</h1>
+        <p class="text-body-lg" style="color: var(--text-secondary);">
+          ASP.NET Core 10 MVC e-commerce platform built with 4-Layer Clean Architecture & Domain-Driven Design (DDD).
+        </p>
+      </div>
+
+      <img src="../Image/elmogy_fresh_mockup.jpg" alt="El Mogy Fresh" style="width: 100%; height: 380px; object-fit: cover; border-radius: var(--radius-xl); margin-bottom: var(--space-8);" loading="eager">
+
+      <!-- 1. Problem & Business Context -->
+      <article class="card reveal" style="padding: var(--space-8); margin-bottom: var(--space-6);">
+        <h2 class="text-h2" style="margin-bottom: var(--space-4);">1. Business Context & Problem Statement</h2>
+        <p class="text-body-lg" style="color: var(--text-secondary);">
+          Fresh produce retailers require a reliable online shopping experience where guest visitors can add products to their shopping cart without registering upfront. However, traditional e-commerce implementations often discard guest carts upon login or fail to clean up abandoned session records in the database.
+        </p>
+      </article>
+
+      <!-- 2. Requirements & Scope -->
+      <article class="card reveal" style="padding: var(--space-8); margin-bottom: var(--space-6);">
+        <h2 class="text-h2" style="margin-bottom: var(--space-4);">2. Core Requirements & Scope</h2>
+        <ul style="padding-left: var(--space-5); color: var(--text-secondary); line-height: 1.8;">
+          <li><strong>Hybrid Shopping Cart</strong>: Session/cookie guest carts auto-merge into registered user profiles upon login.</li>
+          <li><strong>Multi-Language Support</strong>: Arabic and English interface switching via `LanguageController`.</li>
+          <li><strong>Automated Background Cleanup</strong>: Background services for clearing expired guest carts without locking active tables.</li>
+          <li><strong>Catalog & Orders</strong>: Category filters, coupons, order status tracking, and PDF invoices.</li>
+        </ul>
+      </article>
+
+      <!-- 3. Architecture & Trade-offs -->
+      <article class="card reveal" style="padding: var(--space-8); margin-bottom: var(--space-6);">
+        <h2 class="text-h2" style="margin-bottom: var(--space-4);">3. Chosen Architecture & Trade-offs</h2>
+        <p class="text-body-lg" style="color: var(--text-secondary); margin-bottom: var(--space-4);">
+          Structured into 4 decoupled projects: `FreshVeg.Domain`, `FreshVeg.Application`, `FreshVeg.Infrastructure`, and `FreshVeg.Web`.
+        </p>
+        <div style="padding: var(--space-4); background: var(--bg-tertiary); border-left: 3px solid var(--accent-primary);">
+          <h3 class="text-h4" style="color: var(--accent-primary);">Architectural Trade-off</h3>
+          <p class="text-body-sm" style="color: var(--text-secondary);">
+            Using 4 separate project layers increased initial setup time compared to a monolithic MVC project, but guaranteed strict boundary isolation between business rules and EF Core persistence logic.
+          </p>
+        </div>
+      </article>
+
+      <!-- 4. Verified Results -->
+      <article class="card reveal" style="padding: var(--space-8); background: var(--bg-secondary);">
+        <h2 class="text-h2" style="margin-bottom: var(--space-4);">4. Verified Project Links</h2>
+        <div style="display: flex; gap: var(--space-4);">
+          <a href="https://elmogyfresh.runasp.net" target="_blank" rel="noopener" class="btn btn-primary">Visit Live Platform ↗</a>
+          <a href="https://github.com/mohamed68909/ElMogyFresh" target="_blank" rel="noopener" class="btn btn-secondary">GitHub Repository ↗</a>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2026 Mohamed Ashraf. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/app.js"></script>
+  <script src="../js/analytics.js"></script>
+</body>
+</html>

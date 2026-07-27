@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Production Projects & Case Studies — Mohamed Ashraf</title>
+  <meta name="description" content="Explore production case studies by Mohamed Ashraf, Full Stack .NET Developer. Detailed engineering breakdowns of E-Commerce, Smart City, and Healthcare platforms.">
+  <link rel="canonical" href="https://mohamed68909.github.io/Portfolio/work.html">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Production Projects & Case Studies — Mohamed Ashraf">
+  <meta property="og:description" content="Engineering case studies detailing ASP.NET Core, C#, EF Core, SQL Server, and React implementations.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mohamed68909.github.io/Portfolio/work.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+  <a href="#main-content" class="sr-only focus:not-sr-only">Skip to main content</a>
+
+  <nav id="navbar" class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner container">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-accent">&lt;MA/&gt;</span> Mohamed Ashraf
+      </a>
+      <div class="nav-links">
+        <a href="work.html" class="nav-link active">Work</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="engineering.html" class="nav-link">Engineering</a>
+        <a href="resume.html" class="nav-link">Resume</a>
+        <a href="now.html" class="nav-link">Now</a>
+        <a href="uses.html" class="nav-link">Uses</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" style="display:none" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="contact.html" class="btn btn-primary btn-sm nav-cta">Get In Touch</a>
+        <button id="mobile-menu-btn" class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+          <svg class="hamburger-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+          <svg class="close-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+    </div>
+    
+    <div id="mobile-menu" class="mobile-menu">
+      <a href="work.html" class="mobile-menu-link">Work</a>
+      <a href="services.html" class="mobile-menu-link">Services</a>
+      <a href="engineering.html" class="mobile-menu-link">Engineering</a>
+      <a href="resume.html" class="mobile-menu-link">Resume</a>
+      <a href="now.html" class="mobile-menu-link">Now</a>
+      <a href="uses.html" class="mobile-menu-link">Uses</a>
+      <a href="about.html" class="mobile-menu-link">About</a>
+      <a href="contact.html" class="mobile-menu-link">Contact</a>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label badge badge-primary reveal">Case Studies</span>
+          <h1 class="text-display reveal" style="--reveal-delay: 0.1s">Production Projects</h1>
+          <p class="section-desc reveal" style="--reveal-delay: 0.15s">
+            Deep technical reports documenting problem context, architecture decisions, trade-offs, and verified results.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-8); margin-top: var(--space-12);">
+          
+          <!-- El Mogy Fresh -->
+          <article class="card reveal" style="padding: var(--space-6);">
+            <img src="Image/elmogy_fresh_mockup.jpg" alt="El Mogy Fresh" style="width: 100%; height: 240px; object-fit: cover; border-radius: var(--radius-lg); margin-bottom: var(--space-4);" loading="lazy">
+            <span class="badge badge-success" style="margin-bottom: var(--space-2);"><span class="badge-dot"></span>Live Demo Available</span>
+            <h2 class="text-h3" style="margin: var(--space-2) 0;">El Mogy Fresh — Organic E-Commerce Platform</h2>
+            <p class="text-body-sm" style="color: var(--text-secondary); margin-bottom: var(--space-6);">
+              ASP.NET Core 10 MVC 4-Layer Clean Architecture & DDD application. Solved guest-to-user shopping cart merging and automated cleanup of abandoned carts via background services.
+            </p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <a href="case-studies/elmogy-fresh.html" class="btn btn-primary btn-sm">Full Engineering Report →</a>
+              <a href="https://elmogyfresh.runasp.net" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Live Site ↗</a>
+            </div>
+          </article>
+
+          <!-- STMS -->
+          <article class="card reveal" style="padding: var(--space-6);">
+            <img src="Image/traffic_management_mockup.png" alt="Smart Traffic Management" style="width: 100%; height: 240px; object-fit: cover; border-radius: var(--radius-lg); margin-bottom: var(--space-4);" loading="lazy">
+            <span class="badge badge-primary" style="margin-bottom: var(--space-2);">Smart City System</span>
+            <h2 class="text-h3" style="margin: var(--space-2) 0;">STMS — Smart Traffic & Emergency Response</h2>
+            <p class="text-body-sm" style="color: var(--text-secondary); margin-bottom: var(--space-6);">
+              .NET 8 Clean Architecture API featuring real-time SignalR Hubs for emergency vehicle dispatch, Stripe HMAC webhook integration, and React 19 admin dashboard.
+            </p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <a href="case-studies/stms.html" class="btn btn-primary btn-sm">Full Engineering Report →</a>
+              <a href="https://github.com/mohamed68909/SmartTrafficManagement" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">GitHub ↗</a>
+            </div>
+          </article>
+
+          <!-- CurexMind -->
+          <article class="card reveal" style="padding: var(--space-6);">
+            <img src="Image/clinic_api_mockup.png" alt="CurexMind Clinic Management" style="width: 100%; height: 240px; object-fit: cover; border-radius: var(--radius-lg); margin-bottom: var(--space-4);" loading="lazy">
+            <span class="badge badge-primary" style="margin-bottom: var(--space-2);">Healthcare Platform</span>
+            <h2 class="text-h3" style="margin: var(--space-2) 0;">CurexMind — Hospital & Clinic Management</h2>
+            <p class="text-body-sm" style="color: var(--text-secondary); margin-bottom: var(--space-6);">
+              ASP.NET Core 9.0 Web API backend + React 19 TypeScript frontend. Features a 4-step smart appointment booking stepper and unified 5-tab patient record system.
+            </p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <a href="case-studies/curexmind.html" class="btn btn-primary btn-sm">Full Engineering Report →</a>
+              <a href="https://github.com/mohamed68909/ClinicManagementAPI" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">GitHub ↗</a>
+            </div>
+          </article>
+
+          <!-- TechStore -->
+          <article class="card reveal" style="padding: var(--space-6);">
+            <img src="Image/techstore_customer_mockup.png" alt="TechStore E-Commerce" style="width: 100%; height: 240px; object-fit: cover; border-radius: var(--radius-lg); margin-bottom: var(--space-4);" loading="lazy">
+            <span class="badge badge-primary" style="margin-bottom: var(--space-2);">Enterprise N-Tier System</span>
+            <h2 class="text-h3" style="margin: var(--space-2) 0;">TechStore — Enterprise Electronics E-Commerce</h2>
+            <p class="text-body-sm" style="color: var(--text-secondary); margin-bottom: var(--space-6);">
+              6-Project N-Tier Architecture ASP.NET Core 9 application with Stripe payments SDK, 6-digit OTP email verification, and OAuth 2.0 social authentication.
+            </p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <a href="case-studies/techstore.html" class="btn btn-primary btn-sm">Full Engineering Report →</a>
+              <a href="https://github.com/mohamed68909/Portfolio" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">GitHub ↗</a>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Additional Engineering Projects -->
+        <div style="margin-top: var(--space-16);">
+          <h2 class="text-h2 reveal" style="margin-bottom: var(--space-6);">Additional Backend APIs & Systems</h2>
+          
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6);">
+            <div class="card reveal" style="padding: var(--space-6);">
+              <img src="Image/warehouse_wms_mockup.png" alt="Warehouse Management System" style="width: 100%; height: 160px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: var(--space-4);" loading="lazy">
+              <h3 class="text-h4">Warehouse Management System (WMS)</h3>
+              <p class="text-body-sm" style="color: var(--text-secondary); margin: var(--space-2) 0 var(--space-4);">
+                ASP.NET Core Web API with Clean Architecture, Domain-Driven Design, JWT Auth, and stock movement auditing.
+              </p>
+              <span class="text-mono" style="font-size: var(--text-caption); color: var(--accent-primary);">.NET Core · Web API · SQL Server</span>
+            </div>
+
+            <div class="card reveal" style="padding: var(--space-6);">
+              <img src="Image/library_api_mockup.png" alt="Library Management API" style="width: 100%; height: 160px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: var(--space-4);" loading="lazy">
+              <h3 class="text-h4">Library Management API</h3>
+              <p class="text-body-sm" style="color: var(--text-secondary); margin: var(--space-2) 0 var(--space-4);">
+                RESTful Web API adhering to Repository & Unit of Work patterns with Swagger documentation and DTO mapping.
+              </p>
+              <span class="text-mono" style="font-size: var(--text-caption); color: var(--accent-primary);">ASP.NET Core API · Swagger · EF Core</span>
+            </div>
+
+            <div class="card reveal" style="padding: var(--space-6);">
+              <img src="Image/license_management_mockup.png" alt="Driver License System" style="width: 100%; height: 160px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: var(--space-4);" loading="lazy">
+              <h3 class="text-h4">Driver License Management System</h3>
+              <p class="text-body-sm" style="color: var(--text-secondary); margin: var(--space-2) 0 var(--space-4);">
+                C# WinForms desktop application built over a normalized 3NF relational database schema in MS SQL Server.
+              </p>
+              <span class="text-mono" style="font-size: var(--text-caption); color: var(--accent-primary);">C# · SQL Server 3NF · WinForms</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2026 Mohamed Ashraf. All rights reserved.</p>
+        <div class="footer-socials">
+          <a href="https://github.com/mohamed68909" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/mohamed-ashraf-ab5803268" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script src="js/analytics.js"></script>
+</body>
+</html>
