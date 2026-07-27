@@ -70,7 +70,7 @@ start index.html
 
 - **Email:** mohamedashrafabdulkareem@gmail.com
 - **Phone / WhatsApp:** +20 105 050 0189
-- **LinkedIn:** [linkedin.com/in/mohamed-ashraf-ab5803268](https://www.linkedin.com/in/mohamed-ashraf-ab5803268)
+- **LinkedIn:** [linkedin.com/in/mohamed-ashraf-ab5803268](https://www.linkedin.com/in/mohamed-ashraf-dot-netdeveloper/)
 - **GitHub:** [github.com/mohamed68909](https://github.com/mohamed68909)
 
 ---
