@@ -3,16 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Production Projects & Case Studies — Mohamed Ashraf</title>
-  <meta name="description" content="Explore production case studies by Mohamed Ashraf, Full Stack .NET Developer. Detailed engineering breakdowns of E-Commerce, Smart City, and Healthcare platforms.">
+  <title>Production Software Engineering Case Studies — Mohamed Ashraf</title>
+  <meta name="description" content="Explore production case studies by Mohamed Ashraf, Full Stack .NET Developer. In-depth technical architecture breakdowns of STMS Smart Traffic, TechStore E-Commerce, CurexMind Healthcare, and El Mogy Fresh.">
   <link rel="canonical" href="https://mohamed68909.github.io/Portfolio/work.html">
   
-  <!-- Open Graph -->
-  <meta property="og:title" content="Production Projects & Case Studies — Mohamed Ashraf">
-  <meta property="og:description" content="Engineering case studies detailing ASP.NET Core, C#, EF Core, SQL Server, and React implementations.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://mohamed68909.github.io/Portfolio/work.html">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
@@ -45,132 +39,247 @@
           <svg class="icon-moon" style="display:none" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
         <a href="contact.html" class="btn btn-primary btn-sm nav-cta">Get In Touch</a>
-        <button id="mobile-menu-btn" class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
-          <svg class="hamburger-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-          <svg class="close-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-        </button>
       </div>
-    </div>
-    
-    <div id="mobile-menu" class="mobile-menu">
-      <a href="work.html" class="mobile-menu-link">Work</a>
-      <a href="services.html" class="mobile-menu-link">Services</a>
-      <a href="engineering.html" class="mobile-menu-link">Engineering</a>
-      <a href="resume.html" class="mobile-menu-link">Resume</a>
-      <a href="now.html" class="mobile-menu-link">Now</a>
-      <a href="uses.html" class="mobile-menu-link">Uses</a>
-      <a href="about.html" class="mobile-menu-link">About</a>
-      <a href="contact.html" class="mobile-menu-link">Contact</a>
     </div>
   </nav>
 
-  <main id="main-content">
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label badge badge-primary reveal">Case Studies</span>
-          <h1 class="text-display reveal" style="--reveal-delay: 0.1s">Production Projects</h1>
-          <p class="section-desc reveal" style="--reveal-delay: 0.15s">
-            Deep technical reports documenting problem context, architecture decisions, trade-offs, and verified results.
-          </p>
-        </div>
+  <main id="main-content" class="section">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="section-label badge badge-primary reveal">Engineered Solutions</span>
+        <h1 class="text-display reveal" style="--reveal-delay: 0.1s">Production Software Case Studies</h1>
+        <p class="section-desc reveal" style="--reveal-delay: 0.15s">
+          Detailed technical breakdowns of enterprise systems built using .NET 10/9/8, Clean Architecture, SQL Server custom indexing, SignalR, and React 19.
+        </p>
+      </div>
 
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-8); margin-top: var(--space-12);">
-          
-          <!-- El Mogy Fresh -->
-          <article class="card reveal" style="padding: var(--space-6);">
-            <img src="Image/elmogy_fresh_mockup.jpg" alt="El Mogy Fresh" style="width: 100%; height: 240px; object-fit: cover; border-radius: var(--radius-lg); margin-bottom: var(--space-4);" loading="lazy">
-            <span class="badge badge-success" style="margin-bottom: var(--space-2);"><span class="badge-dot"></span>Live Demo Available</span>
-            <h2 class="text-h3" style="margin: var(--space-2) 0;">El Mogy Fresh — Organic E-Commerce Platform</h2>
-            <p class="text-body-sm" style="color: var(--text-secondary); margin-bottom: var(--space-6);">
-              ASP.NET Core 10 MVC 4-Layer Clean Architecture & DDD application. Solved guest-to-user shopping cart merging and automated cleanup of abandoned carts via background services.
-            </p>
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <a href="case-studies/elmogy-fresh.html" class="btn btn-primary btn-sm">Full Engineering Report →</a>
-              <a href="https://elmogyfresh.runasp.net" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Live Site ↗</a>
+      <div style="display: flex; flex-direction: column; gap: var(--space-12); margin-top: var(--space-12);">
+        
+        <!-- PROJECT 1: STMS -->
+        <article id="stms" class="card reveal" style="padding: var(--space-8);">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: var(--space-4); margin-bottom: var(--space-6);">
+            <div>
+              <span class="badge badge-primary">Smart City System · .NET 8 + React 19 + Flutter</span>
+              <h2 class="text-h2" style="font-size: 2.25rem; margin-top: var(--space-2);">1. Smart Traffic & Emergency Management System (STMS)</h2>
+              <p class="text-body-lg" style="color: var(--accent-primary); font-weight: 600;">Real-Time GPS Vehicle Tracking, SignalR Hub Dispatch, & Multi-Role Smart City Portal</p>
             </div>
-          </article>
-
-          <!-- STMS -->
-          <article class="card reveal" style="padding: var(--space-6);">
-            <img src="Image/traffic_management_mockup.png" alt="Smart Traffic Management" style="width: 100%; height: 240px; object-fit: cover; border-radius: var(--radius-lg); margin-bottom: var(--space-4);" loading="lazy">
-            <span class="badge badge-primary" style="margin-bottom: var(--space-2);">Smart City System</span>
-            <h2 class="text-h3" style="margin: var(--space-2) 0;">STMS — Smart Traffic & Emergency Response</h2>
-            <p class="text-body-sm" style="color: var(--text-secondary); margin-bottom: var(--space-6);">
-              .NET 8 Clean Architecture API featuring real-time SignalR Hubs for emergency vehicle dispatch, Stripe HMAC webhook integration, and React 19 admin dashboard.
-            </p>
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <a href="case-studies/stms.html" class="btn btn-primary btn-sm">Full Engineering Report →</a>
-              <a href="https://github.com/mohamed68909/SmartTrafficManagement" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">GitHub ↗</a>
-            </div>
-          </article>
-
-          <!-- CurexMind -->
-          <article class="card reveal" style="padding: var(--space-6);">
-            <img src="Image/clinic_api_mockup.png" alt="CurexMind Clinic Management" style="width: 100%; height: 240px; object-fit: cover; border-radius: var(--radius-lg); margin-bottom: var(--space-4);" loading="lazy">
-            <span class="badge badge-primary" style="margin-bottom: var(--space-2);">Healthcare Platform</span>
-            <h2 class="text-h3" style="margin: var(--space-2) 0;">CurexMind — Hospital & Clinic Management</h2>
-            <p class="text-body-sm" style="color: var(--text-secondary); margin-bottom: var(--space-6);">
-              ASP.NET Core 9.0 Web API backend + React 19 TypeScript frontend. Features a 4-step smart appointment booking stepper and unified 5-tab patient record system.
-            </p>
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <a href="case-studies/curexmind.html" class="btn btn-primary btn-sm">Full Engineering Report →</a>
-              <a href="https://github.com/mohamed68909/ClinicManagementAPI" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">GitHub ↗</a>
-            </div>
-          </article>
-
-          <!-- TechStore -->
-          <article class="card reveal" style="padding: var(--space-6);">
-            <img src="Image/techstore_customer_mockup.png" alt="TechStore E-Commerce" style="width: 100%; height: 240px; object-fit: cover; border-radius: var(--radius-lg); margin-bottom: var(--space-4);" loading="lazy">
-            <span class="badge badge-primary" style="margin-bottom: var(--space-2);">Enterprise N-Tier System</span>
-            <h2 class="text-h3" style="margin: var(--space-2) 0;">TechStore — Enterprise Electronics E-Commerce</h2>
-            <p class="text-body-sm" style="color: var(--text-secondary); margin-bottom: var(--space-6);">
-              6-Project N-Tier Architecture ASP.NET Core 9 application with Stripe payments SDK, 6-digit OTP email verification, and OAuth 2.0 social authentication.
-            </p>
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <a href="case-studies/techstore.html" class="btn btn-primary btn-sm">Full Engineering Report →</a>
-              <a href="https://github.com/mohamed68909/Portfolio" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">GitHub ↗</a>
-            </div>
-          </article>
-
-        </div>
-
-        <!-- Additional Engineering Projects -->
-        <div style="margin-top: var(--space-16);">
-          <h2 class="text-h2 reveal" style="margin-bottom: var(--space-6);">Additional Backend APIs & Systems</h2>
-          
-          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6);">
-            <div class="card reveal" style="padding: var(--space-6);">
-              <img src="Image/warehouse_wms_mockup.png" alt="Warehouse Management System" style="width: 100%; height: 160px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: var(--space-4);" loading="lazy">
-              <h3 class="text-h4">Warehouse Management System (WMS)</h3>
-              <p class="text-body-sm" style="color: var(--text-secondary); margin: var(--space-2) 0 var(--space-4);">
-                ASP.NET Core Web API with Clean Architecture, Domain-Driven Design, JWT Auth, and stock movement auditing.
-              </p>
-              <span class="text-mono" style="font-size: var(--text-caption); color: var(--accent-primary);">.NET Core · Web API · SQL Server</span>
-            </div>
-
-            <div class="card reveal" style="padding: var(--space-6);">
-              <img src="Image/library_api_mockup.png" alt="Library Management API" style="width: 100%; height: 160px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: var(--space-4);" loading="lazy">
-              <h3 class="text-h4">Library Management API</h3>
-              <p class="text-body-sm" style="color: var(--text-secondary); margin: var(--space-2) 0 var(--space-4);">
-                RESTful Web API adhering to Repository & Unit of Work patterns with Swagger documentation and DTO mapping.
-              </p>
-              <span class="text-mono" style="font-size: var(--text-caption); color: var(--accent-primary);">ASP.NET Core API · Swagger · EF Core</span>
-            </div>
-
-            <div class="card reveal" style="padding: var(--space-6);">
-              <img src="Image/license_management_mockup.png" alt="Driver License System" style="width: 100%; height: 160px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: var(--space-4);" loading="lazy">
-              <h3 class="text-h4">Driver License Management System</h3>
-              <p class="text-body-sm" style="color: var(--text-secondary); margin: var(--space-2) 0 var(--space-4);">
-                C# WinForms desktop application built over a normalized 3NF relational database schema in MS SQL Server.
-              </p>
-              <span class="text-mono" style="font-size: var(--text-caption); color: var(--accent-primary);">C# · SQL Server 3NF · WinForms</span>
+            <div style="display: flex; gap: var(--space-3); flex-wrap: wrap;">
+              <a href="https://github.com/mohamed68909/SmartTrafficManagement" target="_blank" rel="noopener" class="btn btn-primary">GitHub Repository ↗</a>
+              <a href="case-studies/stms.html" class="btn btn-ghost">Full Deep Report →</a>
             </div>
           </div>
-        </div>
+
+          <img src="Image/traffic_management_mockup.png" alt="Smart Traffic Management" style="width: 100%; height: 380px; object-fit: cover; border-radius: var(--radius-xl); margin-bottom: var(--space-6);" loading="lazy">
+
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); margin-bottom: var(--space-6);">
+            <div style="background: var(--bg-tertiary); padding: var(--space-5); border-radius: var(--radius-lg);">
+              <h3 class="text-h4" style="color: var(--accent-primary); margin-bottom: var(--space-2);">🏗️ Solution Architecture</h3>
+              <ul style="padding-left: var(--space-4); color: var(--text-secondary); font-size: var(--text-body-sm); line-height: 1.7;">
+                <li><strong>Backend:</strong> .NET 8 (C#) Clean Architecture (`src/`).</li>
+                <li><strong>Database:</strong> SQL Server + EF Core with Custom Non-Clustered Indexes for high-concurrency queries.</li>
+                <li><strong>Real-Time:</strong> SignalR Hubs for location streaming & live chat.</li>
+                <li><strong>Web Portal:</strong> React 19 + Vite (Premium Dark Theme).</li>
+                <li><strong>Mobile App:</strong> Flutter (Dart) + Riverpod + Google Maps API.</li>
+              </ul>
+            </div>
+
+            <div style="background: var(--bg-tertiary); padding: var(--space-5); border-radius: var(--radius-lg);">
+              <h3 class="text-h4" style="color: var(--accent-primary); margin-bottom: var(--space-2);">👥 5 User Roles</h3>
+              <ul style="padding-left: var(--space-4); color: var(--text-secondary); font-size: var(--text-body-sm); line-height: 1.7;">
+                <li><strong>Driver (Flutter):</strong> SOS (Towing, Fuel, Battery, Flat Tire), live GPS tracking, incident reporting.</li>
+                <li><strong>System Admin (React):</strong> Service provider onboarding approval, system revenue analytics.</li>
+                <li><strong>CS Agent (React):</strong> SignalR live support chat & driver lookup/ban.</li>
+                <li><strong>Rescue Provider (React):</strong> SOS task acceptance & earnings graph.</li>
+                <li><strong>Store Seller (React):</strong> Spare parts catalog & order processing.</li>
+              </ul>
+            </div>
+
+            <div style="background: var(--bg-tertiary); padding: var(--space-5); border-radius: var(--radius-lg);">
+              <h3 class="text-h4" style="color: var(--accent-primary); margin-bottom: var(--space-2);">🔒 Security & Optimization</h3>
+              <ul style="padding-left: var(--space-4); color: var(--text-secondary); font-size: var(--text-body-sm); line-height: 1.7;">
+                <li><strong>Auto Token Refresh:</strong> Background HTTP Interceptor renewing expired JWTs without user logout.</li>
+                <li><strong>Stripe HMAC Security:</strong> Webhook signature verification preventing fraudulent payment events.</li>
+                <li><strong>Custom Indexes:</strong> DB index tuning on high-frequency tables (Orders, Traffic Reports, Vehicles).</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 2: TECHSTORE -->
+        <article id="techstore" class="card reveal" style="padding: var(--space-8);">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: var(--space-4); margin-bottom: var(--space-6);">
+            <div>
+              <span class="badge badge-primary">Enterprise N-Tier System · ASP.NET Core 9.0</span>
+              <h2 class="text-h2" style="font-size: 2.25rem; margin-top: var(--space-2);">2. TechStore — Enterprise Electronics E-Commerce</h2>
+              <p class="text-body-lg" style="color: var(--accent-primary); font-weight: 600;">Multi-Project N-Tier Architecture, 6-Digit OTP Email Auth, OAuth 2.0, & Stripe Payments</p>
+            </div>
+            <div style="display: flex; gap: var(--space-3); flex-wrap: wrap;">
+              <a href="https://github.com/mohamed68909/Portfolio" target="_blank" rel="noopener" class="btn btn-primary">GitHub Repository ↗</a>
+              <a href="case-studies/techstore.html" class="btn btn-ghost">Full Deep Report →</a>
+            </div>
+          </div>
+
+          <img src="Image/techstore_customer_mockup.png" alt="TechStore Electronics E-Commerce" style="width: 100%; height: 380px; object-fit: cover; border-radius: var(--radius-xl); margin-bottom: var(--space-6);" loading="lazy">
+
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6);">
+            <div style="background: var(--bg-tertiary); padding: var(--space-5); border-radius: var(--radius-lg);">
+              <h3 class="text-h4" style="color: var(--accent-primary); margin-bottom: var(--space-2);">🏗️ 6 Solution Projects</h3>
+              <ul style="padding-left: var(--space-4); color: var(--text-secondary); font-size: var(--text-body-sm); line-height: 1.7;">
+                <li><code>TechStore</code>: MVC Web App (Customer, Admin, Identity Areas).</li>
+                <li><code>TechStore.Api</code>: RESTful API for external integrations.</li>
+                <li><code>TechStore.Entities</code>: Domain Entities (Product, OrderHeader, ShoppingCart).</li>
+                <li><code>TechStore.Services</code>: Business Logic Layer & Stripe SDK.</li>
+                <li><code>TechStore.DataAccess</code>: DbContext, Repository & Unit of Work.</li>
+                <li><code>TechStore.Utilities</code>: Cross-cutting constants & Roles.</li>
+              </ul>
+            </div>
+
+            <div style="background: var(--bg-tertiary); padding: var(--space-5); border-radius: var(--radius-lg);">
+              <h3 class="text-h4" style="color: var(--accent-primary); margin-bottom: var(--space-2);">✨ Storefront & Admin</h3>
+              <ul style="padding-left: var(--space-4); color: var(--text-secondary); font-size: var(--text-body-sm); line-height: 1.7;">
+                <li><strong>Dynamic Catalog:</strong> Instant search & category filters.</li>
+                <li><strong>Real-Time Tracking:</strong> Pending → Approved → Processing → Shipped → Completed.</li>
+                <li><strong>Admin Dashboard:</strong> CRUD with multi-image upload, inventory controls, & user management.</li>
+                <li><strong>Stripe Checkout:</strong> Multi-stage safe bill payment.</li>
+              </ul>
+            </div>
+
+            <div style="background: var(--bg-tertiary); padding: var(--space-5); border-radius: var(--radius-lg);">
+              <h3 class="text-h4" style="color: var(--accent-primary); margin-bottom: var(--space-2);">🔒 Security & Authentication</h3>
+              <ul style="padding-left: var(--space-4); color: var(--text-secondary); font-size: var(--text-body-sm); line-height: 1.7;">
+                <li><strong>6-Digit OTP Verification:</strong> Email verification code required upon registration.</li>
+                <li><strong>OAuth 2.0 Social Login:</strong> 1-Click Google & Facebook authentication.</li>
+                <li><strong>Strict Audit Time:</strong> Unified <code>DateTimeOffset.UtcNow</code> logging across transactions.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 3: CUREXMIND -->
+        <article id="curexmind" class="card reveal" style="padding: var(--space-8);">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: var(--space-4); margin-bottom: var(--space-6);">
+            <div>
+              <span class="badge badge-primary">Healthcare Platform · ASP.NET Core 9 + React 19</span>
+              <h2 class="text-h2" style="font-size: 2.25rem; margin-top: var(--space-2);">3. CurexMind — Hospital & Clinic Platform</h2>
+              <p class="text-body-lg" style="color: var(--accent-primary); font-weight: 600;">4-Step Booking Stepper, 5-Tab Unified Patient File, 3 Simulated Payment Gateways</p>
+            </div>
+            <div style="display: flex; gap: var(--space-3); flex-wrap: wrap;">
+              <a href="https://github.com/mohamed68909/ClinicManagementAPI" target="_blank" rel="noopener" class="btn btn-primary">GitHub Repository ↗</a>
+              <a href="case-studies/curexmind.html" class="btn btn-ghost">Full Deep Report →</a>
+            </div>
+          </div>
+
+          <img src="Image/clinic_api_mockup.png" alt="CurexMind Hospital Platform" style="width: 100%; height: 380px; object-fit: cover; border-radius: var(--radius-xl); margin-bottom: var(--space-6);" loading="lazy">
+
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6);">
+            <div style="background: var(--bg-tertiary); padding: var(--space-5); border-radius: var(--radius-lg);">
+              <h3 class="text-h4" style="color: var(--accent-primary); margin-bottom: var(--space-2);">🌐 Patient Portal</h3>
+              <ul style="padding-left: var(--space-4); color: var(--text-secondary); font-size: var(--text-body-sm); line-height: 1.7;">
+                <li><strong>Doctor Search & Filters:</strong> Specialty, In-Person/Online, Rating, Price sorting.</li>
+                <li><strong>Smart Doctor Cards:</strong> Auto gender avatar matching.</li>
+                <li><strong>4-Step Booking Stepper:</strong> Doctor selection → Patient Info → Payment → Summary Invoice.</li>
+                <li><strong>3 Payment Gateways:</strong> Instapay, E-Wallets (Vodafone/Etisalat Cash), & Cards.</li>
+              </ul>
+            </div>
+
+            <div style="background: var(--bg-tertiary); padding: var(--space-5); border-radius: var(--radius-lg);">
+              <h3 class="text-h4" style="color: var(--accent-primary); margin-bottom: var(--space-2);">🏢 Reception & Management</h3>
+              <ul style="padding-left: var(--space-4); color: var(--text-secondary); font-size: var(--text-body-sm); line-height: 1.7;">
+                <li><strong>Analytics Dashboard:</strong> Total Patients, Today's Visits, Unpaid Invoices, Pending Funds.</li>
+                <li><strong>5-Tab Medical File:</strong> Basic Info, Appointments, Invoices, Room Stays, & Surgical Operations.</li>
+                <li><strong>Bilingual Support:</strong> Complete Arabic RTL & English LTR with Tailwind CSS 4.</li>
+              </ul>
+            </div>
+
+            <div style="background: var(--bg-tertiary); padding: var(--space-5); border-radius: var(--radius-lg);">
+              <h3 class="text-h4" style="color: var(--accent-primary); margin-bottom: var(--space-2);">⚙️ Tech Stack & Security</h3>
+              <ul style="padding-left: var(--space-4); color: var(--text-secondary); font-size: var(--text-body-sm); line-height: 1.7;">
+                <li><strong>Backend:</strong> ASP.NET Core 9 Web API + EF Core 9 + SQL Server.</li>
+                <li><strong>Frontend:</strong> React 19 + TypeScript + Zustand + Vite.</li>
+                <li><strong>Validation & Security:</strong> FluentValidation + ASP.NET Identity + JWT Bearer RBAC filters.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 4: EL MOGY FRESH -->
+        <article id="elmogy-fresh" class="card reveal" style="padding: var(--space-8);">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: var(--space-4); margin-bottom: var(--space-6);">
+            <div>
+              <span class="badge badge-success"><span class="badge-dot"></span>Live Demo Available · ASP.NET Core 10</span>
+              <h2 class="text-h2" style="font-size: 2.25rem; margin-top: var(--space-2);">4. El Mogy Fresh — Organic E-Commerce Platform</h2>
+              <p class="text-body-lg" style="color: var(--accent-primary); font-weight: 600;">4-Layer Clean Architecture, DDD, Hybrid Session-to-User Shopping Cart Merging</p>
+            </div>
+            <div style="display: flex; gap: var(--space-3); flex-wrap: wrap;">
+              <a href="https://elmogyfresh.runasp.net" target="_blank" rel="noopener" class="btn btn-primary">Live Site Demo ↗</a>
+              <a href="https://github.com/mohamed68909/ElMogyFresh" target="_blank" rel="noopener" class="btn btn-secondary">GitHub Repository ↗</a>
+              <a href="case-studies/elmogy-fresh.html" class="btn btn-ghost">Full Deep Report →</a>
+            </div>
+          </div>
+
+          <img src="Image/elmogy_fresh_mockup.jpg" alt="El Mogy Fresh E-Commerce" style="width: 100%; height: 380px; object-fit: cover; border-radius: var(--radius-xl); margin-bottom: var(--space-6);" loading="lazy">
+
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6);">
+            <div style="background: var(--bg-tertiary); padding: var(--space-5); border-radius: var(--radius-lg);">
+              <h3 class="text-h4" style="color: var(--accent-primary); margin-bottom: var(--space-2);">🛒 Hybrid Shopping Cart</h3>
+              <ul style="padding-left: var(--space-4); color: var(--text-secondary); font-size: var(--text-body-sm); line-height: 1.7;">
+                <li>Guests shop seamlessly via Session/Cookies.</li>
+                <li>Upon login, guest items automatically merge into user account without losing cart data.</li>
+                <li>Hosted <code>GuestCartCleanupBackgroundService</code> automatically clears expired guest session carts.</li>
+              </ul>
+            </div>
+
+            <div style="background: var(--bg-tertiary); padding: var(--space-5); border-radius: var(--radius-lg);">
+              <h3 class="text-h4" style="color: var(--accent-primary); margin-bottom: var(--space-2);">🏗️ 4-Layer DDD Architecture</h3>
+              <ul style="padding-left: var(--space-4); color: var(--text-secondary); font-size: var(--text-body-sm); line-height: 1.7;">
+                <li><code>FreshVeg.Domain</code>: Entities (Product, Order, Cart, Review).</li>
+                <li><code>FreshVeg.Application</code>: Services & DTOs.</li>
+                <li><code>FreshVeg.Infrastructure</code>: DbContext, Repositories & Unit of Work.</li>
+                <li><code>FreshVeg.Web</code>: Controllers, Admin Area, & Background Workers.</li>
+              </ul>
+            </div>
+
+            <div style="background: var(--bg-tertiary); padding: var(--space-5); border-radius: var(--radius-lg);">
+              <h3 class="text-h4" style="color: var(--accent-primary); margin-bottom: var(--space-2);">🎨 UI & Multilingual</h3>
+              <ul style="padding-left: var(--space-4); color: var(--text-secondary); font-size: var(--text-body-sm); line-height: 1.7;">
+                <li>Modern Glassmorphic dark design system.</li>
+                <li>Multi-language support via custom <code>LanguageController</code>.</li>
+                <li>ASP.NET Core Identity with Role-Based Authorization (`Admin` / `User`).</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 5: DRIVER LICENSE SYSTEM -->
+        <article id="driver-license" class="card reveal" style="padding: var(--space-8);">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: var(--space-4); margin-bottom: var(--space-6);">
+            <div>
+              <span class="badge badge-primary">Desktop 3-Tier System · C# + WinForms + SQL Server</span>
+              <h2 class="text-h2" style="font-size: 2.25rem; margin-top: var(--space-2);">5. Driver License Management System</h2>
+              <p class="text-body-lg" style="color: var(--accent-primary); font-weight: 600;">Strict 3-Tier Architecture, 3NF SQL Server Relational Database, & Operation Audit Logging</p>
+            </div>
+            <div style="display: flex; gap: var(--space-3); flex-wrap: wrap;">
+              <a href="https://github.com/mohamed68909/DriverLicenseManagment" target="_blank" rel="noopener" class="btn btn-primary">GitHub Repository ↗</a>
+            </div>
+          </div>
+
+          <img src="Image/license_management_mockup.png" alt="Driver License Management System" style="width: 100%; height: 340px; object-fit: cover; border-radius: var(--radius-xl); margin-bottom: var(--space-6);" loading="lazy">
+
+          <div style="background: var(--bg-tertiary); padding: var(--space-6); border-radius: var(--radius-lg);">
+            <h3 class="text-h4" style="color: var(--accent-primary); margin-bottom: var(--space-3);">Key Capabilities & Architecture</h3>
+            <ul style="padding-left: var(--space-5); color: var(--text-secondary); line-height: 1.8;">
+              <li><strong>Full License Lifecycle:</strong> Complete workflow for driving test tracking, first-time license issuance, renewal, replacement for lost/damaged licenses, and detaining/releasing licenses.</li>
+              <li><strong>3-Tier Architecture:</strong> Strict layer isolation between Presentation (WinForms), Business Logic (C# Domain Classes), and Data Access (ADO.NET Data Access Layer).</li>
+              <li><strong>3NF Database Design:</strong> Relational SQL Server schema designed in 3rd Normal Form with foreign key constraints and transactional consistency.</li>
+              <li><strong>User Activity Logging:</strong> Integrated operation logging tracking every user action, test record modification, and status change.</li>
+            </ul>
+          </div>
+        </article>
 
       </div>
-    </section>
+
+    </div>
   </main>
 
   <footer class="footer">
