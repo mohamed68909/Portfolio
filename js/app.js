@@ -330,9 +330,19 @@ const applyTheme = (theme) => {
 // ==========================================
 
 window.toggleMobileMenu = () => {
-  if (dom.mobileMenu) {
-    dom.mobileMenu.classList.toggle('active');
-    document.body.style.overflow = dom.mobileMenu.classList.contains('active') ? 'hidden' : '';
+  const menu = dom.mobileMenu || document.getElementById('mobile-menu');
+  const btn = dom.mobileMenuBtn || document.getElementById('mobile-menu-btn');
+  if (menu) {
+    const isActive = menu.classList.toggle('active');
+    document.body.style.overflow = isActive ? 'hidden' : '';
+    if (btn) {
+      const hamburger = btn.querySelector('.hamburger-icon');
+      const closeIcon = btn.querySelector('.close-icon');
+      if (hamburger && closeIcon) {
+        hamburger.style.display = isActive ? 'none' : 'block';
+        closeIcon.style.display = isActive ? 'block' : 'none';
+      }
+    }
   }
 };
 
